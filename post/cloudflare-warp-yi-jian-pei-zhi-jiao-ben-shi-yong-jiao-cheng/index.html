@@ -4,13 +4,12 @@
 <head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="项目介绍
-Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术），同时它还有部署简单，不易对电脑环境造成污染的特点。而docker-compose则是对容器进行管理的工具，适合多容器同时使用或容器部署命令复杂时使用。
-下面我会分..." />
+<meta name="description" content="前言
+Cloudflare WARP 一键配置脚本是一个简化在 Linux VPS 上安装和配置 Cloud­flare WARP 的脚本，它支持 WARP 官方客户端和 Wire­Guard 两种主流 WARP 使用方式，适用于 IPv4..." />
 <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
 <link rel="preconnect dns-prefetch" href="https://cdn.jsdelivr.net/" crossorigin>
 <script async src="https://cdn.ampproject.org/v0.js"></script>
-<title>Docker一键部署博客 | Gridea</title>
+<title>Cloudflare WARP 一键配置脚本 使用教程 | Gridea</title>
 
 
   
@@ -2203,37 +2202,34 @@ Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术
 
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
 <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-<link rel="canonical" href="https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/" />
+<link rel="canonical" href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/" />
 <link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1639836950675">
 
 <meta name="author" content="作者">
 
-<meta itemprop="name" content="Docker一键部署博客 | Gridea">
-<meta itemprop="description" content="项目介绍
-Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术），同时它还有部署简单，不易对电脑环境造成污染的特点。而docker-compose则是对容器进行管理的工具，适合多容器同时使用或容器部署命令复杂时使用。
-下面我会分...">
+<meta itemprop="name" content="Cloudflare WARP 一键配置脚本 使用教程 | Gridea">
+<meta itemprop="description" content="前言
+Cloudflare WARP 一键配置脚本是一个简化在 Linux VPS 上安装和配置 Cloud­flare WARP 的脚本，它支持 WARP 官方客户端和 Wire­Guard 两种主流 WARP 使用方式，适用于 IPv4...">
 <meta itemprop="image" content="">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Docker一键部署博客 | Gridea">
-<meta name="twitter:description" content="项目介绍
-Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术），同时它还有部署简单，不易对电脑环境造成污染的特点。而docker-compose则是对容器进行管理的工具，适合多容器同时使用或容器部署命令复杂时使用。
-下面我会分...">
+<meta name="twitter:title" content="Cloudflare WARP 一键配置脚本 使用教程 | Gridea">
+<meta name="twitter:description" content="前言
+Cloudflare WARP 一键配置脚本是一个简化在 Linux VPS 上安装和配置 Cloud­flare WARP 的脚本，它支持 WARP 官方客户端和 Wire­Guard 两种主流 WARP 使用方式，适用于 IPv4...">
 <meta name="twitter:image" content="" />
-<meta name="twitter:image:alt" content="Docker一键部署博客 | Gridea" />
+<meta name="twitter:image:alt" content="Cloudflare WARP 一键配置脚本 使用教程 | Gridea" />
 
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/">
-<meta property="og:title" content="Docker一键部署博客 | Gridea">
-<meta property="og:description" content="项目介绍
-Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术），同时它还有部署简单，不易对电脑环境造成污染的特点。而docker-compose则是对容器进行管理的工具，适合多容器同时使用或容器部署命令复杂时使用。
-下面我会分...">
+<meta property="og:url" content="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/">
+<meta property="og:title" content="Cloudflare WARP 一键配置脚本 使用教程 | Gridea">
+<meta property="og:description" content="前言
+Cloudflare WARP 一键配置脚本是一个简化在 Linux VPS 上安装和配置 Cloud­flare WARP 的脚本，它支持 WARP 官方客户端和 Wire­Guard 两种主流 WARP 使用方式，适用于 IPv4...">
 <meta property="og:image" content="">
-<meta property="og:image:alt" content="Docker一键部署博客 | Gridea" />
+<meta property="og:image:alt" content="Cloudflare WARP 一键配置脚本 使用教程 | Gridea" />
 <meta property="og:site_name" content="Gridea">
 <meta property="og:locale" content="zh_CN">
-<meta property="tag" content="Docker一键部署博客 | Gridea" />
+<meta property="tag" content="Cloudflare WARP 一键配置脚本 使用教程 | Gridea" />
 
 
 <script type="application/ld+json">
@@ -2242,11 +2238,11 @@ Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术
 "@type": "BlogPosting",
 "mainEntityOfPage": {
   "@type": "WebPage",
-  "@id": "https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/"
+  "@id": "https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/"
 },
-"headline": "Docker一键部署博客 | Gridea",
-"datePublished": "Sun Dec 05 2021 14:16:48 GMT+0800",
-"dateModified": "Sun Dec 05 2021 14:16:48 GMT+0800",
+"headline": "Cloudflare WARP 一键配置脚本 使用教程 | Gridea",
+"datePublished": "Sat Dec 18 2021 22:13:16 GMT+0800",
+"dateModified": "Sat Dec 18 2021 22:13:16 GMT+0800",
 "author": {
   "@type": "Person",
   "name": "作者"
@@ -2262,9 +2258,8 @@ Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术
 "image": [
 ""
 ],
-"description": "项目介绍
-Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术），同时它还有部署简单，不易对电脑环境造成污染的特点。而docker-compose则是对容器进行管理的工具，适合多容器同时使用或容器部署命令复杂时使用。
-下面我会分..."
+"description": "前言
+Cloudflare WARP 一键配置脚本是一个简化在 Linux VPS 上安装和配置 Cloud­flare WARP 的脚本，它支持 WARP 官方客户端和 Wire­Guard 两种主流 WARP 使用方式，适用于 IPv4..."
  }
 
 </script>
@@ -2280,8 +2275,8 @@ Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术
     },{
       "@type": "ListItem", 
       "position": 2, 
-      "name": "Docker一键部署博客 | Gridea",
-      "item": "https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/"  
+      "name": "Cloudflare WARP 一键配置脚本 使用教程 | Gridea",
+      "item": "https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/"  
     }]
   }
   </script>
@@ -2303,7 +2298,7 @@ Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术
 
 <script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>
 
-<link rel="alternate" type="application/atom+xml" title="Docker一键部署博客 | Gridea - Atom Feed" href="https://blog.52naiba.cn/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="Cloudflare WARP 一键配置脚本 使用教程 | Gridea - Atom Feed" href="https://blog.52naiba.cn/atom.xml">
 
   
   <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
@@ -2391,13 +2386,13 @@ Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术
       <div class="article-info">
         
         <h2 class="article-title">
-          <a href="https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/">Docker一键部署博客</a>
+          <a href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/">Cloudflare WARP 一键配置脚本 使用教程</a>
         </h2>
         <div class="flex-box">
           <div class="flex-box post-meta-box">
             <a class="post-meta" href="https://blog.52naiba.cn"><span
                 class="iconfont icon-mr-postmeta"></span>作者</a>
-            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2021 年 12	月 5日</span>
+            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2021 年 12	月 18日</span>
             
 
 
@@ -2405,87 +2400,87 @@ Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术
         </div>
       </div>
       <div class="content">
-        <h2 id="项目介绍">项目介绍</h2>
-<p>Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术），同时它还有部署简单，不易对电脑环境造成污染的特点。而docker-compose则是对容器进行管理的工具，适合多容器同时使用或容器部署命令复杂时使用。</p>
-<p>下面我会分享如何在x86_64或arm64平台（包括但不限于CentOS7、Ubuntu20.04、Rasbianarm64）上利用docker-compose命令构建属于自己的博客（wordpress或者typecho二选一，个人推荐wordpress）</p>
-<h3 id="1环境">1.环境</h3>
-<h4 id="11-环境检查">1.1 环境检查</h4>
-<p>这一步骤主要是对服务器上docker-compose和git的检查，你可以使用下面命令查询服务器是否安装docker-compose和git</p>
-<pre><code>docker-compose -v
-git --version
+        <h2 id="前言">前言</h2>
+<p><a href="https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC93YXJwLnNo">Cloudflare WARP 一键配置脚本</a>是一个简化在 Linux VPS 上安装和配置 Cloud­flare WARP 的脚本，它支持 WARP 官方客户端和 Wire­Guard 两种主流 WARP 使用方式，适用于 IPv4/IPv6 单双栈各类的网络环境，操作系统、 CPU 架构和虚拟化平台支持全面。本篇是介绍说明及简单使用教程。</p>
+<p>Cloud­flare WARP 是什么？能干什么？好不好用？以及这个脚本的实现原理知识和其它周边配套设置参见《<a href="https://p3terx.com/archives/use-cloudflare-warp-to-add-extra-ipv4-or-ipv6-network-support-to-vps-servers-for-free.html">Cloudflare WARP 给 VPS 服务器额外添加 IPv4 或 IPv6 网络获得 “原生” IP</a>》。</p>
+<h2 id="项目地址">项目地址</h2>
+<p>GitHub</p>
+<p>https://github.com/sjlleo/netflix-verify     检查是否解锁Netflix</p>
+<p><a href="https://github.com/P3TERX/warp.sh">https://github.com/P3TERX/warp.sh</a></p>
+<p>支持本项目欢迎随手点个 <code>star</code>，可以让更多的人发现、使用并受益。你的支持是持续开发维护的动力。</p>
+<h2 id="脚本特点">脚本特点</h2>
+<ul>
+<li>CPU 架构支持：x86(i386)、x86_64(amd64)、ARMv8(aarch64)、ARMv7 等</li>
+<li>虚拟化平台支持：KVM、Xen、OpenVZ、LXC 等</li>
+<li>操作系统支持：Debian、Ubuntu、CentOS、Arch Linux 以及其它 DEB 系与 RHEL 系下游的最新版本</li>
+<li>智能识别网络方案并自动匹配最佳配置方案进行部署</li>
+<li>独家优化配置方案，获得更好的 WARP 网络体验</li>
+<li>无需更换 Linux 内核，更稳定、更安全、更自由</li>
+<li>直观的进程状态、网络状态和 WARP 状态显示</li>
+<li>Cloudflare WARP 官方 Linux 客户端支持</li>
+<li>“一把梭”式极致体验</li>
+</ul>
+<figure data-type="image" tabindex="1"><a href="https://imgcdn.p3terx.com/post/20201113013636.jpg#vwid=600&amp;vhei=395"><img src="https://imgcdn.p3terx.com/post/20201113013636.jpg#vwid=600&amp;vhei=395" alt="img" loading="lazy"></a></figure>
+<h2 id="使用方法">使用方法</h2>
+<p>SSH 连上 VPS 。<s><a href="https://p3terx.com/archives/cheap-and-costeffective-vps-recommended.html">AD: 还没有 VPS ？赶紧点这里去选一个吧！</a></s></p>
+<ul>
+<li>
+<p>无论 VPS 是 IPv4 还是 IPv6 又或都有，添加 WARP Wire­Guard 双栈全局网络，直接使用以下命令一把梭：</p>
+<pre><code class="language-bash"># 自动配置 WARP WireGuard 双栈全局网络
+bash &lt;(curl -fsSL git.io/warp.sh) d
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="https://www.laning.cc/wp-content/uploads/2021/12/%E6%8D%95%E8%8E%B72.png" alt="img" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="https://www.laning.cc/wp-content/uploads/2021/12/%E6%8D%95%E8%8E%B73.png" alt="img" loading="lazy"></figure>
-<p>如果看到类似下面的输出，则证明服务器已经安装docker-compose和git（可能版本不太一样，但不必焦虑，请直接跳转到第2步）</p>
-<h4 id="12-环境安装">1.2 环境安装</h4>
-<p>如果没有看到版本信息，则服务器没有安装docker-compose，你需要用下面的命令安装此工具：</p>
-<pre><code>CentOS：sudo yum install docker-compose &amp;&amp; sudo yum install git
-Ubuntu：sudo apt install docker-compose &amp;&amp; sudo apt install git
-Rasbianarm64：sudo apt install docker-compose &amp;&amp; sudo apt install git
+</li>
+<li>
+<p>添加或置换 IPv4/IPv6 网络中的一个为 WARP Wire­Guard 网络，使用以下命令一把梭：</p>
+<pre><code class="language-bash"># 自动配置 WARP WireGuard IPv4 网络
+bash &lt;(curl -fsSL git.io/warp.sh) 4
+# 自动配置 WARP WireGuard IPv6 网络
+bash &lt;(curl -fsSL git.io/warp.sh) 6
 </code></pre>
-<h4 id="13-添加docker开机自启动">1.3 添加docker开机自启动</h4>
-<p>这一步骤主要是将docker添加到开机自启动中，命令如下：</p>
-<pre><code>sudo systemctl enable docker
+</li>
+<li>
+<p>Cloud­flare 官方于近期发布了 WARP Linux 客户端，同时也带来了全新的 Proxy Mode 功能，它使得我们可以让应用通过本地的 SOCKS5 代理端口去直接使用 WARP 网络。对于想尝鲜官方客户端的小伙伴，可以使用以下命令一把梭自动安装 WARP 官方客户端并开启 SOCKS5 本机代理端口 (<code>127.0.0.1:40000</code>)：</p>
+<pre><code class="language-bash"># 自动配置 WARP 官方客户端 SOCKS5 代理
+bash &lt;(curl -fsSL git.io/warp.sh) s5
 </code></pre>
-<h3 id="2部署博客">2.部署博客</h3>
-<h4 id="21-wordpress-部署">2.1 wordpress 部署</h4>
-<h4 id="211-拉取文件并启动容器">2.1.1 拉取文件并启动容器</h4>
-<p>利用git从github拉取wordpress 的docker-compose.yml文件，命令如下：</p>
-<pre><code>git clone https://github.com/laningya/docker_wordpress.git
+</li>
+<li>
+<p>给喜欢功能菜单的小伙伴特别准备的功能，执行以下命令显示功能菜单和贴心的状态显示：</p>
+<pre><code class="language-bash"># Cloudflare WARP 一键配置脚本 功能菜单
+bash &lt;(curl -fsSL git.io/warp.sh) menu
 </code></pre>
-<p>启动容器，命令如下：</p>
-<pre><code>cd docker-wordpress &amp;&amp; sudo docker-compose up -d
-</code></pre>
-<h4 id="212-访问博客">2.1.2 访问博客</h4>
-<p>使用服务器IP访问博客地址</p>
-<p>例：内网IP：http://192.168.x.x</p>
-<p>如果是购买的阿里云、腾讯云等云服务器请先备案并在安全组中开放80端口</p>
-<h4 id="213-配置wordpress">2.1.3 配置wordpress</h4>
-<p>语言选择：简体中文 点击继续</p>
-<figure data-type="image" tabindex="3"><img src="https://www.laning.ltd/wp-content/uploads/2021/12/%E6%8D%95%E8%8E%B71.png" alt="img" loading="lazy"></figure>
-<p>补充说明：</p>
-<p>请按照自己的个人信息自行填写</p>
-<p>搜索引擎可见性可选可不选</p>
-<h4 id="214-补充">2.1.4 补充</h4>
-<p>默认博客地址是 http://服务器IP</p>
-<p>默认博客后台地址是 http://服务器IP/admin</p>
-<p>关于wordpress的美化请自行百度</p>
-<h4 id="22-typecho-部署">2.2 typecho 部署</h4>
-<h4 id="221-拉取文件并启动容器">2.2.1 拉取文件并启动容器</h4>
-<p>利用git从github拉取typecho的docker-compose.yml文件，命令如下：</p>
-<pre><code>git clone https://github.com/laningya/docker_typecho.git
-</code></pre>
-<p>启动容器，命令如下：</p>
-<pre><code>cd docker-typecho &amp;&amp; sudo docker-compose up -d
-</code></pre>
-<h4 id="222-访问博客">2.2.2 访问博客</h4>
-<p>使用服务器IP访问博客地址</p>
-<p>例：内网IP：http://192.168.x.x</p>
-<p>如果是购买的阿里云、腾讯云等云服务器请先备案并在安全组中开放80端口</p>
-<h4 id="223-配置typecho">2.2.3 配置typecho</h4>
-<p>点击我准备好了开始下一步</p>
-<p>接下来按如下图配置</p>
-<p>补充说明：</p>
-<p>数据库配置请严格按照上面格式</p>
-<p>管理员账号中请填写自己的IP地址或自己的域名</p>
-<p>用户名 密码 邮箱部分请自己填写</p>
-<figure data-type="image" tabindex="4"><img src="https://www.laning.ltd/wp-content/uploads/2021/12/%E6%8D%95%E8%8E%B7.png" alt="img" loading="lazy"></figure>
-<h4 id="224-补充">2.2.4 补充</h4>
-<p>默认博客地址是 http://服务器IP</p>
-<p>默认博客后台地址是 http://服务器IP/admin</p>
+<figure data-type="image" tabindex="2"><a href="https://imgcdn.p3terx.com/post/20210718032620.png#vwid=523&amp;vhei=460"><img src="https://imgcdn.p3terx.com/post/20210718032620.png#vwid=523&amp;vhei=460" alt="img" loading="lazy"></a></figure>
+</li>
+</ul>
+<h2 id="注意事项和其它说明">注意事项和其它说明</h2>
+<ul>
+<li>脚本目前处于公测阶段，可能还存在少量未知的 bug ，虽然不会导致毁灭性的问题，但不建议在生产环境中使用。</li>
+<li><code>自动配置 WARP WireGuard 双栈全局网络</code>已做到适配目前大多数主流的系统和 IDC 网络方案，但不排除极个别的差异没考虑到，因此可能会因为路由规则不适用而导致 SSH 失联。若失联可以使用网页 VNC 登录到 VPS 然后执行<code>systemctl disable wg-quick@wgcf --now</code>命令完全禁用 WARP WireGuard 服务即可恢复。</li>
+<li>因 WireGuard 的 bug 与 WARP 网络偶发性连接故障，可能会出现网络状态显示均为未连接且网络访问异常的情况，使用<code>systemctl restart wg-quick@wgcf</code>命令重启 WARP WireGuard 进程即可。若一直有问题则一直重启，直到能使用为止。</li>
+<li>功能菜单中的<code>选择其它 WARP WireGuard 配置方案</code>最初设计为自动配置时因本地源 IP 识别错误导致失联后的半自动备用方案，目前已经几乎用不到了。如果需要使用可根据实际情况与需求选择，遵循“无则添加、有则置换”原则。注意确认 IP 地址是否需要修改，如需修改可以手动输入 IP。随着脚本的完善，逐步走向智能自动化，后续这个功能菜单可能会移除。</li>
+<li>脚本使用 <a href="https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1ZpUmIzL3dnY2Y">wgcf</a> 生成通用 WireGuard 配置文件，配置完成后会原样备份至<code>~/.wgcf</code>目录，以便下次脚本自动调用，避免重复申请 WARP 账号导致 IP 被 Cloudflare 拉黑。</li>
+<li>若之前自行生成过 WireGuard 配置文件，在文件名为<code>wgcf-profile.conf</code>的情况下在此配置文件所在目录执行脚本会优先调用此配置文件并截取关键信息生成符合所选网络方案的新配置文件。若之前有生成过带有 WARP+ 流量的配置文件，则可以使用这个彩蛋功能。</li>
+<li>WARP WireGuard 双栈全局网络可能会导致 Docker 应用在 Bridge 网络模式下无法通过 IP 直接访问。可以使用 Host 网络模式，或者用 nginx 反代的方式去使用。暂时还没有找到完美的解决方案，如果有大佬知道怎么解决，欢迎分享。</li>
+<li>WARP 官方 Linux 客户端才上线不久，实测稳定性不佳，且系统支持不全。目前只支持在 x86_64(amd64) 架构的 Debian 10/11、Ubuntu 20.04、CentOS 8 系统中尝鲜使用。其它系统也许能正常安装，但可能存在无法正常启动的问题。</li>
+<li>WARP 官方客户端与 WARP WireGuard 网络可以同时使用，但 WARP 客户端的网络数据可能会走在 WARP WireGuard 隧道中，这属于套娃行为，减速效果非常明显。</li>
+<li>WARP 官方客户端可能无法在部分 IPv6 Only VPS 上使用，可以先添加 WARP WireGuard IPv4 网络，但正如前面所说套娃减速。</li>
+</ul>
+<h2 id="遇到问题如何处理">遇到问题如何处理</h2>
+<ul>
+<li>脚本运行失败或错误请在 <a href="https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC93YXJwLnNoL2lzc3Vlcw">GitHub issues</a> 页面进行留言，提供虚拟化平台、系统版本、内核版本以及从脚本运行到末尾的详细日志等信息，以便分析问题原因改进脚本。<strong>若未提供有用信息一律当做垃圾信息处理。</strong></li>
+<li>重启、重装、重买是解决问题的三大法宝。</li>
+</ul>
+<h2 id="最后">最后</h2>
+<p>这个脚本从方案设计到代码编写全部都是由博主个人原创，且花费了大量时间和精力打磨而成，最初只是自己使用，觉得达到了近乎完美的状态也就开源分享了出来。如果觉得这个脚本对你有帮助，可以去 <a href="https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC93YXJwLnNo">WARP 脚本的 Github 项目页面</a>点下 Star 点亮小星星支持一下，也欢迎小伙伴们分享出去让更多的人看到、使用并受益。</p>
 
       </div>
 
       
       <nav class="post-nav">
         
-        <div class="nav-previous">
-          <a class="post-nav-link-active" title="X-ui，支持多协议多用户的 Xray 面板！V2-ui全面停止更新，后续逐渐用 X-ui 面板取代 V2-ui 面板！" href="https://blog.52naiba.cn/post/x-uizhi-chi-duo-xie-yi-duo-yong-hu-de-xray-mian-ban-v2-ui-quan-mian-ting-zhi-geng-xin-hou-xu-zhu-jian-yong-x-ui-mian-ban-qu-dai-v2-ui-mian-ban/">上一篇文章</a>
-        </div>
-        
         
         <div class="nav-next">
-          <a class="post-nav-link-active" title="Hello Gridea" href="https://blog.52naiba.cn/post/hello-gridea/">下一篇文章</a>
+          <a class="post-nav-link-active" title="搭建基于telegraph的无限储存图床" href="https://blog.52naiba.cn/post/da-jian-ji-yu-telegraph-de-wu-xian-chu-cun-tu-chuang/">下一篇文章</a>
           
 
         </div>
@@ -2534,7 +2529,7 @@ Rasbianarm64：sudo apt install docker-compose &amp;&amp; sudo apt install git
   <div id="respond" class="comment-respond">
     <amp-iframe width=600 height=200 layout="responsive"
       sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms" resizable
-      src="?title=Docker一键部署博客&url=https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/&identifier=https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/">
+      src="?title=Cloudflare WARP 一键配置脚本 使用教程&url=https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/&identifier=https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/">
       <div
       overflow
       tabindex=0

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.52naiba.cn</id>
     <title>Gridea</title>
-    <updated>2021-12-15T15:48:20.726Z</updated>
+    <updated>2021-12-18T14:15:54.967Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.52naiba.cn"/>
     <link rel="self" href="https://blog.52naiba.cn/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://blog.52naiba.cn/images/avatar.png</logo>
     <icon>https://blog.52naiba.cn/favicon.ico</icon>
     <rights>All rights reserved 2021, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[Cloudflare WARP 一键配置脚本 使用教程]]></title>
+        <id>https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/</id>
+        <link href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/">
+        </link>
+        <updated>2021-12-18T14:13:16.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[搭建基于telegraph的无限储存图床]]></title>
         <id>https://blog.52naiba.cn/post/da-jian-ji-yu-telegraph-de-wu-xian-chu-cun-tu-chuang/</id>
