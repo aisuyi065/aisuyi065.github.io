@@ -1,215 +1,217 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" >
 
-<head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>
-    Gridea
-</title>
-<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1640843834022">
-<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<title>文章归档 | Gridea</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1640843982334">
 <link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
-<!-- js -->
-<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://blog.52naiba.cn/media/js/jquery.sticky-sidebar.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
-</head>
 
-<body>
-    <div class="main">
-        <div class="header">
-    <div class="nav">
-        <div class="logo">
-            <a href="https://blog.52naiba.cn">
-                <img class="avatar" src="https://blog.52naiba.cn/images/avatar.png?v=1640843834022" alt="">
-            </a>
-            <div class="site-title">
-                <h1>
-                    Gridea
-                </h1>
-            </div>
-        </div>
-        <span class="menu-btn fa fa-align-justify"></span>
-        <div class="menu-container">
-            <ul>
-                
-                    
-                            <li>
-                                <a href="/" class="menu">
-                                    首页
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/archives" class="menu">
-                                    归档
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/tags" class="menu">
-                                    标签
-                                </a>
-                            </li>
-                            
-                                
-                    
-                            <li>
-                                <a href="/post/about" class="menu">
-                                    关于
-                                </a>
-                            </li>
-                            
-                                
-            </ul>
-        </div>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="温故而知新">
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://blog.52naiba.cn">
+        <img src="https://blog.52naiba.cn/images/avatar.png?v=1640843982334" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
     </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://blog.52naiba.cn/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
 </div>
 
-<script>
-    $(document).ready(function() {
-        $(".menu-btn").click(function() {
-            $(".menu-container").slideToggle();
-        });
-        $(window).resize(function() {
 
-            if (window.matchMedia('(min-width: 960px)').matches) {
-                $(".menu-container").css('display', 'block')
-            } else {
-                $(".menu-container").css('display', 'none')
-            }
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          
 
-        });
-    });
-</script>
-
+          <h2 class="archives-title">文章归档</h2>
+          <div class="archives-container">
             
-
-    <div class="archives-container main-container">
-        <ul class="timeline">
+              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2021</h2>
+              
+                
+                  <article class="post">
+                    <a href="https://blog.52naiba.cn/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/">
+                      <h2 class="post-title">
+                        个人常使用的一些脚本集合
+                      </h2>
+                    </a>
+                  </article>
+                
+              
+                
+                  <article class="post">
+                    <a href="https://blog.52naiba.cn/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/">
+                      <h2 class="post-title">
+                        分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本
+                      </h2>
+                    </a>
+                  </article>
+                
+              
+                
+                  <article class="post">
+                    <a href="https://blog.52naiba.cn/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/">
+                      <h2 class="post-title">
+                        Cloudflare WARP 一键配置脚本 使用教程
+                      </h2>
+                    </a>
+                  </article>
+                
+              
+                
+                  <article class="post">
+                    <a href="https://blog.52naiba.cn/da-jian-ji-yu-telegraph-de-wu-xian-chu-cun-tu-chuang/">
+                      <h2 class="post-title">
+                        搭建基于telegraph的无限储存图床
+                      </h2>
+                    </a>
+                  </article>
+                
+              
+                
+                  <article class="post">
+                    <a href="https://blog.52naiba.cn/x-uizhi-chi-duo-xie-yi-duo-yong-hu-de-xray-mian-ban-v2-ui-quan-mian-ting-zhi-geng-xin-hou-xu-zhu-jian-yong-x-ui-mian-ban-qu-dai-v2-ui-mian-ban/">
+                      <h2 class="post-title">
+                        X-ui，支持多协议多用户的 Xray 面板！V2-ui全面停止更新，后续逐渐用 X-ui 面板取代 V2-ui 面板！
+                      </h2>
+                    </a>
+                  </article>
+                
+              
+                
+                  <article class="post">
+                    <a href="https://blog.52naiba.cn/docker-yi-jian-bu-shu-bo-ke/">
+                      <h2 class="post-title">
+                        Docker一键部署博客
+                      </h2>
+                    </a>
+                  </article>
+                
+              
+                
+              
             
-                <li>
-                    <h3 class="year">
-                        2021
-                    </h3>
-                    <ul class="year-wrapper">
-                        
-                            
-                                <li>
-                                    <span class="date">2021-12-30</span>
-                                    <a class="title" href="https://blog.52naiba.cn/post/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/">
-                                        <span>个人常使用的一些脚本集合</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2021-12-30</span>
-                                    <a class="title" href="https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/">
-                                        <span>分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2021-12-18</span>
-                                    <a class="title" href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/">
-                                        <span>Cloudflare WARP 一键配置脚本 使用教程</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2021-12-15</span>
-                                    <a class="title" href="https://blog.52naiba.cn/post/da-jian-ji-yu-telegraph-de-wu-xian-chu-cun-tu-chuang/">
-                                        <span>搭建基于telegraph的无限储存图床</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2021-12-07</span>
-                                    <a class="title" href="https://blog.52naiba.cn/post/x-uizhi-chi-duo-xie-yi-duo-yong-hu-de-xray-mian-ban-v2-ui-quan-mian-ting-zhi-geng-xin-hou-xu-zhu-jian-yong-x-ui-mian-ban-qu-dai-v2-ui-mian-ban/">
-                                        <span>X-ui，支持多协议多用户的 Xray 面板！V2-ui全面停止更新，后续逐渐用 X-ui 面板取代 V2-ui 面板！</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                <li>
-                                    <span class="date">2021-12-05</span>
-                                    <a class="title" href="https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/">
-                                        <span>Docker一键部署博客</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                            
-                                    
-                    </ul>
-
-                </li>
+              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2018</h2>
+              
                 
-                <li>
-                    <h3 class="year">
-                        2018
-                    </h3>
-                    <ul class="year-wrapper">
-                        
-                            
-                                    
-                            
-                                    
-                            
-                                    
-                            
-                                    
-                            
-                                    
-                            
-                                    
-                            
-                                <li>
-                                    <span class="date">2018-12-12</span>
-                                    <a class="title" href="https://blog.52naiba.cn/post/hello-gridea/">
-                                        <span>Hello Gridea</span>
-                                    </a>
-                                </li>
-                                
-                                    
-                    </ul>
-
-                </li>
+              
                 
-        </ul>
-    </div>
-
+              
                 
+              
+                
+              
+                
+              
+                
+              
+                
+                  <article class="post">
+                    <a href="https://blog.52naiba.cn/hello-gridea/">
+                      <h2 class="post-title">
+                        Hello Gridea
+                      </h2>
+                    </a>
+                  </article>
+                
+              
+            
+          </div>
 
-                    <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://blog.52naiba.cn/atom.xml" target="_blank">RSS</a>
+          <div class="pagination-container">
+  
+  
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
 
-    </div>
-</body>
 
+
+
+
+
+  </body>
 </html>

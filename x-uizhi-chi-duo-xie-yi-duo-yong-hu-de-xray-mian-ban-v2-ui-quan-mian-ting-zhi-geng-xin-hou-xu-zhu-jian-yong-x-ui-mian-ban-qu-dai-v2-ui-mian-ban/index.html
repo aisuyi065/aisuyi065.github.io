@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>X-ui，支持多协议多用户的 Xray 面板！V2-ui全面停止更新，后续逐渐用 X-ui 面板取代 V2-ui 面板！ | Gridea</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1640843982334">
+<link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="1、VPS 一台重置好主流的操作系统 （CentOS 7+、Ubuntu 16+、Debian 8+），作者使用：搬瓦工 VPS
+2、域名一个，做好相关的解析，若是需要套用 CDN，请托管域名到 cloudflare ，不会请点击
+安装 X..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://blog.52naiba.cn">
+        <img src="https://blog.52naiba.cn/images/avatar.png?v=1640843982334" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://blog.52naiba.cn/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">X-ui，支持多协议多用户的 Xray 面板！V2-ui全面停止更新，后续逐渐用 X-ui 面板取代 V2-ui 面板！</h2>
+            <div class="post-date">2021-12-07</div>
+            
+            <div class="post-content" v-pre>
+              <p>1、VPS 一台重置好主流的操作系统 （CentOS 7+、Ubuntu 16+、Debian 8+），作者使用：<a href="https://www.v2rayssr.com/bwg.html">搬瓦工 VPS</a></p>
+<p>2、域名一个，做好相关的解析，若是需要套用 CDN，请托管域名到 cloudflare ，<a href="https://www.v2rayssr.com/yumingreg.html">不会请点击</a></p>
+<h2 id="安装-x-ui-面板">安装 X-ui 面板</h2>
+<h3 id="申请-ssl-证书">申请 SSL 证书</h3>
+<p>下面环境的安装方式，大家根据自己的系统选择命令安装就好了。</p>
+<h4 id="更新及安装组件">更新及安装组件</h4>
+<pre><code>apt update -y          # Debian/Ubuntu 命令apt install -y curl    #Debian/Ubuntu 命令apt install -y socat    #Debian/Ubuntu 命令
+yum update -y          #CentOS 命令yum install -y curl    #CentOS 命令yum install -y socat    #CentOS 命令
+</code></pre>
+<h4 id="安装-acme-脚本">安装 Acme 脚本</h4>
+<pre><code>curl https://get.acme.sh | sh
+</code></pre>
+<h4 id="80-端口空闲的证书申请方式">80 端口空闲的证书申请方式</h4>
+<p>自行更换代码中的域名、邮箱为你解析的域名及邮箱</p>
+<pre><code>~/.acme.sh/acme.sh --register-account -m xxxx@xxxx.com~/.acme.sh/acme.sh  --issue -d mydomain.com   --standalone
+</code></pre>
+<h4 id="安装证书到指定文件夹">安装证书到指定文件夹</h4>
+<p>自行更换代码中的域名为你解析的域名</p>
+<pre><code>~/.acme.sh/acme.sh --installcert -d mydomain.com --key-file /root/private.key --fullchain-file /root/cert.crt
+</code></pre>
+<h3 id="安装-升级-x-ui-面板">安装 &amp; 升级 X-ui 面板</h3>
+<h4 id="安装及升级的一键代码">安装及升级的一键代码</h4>
+<pre><code>bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+</code></pre>
+<h4 id="节点配置及功能讲解">节点配置及功能讲解</h4>
+<figure data-type="image" tabindex="1"><img src="https://www.v2rayssr.com/wp-content/uploads/2021/07/2.png" alt="img" loading="lazy"></figure>
+<p>节点配置及龙能方面，请看 <a href="https://www.v2rayssr.com/go?url=https://youtu.be/6ztPETEiY8M">视频教程</a></p>
+<h4 id="v2-ui-x-ui数据迁移">V2-ui - X-ui数据迁移</h4>
+<p>安装完 X-ui 以后，输入以下代码，即可完成用户数据的迁移（不包含管理员账号及密码，仅针对已部署的节点部分）</p>
+<pre><code>x-ui v2-ui
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://blog.52naiba.cn/docker-yi-jian-bu-shu-bo-ke/">
+                  <h3 class="post-title">
+                    Docker一键部署博客
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'disqus_VB5MsU1LjI',
+      apikey: 'dMP3jABp5m3Xm3lr2VvyrqTP1WliooGhnGwIsjChrhYOsxvevWjh89U1SDXCQyzW',
+    }
+    if ('rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz') {
+      options.api = 'rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz'
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>
