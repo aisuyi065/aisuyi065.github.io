@@ -4,18 +4,12 @@
 <head>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
-
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-..." />
+<meta name="description" content="最近一直在慢慢的学习shell,于是打算用实战来强化学到的知识点,所以花了半天时间写了一个交互式的脚本,用于自动申请Let's Encrypt泛域名证书使用.欢迎大家使用.
+本文为 Stille 原创文章.经实践,测试,整理发布.如需转载请..." />
 <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
 <link rel="preconnect dns-prefetch" href="https://cdn.jsdelivr.net/" crossorigin>
 <script async src="https://cdn.ampproject.org/v0.js"></script>
-<title>关于 | Gridea</title>
+<title>分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本 | Gridea</title>
 
 
   
@@ -2208,52 +2202,34 @@
 
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
 <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-<link rel="canonical" href="https://blog.52naiba.cn/post/about/" />
+<link rel="canonical" href="https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/" />
 <link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1640842438377">
 
 <meta name="author" content="作者">
 
-<meta itemprop="name" content="关于 | Gridea">
-<meta itemprop="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
-
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-...">
+<meta itemprop="name" content="分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本 | Gridea">
+<meta itemprop="description" content="最近一直在慢慢的学习shell,于是打算用实战来强化学到的知识点,所以花了半天时间写了一个交互式的脚本,用于自动申请Let's Encrypt泛域名证书使用.欢迎大家使用.
+本文为 Stille 原创文章.经实践,测试,整理发布.如需转载请...">
 <meta itemprop="image" content="">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="关于 | Gridea">
-<meta name="twitter:description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
-
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-...">
+<meta name="twitter:title" content="分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本 | Gridea">
+<meta name="twitter:description" content="最近一直在慢慢的学习shell,于是打算用实战来强化学到的知识点,所以花了半天时间写了一个交互式的脚本,用于自动申请Let's Encrypt泛域名证书使用.欢迎大家使用.
+本文为 Stille 原创文章.经实践,测试,整理发布.如需转载请...">
 <meta name="twitter:image" content="" />
-<meta name="twitter:image:alt" content="关于 | Gridea" />
+<meta name="twitter:image:alt" content="分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本 | Gridea" />
 
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://blog.52naiba.cn/post/about/">
-<meta property="og:title" content="关于 | Gridea">
-<meta property="og:description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
-
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-...">
+<meta property="og:url" content="https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/">
+<meta property="og:title" content="分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本 | Gridea">
+<meta property="og:description" content="最近一直在慢慢的学习shell,于是打算用实战来强化学到的知识点,所以花了半天时间写了一个交互式的脚本,用于自动申请Let's Encrypt泛域名证书使用.欢迎大家使用.
+本文为 Stille 原创文章.经实践,测试,整理发布.如需转载请...">
 <meta property="og:image" content="">
-<meta property="og:image:alt" content="关于 | Gridea" />
+<meta property="og:image:alt" content="分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本 | Gridea" />
 <meta property="og:site_name" content="Gridea">
 <meta property="og:locale" content="zh_CN">
-<meta property="tag" content="关于 | Gridea" />
+<meta property="tag" content="分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本 | Gridea" />
 
 
 <script type="application/ld+json">
@@ -2262,11 +2238,11 @@
 "@type": "BlogPosting",
 "mainEntityOfPage": {
   "@type": "WebPage",
-  "@id": "https://blog.52naiba.cn/post/about/"
+  "@id": "https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/"
 },
-"headline": "关于 | Gridea",
-"datePublished": "Fri Jan 25 2019 19:09:48 GMT+0800",
-"dateModified": "Fri Jan 25 2019 19:09:48 GMT+0800",
+"headline": "分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本 | Gridea",
+"datePublished": "Thu Dec 30 2021 13:32:51 GMT+0800",
+"dateModified": "Thu Dec 30 2021 13:32:51 GMT+0800",
 "author": {
   "@type": "Person",
   "name": "作者"
@@ -2282,14 +2258,8 @@
 "image": [
 ""
 ],
-"description": "
-欢迎来到我的小站呀，很高兴遇见你！🤝
-
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-..."
+"description": "最近一直在慢慢的学习shell,于是打算用实战来强化学到的知识点,所以花了半天时间写了一个交互式的脚本,用于自动申请Let's Encrypt泛域名证书使用.欢迎大家使用.
+本文为 Stille 原创文章.经实践,测试,整理发布.如需转载请..."
  }
 
 </script>
@@ -2305,8 +2275,8 @@
     },{
       "@type": "ListItem", 
       "position": 2, 
-      "name": "关于 | Gridea",
-      "item": "https://blog.52naiba.cn/post/about/"  
+      "name": "分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本 | Gridea",
+      "item": "https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/"  
     }]
   }
   </script>
@@ -2328,7 +2298,7 @@
 
 <script async custom-element="amp-gist" src="https://cdn.ampproject.org/v0/amp-gist-0.1.js"></script>
 
-<link rel="alternate" type="application/atom+xml" title="关于 | Gridea - Atom Feed" href="https://blog.52naiba.cn/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本 | Gridea - Atom Feed" href="https://blog.52naiba.cn/atom.xml">
 
   
   <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
@@ -2416,13 +2386,13 @@
       <div class="article-info">
         
         <h2 class="article-title">
-          <a href="https://blog.52naiba.cn/post/about/">关于</a>
+          <a href="https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/">分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本</a>
         </h2>
         <div class="flex-box">
           <div class="flex-box post-meta-box">
             <a class="post-meta" href="https://blog.52naiba.cn"><span
                 class="iconfont icon-mr-postmeta"></span>作者</a>
-            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2019 年 01	月 25日</span>
+            <span class="post-meta"><span class="iconfont icon-mr-postmeta"></span>2021 年 12	月 30日</span>
             
 
 
@@ -2430,16 +2400,52 @@
         </div>
       </div>
       <div class="content">
-        <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+        <p>最近一直在慢慢的学习<code>shell</code>,于是打算用实战来强化学到的知识点,所以花了半天时间写了一个交互式的脚本,用于自动申请<code>Let's Encrypt</code>泛域名证书使用.欢迎大家使用.</p>
+<p>本文为<a href="https://www.ioiox.com/stille.html"> Stille </a>原创文章.经实践,测试,整理发布.如需转载请联系作者获得授权,并注明转载地址.</p>
+<hr>
+<h3 id="获取域名服务商-api">获取域名服务商 API</h3>
+<p>申请域名最重要和最麻烦的地方就是验证域名所有权,常规情况下使用域名服务商的 API 来自动创建 txt 验证记录最为方便.</p>
+<p>参考以下链接获取国内用户常用的<code>腾讯云</code>/<code>阿里云</code>/<code>Cloudflare</code>的 API :</p>
+<p>https://www.ioiox.com/archives/87.html</p>
+<p>参考官方文档可以获取多达<code>100</code>多个全球各种域名服务商的 API :</p>
+<p>https://github.com/acmesh-official/acme.sh/wiki/dnsapi</p>
+<h3 id="交互式脚本">交互式脚本</h3>
+<p>交互式脚本仅支持 <strong>腾讯云 / 阿里云 / Cloudflare</strong></p>
+<p>执行以下命令直接使用,根据提示输入相关 API 信息即可申请.</p>
+<pre><code>curl -O https://gist.githubusercontent.com/stilleshan/02d8652ce320941e497d378a04ecf016/raw/ffb5c536735a2d90390c98d7bbbe0ff63a74ba52/acme_docker.sh &amp;&amp; chmod +x acme_docker.sh &amp;&amp; ./acme_docker.sh
+</code></pre>
+<h3 id="非交互式固定域名证书申请">非交互式固定域名证书申请</h3>
+<p>通过简单修改脚本,可以让本脚本作为固定证书申请使用.无交互式选项直接根据设置的域名和 API 信息进行申请.建议可以设置<code>crontab</code>定时每月执行.</p>
+<p>非交互式脚本可以支持 <strong>acme.sh</strong> 官方支持的 <strong>100</strong> 多个全球各种域名服务商的 API</p>
+<p>编辑脚本修改 16 - 20 行.以下为示例:</p>
+<pre><code># 交互式脚本请保持以下 DOMAIN= 为空不要修改.如无需交互式,固定申请单一证书,请参考文档自行修改以下变量.
+DOMAIN=ioiox.com
+DNSAPI='dns_cf'
+API_ID='export CF_Token=&quot;xxxxxxxxxxxxx&quot;'
+API_KEY='export CF_Account_ID=&quot;xxxxxxxxxxxxx&quot;'
+# API_ZONE='export CF_Zone_ID=&quot;xxxxxxxxxxxxx&quot;'
+# 交互式脚本请保持以下 DOMAIN= 为空不要修改.如无需交互式,固定申请单一证书,请参考文档自行修改以上变量.
+</code></pre>
+<hr>
+<p>本脚本长期维护,后续会慢慢更新以支持更多服务商.可以访问以下<code>gist</code>地址<code>star</code>收藏:<br>
+https://gist.github.com/stilleshan/02d8652ce320941e497d378a04ecf016</p>
 
       </div>
 
+      
+      <nav class="post-nav">
+        
+        <div class="nav-previous">
+          <a class="post-nav-link-active" title="个人常使用的一些脚本集合" href="https://blog.52naiba.cn/post/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/">上一篇文章</a>
+        </div>
+        
+        
+        <div class="nav-next">
+          <a class="post-nav-link-active" title="Cloudflare WARP 一键配置脚本 使用教程" href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/">下一篇文章</a>
+          
+
+        </div>
+      </nav>
       
 
       
@@ -2484,7 +2490,7 @@
   <div id="respond" class="comment-respond">
     <amp-iframe width=600 height=200 layout="responsive"
       sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms" resizable
-      src="?title=关于&url=https://blog.52naiba.cn/post/about/&identifier=https://blog.52naiba.cn/post/about/">
+      src="?title=分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本&url=https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/&identifier=https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/">
       <div
       overflow
       tabindex=0
