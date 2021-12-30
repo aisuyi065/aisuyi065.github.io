@@ -1,767 +1,598 @@
-<!doctype html>
-<html amp lang="zh-Hans">
+<html>
 
 <head>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="description" content="温故而知新" />
-<link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
-<link rel="preconnect dns-prefetch" href="https://cdn.jsdelivr.net/" crossorigin>
-<script async src="https://cdn.ampproject.org/v0.js"></script>
-<title>Gridea</title>
-
-
-  
-
-    
-      <style amp-custom>
-        body{width:100vw;display:flex;flex-direction:column;font-family:'PT Serif',-apple-system-font,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif,serif;background:#fff}
-        :focus{outline:0}
-        @font-face{font-family:iconfont;src:url(https://cdn.jsdelivr.net/gh/jiansing/gridea-theme-inlineamp/inlineamp/assets/media/fonts/iconfont.eot?20200105#iefix) format('embedded-opentype'),url(https://cdn.jsdelivr.net/gh/jiansing/gridea-theme-inlineamp/inlineamp/assets/media/fonts/iconfont.woff2?20200105) format('woff2'),url(https://cdn.jsdelivr.net/gh/jiansing/gridea-theme-inlineamp/inlineamp/assets/media/fonts/iconfont.woff?20200105) format('woff'),url(https://cdn.jsdelivr.net/gh/jiansing/gridea-theme-inlineamp/inlineamp/assets/media/fonts/iconfont.ttf?20200105) format('truetype'),url(https://cdn.jsdelivr.net/gh/jiansing/gridea-theme-inlineamp/inlineamp/assets/media/fonts/iconfont.svg?20200105#iconfont) format('svg')}
-        @font-face{font-family:'PT Serif';font-style:normal;font-weight:400;font-display:swap;src:local('PT Serif'),local('PTSerif-Regular'),url(https://cdn.jsdelivr.net/gh/jiansing/gridea-theme-inlineamp/inlineamp/assets/media/fonts/ptserif.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-        .iconfont{font-family:iconfont;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-        input[type=email],input[type=password],input[type=submit],input[type=text],input[type=url],textarea{-webkit-appearance:none;border-radius:0}
-        header{width:100vw;background:#000000;display:flex;justify-content:center}
-        .top-container{width:71.4286vw;height:100%}
-        .title-menus-area{display:flex;width:100%;height:5.8095vw;justify-content:space-between}
-        .blog-title{display:flex;font-size:1.6667vw;font-weight:700;color:#ffffff;margin-top:1.2857vw;white-space:nowrap;text-decoration:none;line-height:1.6667vw}
-        .tagline{display:flex;width:100%;flex-direction:column;align-items:center}
-        .tagline-main{color:#ffffff;font-size:2.9286vw;margin-bottom:1.6667vw;line-height:2.9286vw;display:flex;flex-direction:column;align-items:center}
-        .tagline-main:after{content:'';display:flex;background:#edebe9;width:4.7619vw;height:.2381vw;margin-top:1.6667vw}
-        .tagline-sub{color:#c8c6c4;font-size:.9524vw;line-height:1.6667vw;margin-bottom:3.5119vw}
-        .tagline-sub a{text-decoration:none;color:unset}
-        .tagline-sub a:hover{color:#004578}
-        .scrolltop-wrap{box-sizing:border-box;position:absolute;top:11.6667vw;right:-3.9048vw;bottom:0}
-        .go-top{width:2.9762vw;height:2.9762vw;font-size:1.1905vw;text-decoration:none;background:#004578;border-radius:100%;color:#fff;justify-content:center;align-items:center;display:flex;cursor:pointer;position:fixed;position:-webkit-sticky;position:sticky;top:-5.9524vw;transform:translateY(100vh);overflow:hidden}
-        @media only screen and (max-width:640px){.top-container{width:100%}
-        .title-menus-area{padding-top:4.6667vw;height:auto;position:relative}
-        .blog-title{margin-top:0;margin-left:5.3333vw;font-size:3.7333vw;line-height:3.7333vw}
-        .tagline{margin:6vw auto 0 auto;width:89.3333vw}
-        .tagline-main{font-size:5.0667vw;line-height:5.0667vw;margin-bottom:2vw}
-        .tagline-main:after{width:8.8vw;height:.44vw;margin-top:3.0667vw}
-        .tagline-sub{font-size:2.9333vw;line-height:5.1333vw}
-        .scrolltop-wrap{display:none}
-        }
-        .top-menus{display:flex;padding-right:1.7619vw;padding-top:1.5833vw;height:.9524vw}
-        .top-menus>nav>ul>li{display:flex;list-style:none;margin-left:2.393vw;margin-bottom:.2976vw;position:relative;height:1.9644vw}
-        .top-menus>nav>ul>li>a{color:#fff;font-size:.9524vw;line-height:.9524vw;text-decoration:none}
-        .top-menus .menu{display:flex;margin:0;padding:0;white-space:nowrap;list-style:none;justify-content:flex-end;flex-wrap:wrap}
-        .top-menus>nav>ul>li.menu-item-has-children>a:after{font-family:iconfont;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:'\e62b';margin-left:.5952vw;font-size:.9524vw}
-        .top-menus>nav>ul>li:hover a{color:#004578}
-        .top-menus>nav>ul>li:hover>ul{opacity:1;visibility:visible;transition:.2s all ease}
-        .top-menus>nav>ul>li>.sub-menu{position:absolute;left:50%;transform:translateX(-50%);margin-top:1.9345vw;display:flex;flex-direction:column;background:#201f1e;border:#3b3a39 .0595vw solid;padding-top:.4167vw;padding-bottom:.4167vw;padding-left:1.2501vw;padding-right:1.2501vw;z-index:1;overflow:hidden;opacity:0;visibility:hidden;transition:.2s all ease}
-        .top-menus>nav>ul>li>.sub-menu>li{list-style:none;border-bottom:#201f1e .0595vw solid}
-        .top-menus>nav>ul>li>.sub-menu>li:last-child{border-bottom:0}
-        .top-menus ul>li>.sub-menu>li>a{font-size:.8333vw;line-height:.8333vw;color:#fff;text-decoration:none;width:100%;min-height:2.4405vw;display:flex;align-items:center}
-        .top-menus>nav>ul>li>.sub-menu>li ul{padding-left:.893vw}
-        .top-menus>nav>ul>li>.sub-menu>li>ul li{list-style:none}
-        .top-menus>nav>ul>li>.sub-menu>li ul li a{color:rgba(255,255,255,.4);min-height:unset;margin-bottom:.6548vw}
-        .top-menus>nav>ul>li>.sub-menu>li ul li a:before{content:'-';margin-right:.2976vw}
-        .top-menus>nav>ul>li>.sub-menu>li a:hover{color:#004578}
-        #header-menu-button{display:none}
-        @media only screen and (max-width:640px){#header-menu-button+header .top-menus{display:flex;position:absolute;width:100%;padding:0;height:auto;top:0;z-index:1;pointer-events:none}
-        #header-menu-button:checked+header .top-menus{pointer-events:auto}
-        #header-menu-button:checked+header .top-menus nav>ul{padding-left:4vw;padding-right:4vw;opacity:1;visibility:visible;padding-bottom:16vw}
-        #header-menu-button+header .top-menus nav>ul{min-height:100vh;position:fixed;top:0;bottom:0;overflow:scroll;flex-wrap:nowrap;opacity:0;transition:.6s all ease;visibility:hidden;display:flex;width:100%;flex-direction:column;background:#000000;justify-content:start;padding-top:0;padding-bottom:4.1333vw;box-sizing:border-box}
-        #header-menu-button+header .top-menus nav>ul>li{margin:0;height:auto;padding-left:1.3333vw;padding-right:1.3333vw;border-bottom:.1333vw #4a4a4a solid;flex-direction:column;padding-top:4.0667vw;padding-bottom:4.0667vw}
-        #header-menu-button+header .top-menus nav>ul>li:first-child>a{padding-top:0}
-        #header-menu-button+header .top-menus nav>ul>li:last-child{border-bottom:none}
-        #header-menu-button+header .top-menus nav>ul>li>a{font-size:3.7333vw;line-height:3.7333vw}
-        .top-menus>nav>ul>li.menu-item-has-children>a:after{display:none}
-        ul#menu-top-menu li{display:inline-flex;white-space:normal}
-        .top-menus>nav>ul>li>.sub-menu{display:flex;transform:none;position:relative;left:0;margin-top:0;margin-bottom:4vw;background:inherit;border:none;padding:0;padding-left:3vw;opacity:1;visibility:visible}
-        .top-menus>nav>ul>li:hover a{color:#fff}
-        .top-menus>nav>ul li a:hover{color:#004578}
-        .top-menus>nav>ul>li>.sub-menu>li{border:none;margin-top:3.7067vw;flex-direction:column}
-        .top-menus>nav>ul>li>.sub-menu>li>a:before{content:'-';margin-right:.8vw;color:rgba(255,255,255,.4)}
-        .top-menus>nav>ul>li>.sub-menu>li ul{padding-left:3vw}
-        .top-menus>nav>ul>li>.sub-menu>li ul li a{margin-bottom:0;margin-top:3.7067vw}
-        .top-menus ul>li>.sub-menu>li>a{font-size:3.7333vw;line-height:3.7333vw;color:rgba(255,255,255,.4)}
-        #header-menu-button{display:flex;margin:0;-webkit-appearance:none;appearance:none;line-height:3.7333vw;width:4vw;height:4vw;z-index:2;position:absolute;right:4vw;top:4vw;border:none;background:0 0}
-        #header-menu-button:checked+header+main{animation:mainhide 2s ease;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards;overflow:hidden}
-        @keyframes mainhide{from{max-height:auto}
-        to{overflow:hidden;max-height:0}
-        }
-        #header-menu-button:checked{position:fixed}
-        #header-menu-button:checked:after{display:flex;content:'\e63c';transform:scale(.7)}
-        #header-menu-button:after{content:'';color:#fff;font-family:iconfont;font-size:5.3333vw;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:'\e63e'}
-        }
-        main{width:71.4286vw;display:flex;margin:0 auto;justify-content:space-between;padding-top:2.9762vw;position:relative}
-        .main-container{width:48.2143vw}
-        .list-box{width:100%;display:flex;flex-direction:column;margin-bottom:2.9762vw}
-        .title-img{width:48.2143vw;height:17.8571vw;position:relative}
-        .title-img amp-img.contain img{object-fit:cover;object-position:top;transition:all .5s}
-        a.title-img:hover amp-img.contain img{object-fit:cover;transform:scale(1.08);-webkit-transform:scale(1.08);-moz-transform:scale(1.08)}
-        .post-info{position:relative;padding-left:1.7857vw;padding-top:1.5119vw;padding-right:1.7857vw;padding-bottom:1.7857vw;width:48.2143vw;border:.0595vw solid #e6e6e6;box-sizing:border-box;display:flex;flex-direction:column}
-        .post-cate{font-size:.9524vw;line-height:1.5476vw;color:#004578;text-decoration:none;margin-right:.9644vw;display:flex;align-items:center}
-        .sticky-tag{display:flex;align-items:center;color:#004578}
-        .post-cate:before,.sticky-tag:before{display:flex;content:'';width:.0595vw;min-width:1px;height:.6548vw;background:#004578;margin-right:.9524vw}
-        .post-cate:first-child:before{display:none}
-        .sticky-tag .sticky-text{font-size:.9524vw;text-transform:uppercase}
-        .sticky-tag .sticky-text:before{font-family:iconfont;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:'\e63f';font-size:.9524vw;margin-right:.4167vw}
-        .post-title{font-size:1.3613vw;line-height:2.381vw;margin-top:.5952vw;margin-bottom:0;width:39.881vw;word-break:break-all}
-        .post-title:after{display:flex;content:'';width:4.1667vw;height:.2976vw;background:#004578;margin-top:.7321vw}
-        .post-title a{text-decoration:none;color:#000}
-        .post-excerpt{margin-top:1.4286vw;margin-bottom:1.1905vw;font-size:.9524vw;line-height:1.6667vw;color:#8a8a8a;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;visibility:visible}
-        .flex-box{display:flex;align-items:center}
-        .meta-category{flex-wrap:wrap;padding-right:4.1667vw}
-        .justify-between{justify-content:space-between}
-        .read-more{display:flex;justify-content:center;align-items:center;font-size:.8333vw;line-height:.8333vw;text-decoration:none;min-width:9.1667vw;min-height:2.1429vw;box-sizing:border-box;padding-left:1.1905vw;padding-right:1.1905vw;padding-top:.7143vw;padding-bottom:.7143vw;color:#004578;border:.0595vw #004578 solid;transition:all .2s;text-transform:uppercase}
-        .read-more:hover{background:#004578;color:#fff}
-        .icon-ml-readmore{margin-left:.625vw;font-size:1.1905vw}
-        .post-meta-box{margin-top:.7143vw;font-size:.8333vw}
-        .post-meta{font-size:.8333vw;color:#1a1a1a;text-decoration:none;margin-left:1.4881vw;display:inline-flex;align-items:center}
-        .icon-mr-postmeta{margin-right:.5952vw;font-size:1.4881vw}
-        .post-meta .icon-like-sp{font-size:1.1905vw}
-        .post-meta-box a.edit-link:after{content:'';display:flex;background:#3b3a39;margin-left:1.4881vw;width:.0595vw;height:.6548vw}
-        .post-publish-date{width:4.1667vw;height:4.7619vw;background:#f6f6f7;position:absolute;right:1.2501vw;top:-.8333vw;flex-direction:column;justify-content:center;align-items:center}
-        .post-publish-date .post-date{color:#004578;font-size:1.3095vw;line-height:2.2916vw;font-weight:700}
-        .post-publish-date .post-month{color:#000;font-size:.8333vw;line-height:1.4583vw;text-transform:uppercase}
-        .list-box:last-child{margin-bottom:2.381vw}
-        .pagination .screen-reader-text{display:none}
-        .nav-links{margin-top:2.9762vw;margin-bottom:2.9762vw;display:flex;justify-content:center;flex-wrap:wrap}
-        .nav-links .page-numbers,.nav-links .post-page-numbers{min-width:2.1429vw;height:2.1429vw;border:.0595vw #004578 solid;color:#004578;font-size:1.0714vw;line-height:1.0714vw;text-decoration:none;display:inline-flex;justify-content:center;align-items:center;margin-left:.4762vw;margin-right:.4762vw;margin-bottom:.4762vw;box-sizing:border-box}
-        .nav-links .current,.nav-links a.page-numbers:hover,.nav-links a.post-page-numbers:hover{background:#004578;color:#fff}
-        .pagination>.nav-links>.dots{border:none;padding-bottom:.5714vw}
-        @media only screen and (max-width:640px){main{width:100%;flex-direction:column;align-items:center;padding-top:6.6667vw}
-        .main-container{width:92vw}
-        .title-img{width:92vw;height:34.1333vw}
-        .post-info{width:92vw;padding:3.4667vw;border:.2667vw solid #e6e6e6}
-        .post-publish-date{width:10.6667vw;height:12.1333vw;top:-2vw;right:2.8vw}
-        .post-publish-date .post-date{font-size:3.4667vw;line-height:6.0667vw}
-        .post-publish-date .post-month{font-size:2.1333vw;line-height:3.7333vw}
-        .post-cate{font-size:3.4667vw;line-height:4.8vw;margin-right:2.2133vw}
-        .post-cate:before,.sticky-tag:before{width:.1333vw;height:1.8933vw;margin-right:2.2vw}
-        .sticky-tag .sticky-text{font-size:2.9333vw;line-height:2.9333vw}
-        .sticky-tag .sticky-text:before{font-size:2.8vw;margin-right:2vw}
-        .post-title{margin-top:2.5333vw;margin-bottom:0;font-size:4.8vw;line-height:6.6667vw;width:74.4vw}
-        .post-title:after{width:9.3333vw;height:.8vw;margin-top:2.2667vw}
-        .post-excerpt{margin-top:3.3333vw;margin-bottom:3.3333vw;font-size:4vw;line-height:5.6vw}
-        .read-more{font-size:2.4533vw;line-height:2.4533vw;min-width:26.4933vw;min-height:6.1333vw;padding-left:3.7333vw;padding-right:3.7333vw;padding-top:2vw;padding-bottom:2vw;border:.1333vw #004578 solid}
-        .icon-ml-readmore{margin-left:1.3333vw;font-size:3.3333vw}
-        .post-meta{font-size:2.1333vw;margin-left:3.2vw}
-        .icon-mr-postmeta{margin-right:1.8667vw;font-size:3.4667vw}
-        .post-meta-box a.edit-link:after{margin-left:3.2133vw;width:.1333vw;height:1.68vw}
-        .post-meta .icon-like-sp{font-size:2.4vw}
-        .list-box{margin-bottom:5.3333vw}
-        .nav-links .page-numbers,.nav-links .post-page-numbers{min-width:8vw;height:8vw;border:.1333vw #004578 solid;font-size:4vw;line-height:4vw;margin-left:1.7733vw;margin-right:1.7733vw;margin-bottom:1.7733vw}
-        .pagination>.nav-links>.dots{padding-bottom:2.6667vw}
-        .list-box:last-child{margin-bottom:5.3333vw}
-        .meta-category{flex-wrap:wrap;padding-right:10.6667vw}
-        }
-        .sidebar{width:19.6429vw;min-height:29.7619vw}
-        .sidebar>aside:first-child{margin-top:0}
-        .widget{width:100%}
-        .widget-title{color:#000;font-size:1.0714vw;line-height:1.0714vw;margin-top:0;margin-bottom:1.6667vw;text-transform:uppercase}
-        .widget-title:after{display:flex;margin-top:1.1131vw;content:'';width:3.7501vw;height:.119vw;min-height:1.5px;background:#dedede}
-        .widget{border-bottom:.0595vw #ebebeb solid;padding-bottom:2.1429vw;margin-bottom:2.9762vw}
-        .widget:last-child{margin-bottom:0;border-bottom:none}
-        .widget>ul{overflow-wrap:break-word;margin:0;padding-left:0}
-        .widget_categories>ul>li>ul.children>li.cat-item{color:#000;font-size:.9524vw;margin-top:1.1905vw}
-        .widget_categories>ul>li>ul.children>li.cat-item ul.children li{color:#000;font-size:.9524vw;margin-top:.9524vw}
-        .widget_categories>ul>li.cat-item:before{content:'\e641';font-family:iconfont;color:#004578;font-size:.9524vw;margin-right:.7143vw;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-        .widget_categories>ul>li>ul.children{padding-left:1.4286vw}
-        .widget_categories>ul>li>ul.children>li>ul.children{padding-left:2.619vw}
-        .widget_categories>ul>li>ul.children>li>ul.children>li ul{padding-left:1.3095vw}
-        .widget_categories ul.children{padding-left:.2976vw;display:flex;flex-direction:column}
-        .widget_categories>ul>li>ul.children>li:before{content:"\e642";display:inline-flex;font-family:iconfont;color:#004578;font-size:.9524vw;margin-right:.5952vw;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-        .widget_categories li.cat-item a{color:#000;text-decoration:none}
-        .widget_categories ul{list-style:none}
-        .widget_categories .screen-reader-text{display:none}
-        .widget ul li{font-size:.9524vw;line-height:1.5476vw;margin-top:1.25vw;list-style:none;position:relative;padding-left:1.6667vw}
-        .widget ul li:first-child{margin-top:0}
-        .widget ul li a{color:#000;text-decoration:none}
-        .widget ul li a:hover{color:#004578}
-        .widget>ul>li:before{content:'\e62d';font-family:iconfont;color:#004578;font-size:.893vw;margin-right:.7143vw;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;position:absolute;left:0}
-        .widget .screen-reader-text{display:none}
-        .widget_search form{display:flex;position:relative;align-items:center}
-        .widget_search{border-bottom:none;padding-bottom:0}
-        .widget_search form input[type=text]{width:19.5833vw;height:2.6787vw;border:.0595vw #e6e6e6 solid;border-radius:.2381vw;padding-left:1.1905vw;padding-right:2.9762vw;font-size:.8333vw}
-        .widget_search form input[type=text]::placeholder{font-size:.8333vw;color:#8a8a8a}
-        .widget_search form button[type=submit]{position:absolute;right:0;padding:0;border:none;background:unset;z-index:1;cursor:pointer}
-        .widget_search form button[type=submit]:before{content:'\e62c';font-family:iconfont;color:#b0b0b0;font-size:1.7857vw;margin-right:.7143vw;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-        .widget_profile{padding-bottom:0;border-bottom:0}
-        .widget_profile .profile-box{width:19.6429vw;min-height:9.2262vw;border:.0595vw #e6e6e6 solid;display:flex;justify-content:center;position:relative;margin-top:2.6787vw}
-        .widget_profile .profile-avatar{width:5.3571vw;height:5.3571vw;position:absolute;top:-2.6787vw}
-        .widget_profile .profile-avatar img{border-radius:100%}
-        .widget_profile .profile-content{font-size:.9524vw;padding:2.9762vw 1.6667vw 1.9048vw 1.6667vw;width:100%;box-sizing:border-box;word-break:break-word;line-height:1.8}
-        .widget_profile .profile-content li{margin-top:.5952vw}
-        .widget_profile ol,.widget_profile ul{padding-left:.9524vw;margin-top:.5952vw;margin-bottom:.5952vw}
-        .widget_profile .profile-content p{margin-block-start:auto;margin-block-end:auto;margin-top:.5952vw}
-        .widget_profile img{max-width:100%;height:auto}
-        .widget_profile .wp-video,.widget_profile .wp-video video{max-width:100%;height:auto}
-        .widget_profile a{font-size:.9524vw;color:#004578;text-decoration:none}
-        .widget ul li a,.widget ul li span{color:#000}
-        .widget ul li span.post-date{color:#a19f9d;font-style:italic}
-        li.recentcomments{color:#a19f9d}
-        @media only screen and (max-width:640px){.sidebar{width:92vw;margin-top:8vw}
-        .widget_profile .profile-box{width:92vw;margin-top:12.5333vw;border:.2667vw #e6e6e6 solid}
-        .widget_profile .profile-avatar{width:25.0667vw;height:25.0667vw;top:-12.5333vw}
-        .widget_profile .profile-content{font-size:4vw;line-height:5.8667vw;padding:17.8667vw 8.0667vw 4.8267vw 8.0667vw}
-        .widget_profile .profile-content li{font-size:4vw;line-height:5.8667vw;margin-top:1.3333vw;list-style:unset}
-        .widget_profile ol,.widget_profile ul{padding-left:2.1333vw;margin-top:1.3333vw;margin-bottom:1.3333vw}
-        .widget_profile .profile-content p{margin-block-start:auto;margin-block-end:auto;margin-top:1.3333vw}
-        .widget_profile img{max-width:100%;height:auto}
-        .widget_profile a{font-size:4vw;color:#004578;text-decoration:none}
-        .widget_search{margin-top:8vw;margin-bottom:8vw}
-        .widget_search form input[type=text]{width:92vw;height:10.6667vw;border:.2667vw #e6e6e6 solid;border-radius:.5333vw;padding-left:5.3333vw;padding-right:6.6667vw;font-size:4vw}
-        .widget_search form input[type=text]::placeholder{font-size:4vw}
-        .widget_search form button[type=submit]:before{font-size:6.4vw;margin-right:4.1333vw}
-        .widget{border-bottom:.2667vw #ebebeb solid;padding-bottom:8.0667vw;margin-bottom:8.0667vw}
-        .widget_profile,.widget_search{border-bottom:none;padding-bottom:0}
-        .widget:last-child{margin-bottom:0;border-bottom:none}
-        .widget-title{font-size:4.5333vw;line-height:4.5333vw;margin-bottom:7.4133vw}
-        .widget-title:after{margin-top:4.5067vw;width:15.2133vw;height:.48vw}
-        .widget_categories>ul>li.cat-item:before{font-size:3.6vw;margin-right:2.8933vw}
-        .widget ul li{font-size:4vw;line-height:6.6667vw;margin-top:4vw;padding-left:6.6667vw}
-        .widget_categories>ul>li>ul.children{padding-left:3.7333vw}
-        .widget_categories>ul>li>ul.children>li:before{font-size:4vw;margin-right:1.3333vw}
-        .widget_categories>ul>li>ul.children>li.cat-item{font-size:3.3333vw;margin-top:2.6667vw}
-        .widget_categories>ul>li>ul.children>li>ul.children{padding-left:6.6667vw}
-        .widget_categories>ul>li>ul.children>li.cat-item ul.children li{font-size:3.3333vw;margin-top:2.6667vw}
-        .widget>ul>li:before{font-size:3.6vw;margin-right:2.5333vw}
-        }
-        footer{width:100vw;background:#000000;display:flex;justify-content:center}
-        .footer-container{width:71.4286vw;height:100%;display:flex;justify-content:center;flex-direction:column}
-        .footer-container .footer-copyright{margin-bottom:1.1905vw;margin-top:2.893vw}
-        .footer-container .footer-copyright,.footer-container .footer-copyright a{text-align:center;font-size:.8333vw;color:#a19f9d;line-height:.5952vw;text-decoration:none}
-        .footer-menus>nav{margin-top:2.893vw;margin-bottom:.875vw}
-        .footer-menus>nav>ul{display:flex;margin-top:0;margin-bottom:0;display:flex;justify-content:center}
-        .footer-menus>nav>ul>li{font-size:1.0714vw;line-height:1.0714vw;text-transform:uppercase;display:flex;flex-direction:column}
-        .footer-menus>nav>ul>li>a:after{display:flex;content:'';margin-top:.7798vw;width:2.381vw;height:.119vw;background:#3b3a39}
-        .footer-menus>nav>ul>li>a{color:#004578}
-        .footer-menus>nav a{text-decoration:none;font-size:1.0714vw}
-        .footer-menus>nav li,.footer-menus>nav ul{list-style:none;justify-content:space-around;justify-content:space-evenly;display:flex;padding-left:0}
-        .footer-menus>nav>ul>li .sub-menu{display:flex;flex-direction:column;text-transform:none}
-        .footer-menus>nav>ul>li ul li{margin-top:1.2143vw;line-height:.9524vw;display:flex;justify-content:start}
-        .footer-container a:hover{color:#004578}
-        .footer-menus>nav>ul>li ul li:first-child{margin-top:.893vw}
-        .footer-menus>nav>ul>li ul li a{font-size:.9524vw;color:rgba(255,255,255,.6);display:flex}
-        @media only screen and (max-width:640px){.footer-container{width:100%;padding-top:8.1333vw;padding-bottom:5.3333vw}
-        .footer-menus>nav>ul>li{font-size:3.7333vw;line-height:3.7333vw;margin-bottom:13.3333vw;min-width:33.4667vw;margin-left:4vw;margin-right:4vw}
-        .footer-menus>nav a{font-size:3.7333vw}
-        .footer-menus>nav>ul>li>a:after{margin-top:2.8vw;width:8.5467vw;height:.4267vw}
-        .footer-menus>nav>ul>li ul li:first-child{margin-top:3.1733vw}
-        .footer-menus>nav>ul>li ul li{margin-top:4.3067vw;font-size:3.4667vw;line-height:3.4667vw}
-        .footer-menus>nav>ul>li ul li a{font-size:3.4667vw}
-        .footer-menus>nav>ul{flex-wrap:wrap;justify-content:space-between;box-sizing:border-box;padding:0 8.5334vw 0 8.5334vw}
-        .footer-menus>nav{margin:0}
-        .footer-container .footer-copyright,.footer-container .footer-copyright a{font-size:2.9333vw;line-height:2.9333vw}
-        .footer-container .footer-copyright p{margin-top:0}
-        .footer-container .footer-copyright{margin-top:0;margin-bottom:0}
-        }
-        :root:not(#_):not(#_):not(#_):not(#_):not(#_) .amp-wp-681d4ff{text-align:center;margin-top:.5vw}
-        </style>
-    
-
-
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
-<noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-<link rel="canonical" href="https://blog.52naiba.cn" />
-<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1640842438377">
-
-<meta name="author" content="作者">
-
-<meta itemprop="name" content="Gridea">
-<meta itemprop="description" content="温故而知新">
-<meta itemprop="image" content="">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Gridea">
-<meta name="twitter:description" content="温故而知新">
-<meta name="twitter:image" content="" />
-<meta name="twitter:image:alt" content="Gridea" />
-
-
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://blog.52naiba.cn">
-<meta property="og:title" content="Gridea">
-<meta property="og:description" content="温故而知新">
-<meta property="og:image" content="">
-<meta property="og:image:alt" content="Gridea" />
-<meta property="og:site_name" content="Gridea">
-<meta property="og:locale" content="zh_CN">
-<meta property="tag" content="Gridea" />
-
-
-<script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":
-    [
-     {
-      "@type":"ListItem",
-      "position":1,
-      "name":"Home",
-      "item":"https://blog.52naiba.cn"
-     }
-     ]
-    }
-
-</script>
-
-
-
-<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-<script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
-<link rel="alternate" type="application/atom+xml" title="Gridea - Atom Feed" href="https://blog.52naiba.cn/atom.xml">
-
-      
-      
-        <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-        
-          <amp-analytics type="gtag" data-credentials="include">
-          <script type="application/json">
-          {
-            "vars" : {
-              "gtag_id": "G-DXZTRZF41T",
-              "config" : {
-                "G-DXZTRZF41T": { "groups": "default" }
-              }
-            }
-          }
-          </script>
-          </amp-analytics>
-          
-    
-          
-    
-        
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>
+    Gridea
+</title>
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1640843834022">
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
+<!-- js -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://blog.52naiba.cn/media/js/jquery.sticky-sidebar.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
 </head>
 
-<body class="home blog">
-  <input type="checkbox" id="header-menu-button">
-  <header id="commonTop">
-  <div class="top-container">
-    <div class="title-menus-area">
-      <a class="blog-title" href="https://blog.52naiba.cn">Gridea</a>
-      <label for="header-menu-button" class="top-menus">
-        <nav class="menu-menu-1-container">
-          <ul id="menu-menu-1" class="menu">
-            
-            
-            <li>
-              <a href="/" aria-current="page">首页</a></li>
-            
-            
-            
-            <li>
-              <a href="/archives" aria-current="page">归档</a></li>
-            
-            
-            
-            <li>
-              <a href="/tags" aria-current="page">标签</a></li>
-            
-            
-            
-            <li>
-              <a href="/post/about" aria-current="page">关于</a></li>
-            
-            
-          </ul>
-        </nav>
-      </label>
+<body>
+    <div class="main">
+        <div class="header">
+    <div class="nav">
+        <div class="logo">
+            <a href="https://blog.52naiba.cn">
+                <img class="avatar" src="https://blog.52naiba.cn/images/avatar.png?v=1640843834022" alt="">
+            </a>
+            <div class="site-title">
+                <h1>
+                    Gridea
+                </h1>
+            </div>
+        </div>
+        <span class="menu-btn fa fa-align-justify"></span>
+        <div class="menu-container">
+            <ul>
+                
+                    
+                            <li>
+                                <a href="/" class="menu">
+                                    首页
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/archives" class="menu">
+                                    归档
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/tags" class="menu">
+                                    标签
+                                </a>
+                            </li>
+                            
+                                
+                    
+                            <li>
+                                <a href="/post/about" class="menu">
+                                    关于
+                                </a>
+                            </li>
+                            
+                                
+            </ul>
+        </div>
     </div>
-    
-    <div class="tagline">
-      <div class="tagline-main">#fff</div>
-      <div class="tagline-sub">#8a8a8a</div>
-    </div>
-    
-  </div>
-</header>
+</div>
 
-  <main>
-    <div class="main-container">
-  <div class="post-list">
-    
-    <article class="list-box post type-post status-publish format-standard has-post-thumbnail hentry category-xiaoqiao">
-      
+<script>
+    $(document).ready(function() {
+        $(".menu-btn").click(function() {
+            $(".menu-container").slideToggle();
+        });
+        $(window).resize(function() {
 
-      <div class="post-info">
+            if (window.matchMedia('(min-width: 960px)').matches) {
+                $(".menu-container").css('display', 'block')
+            } else {
+                $(".menu-container").css('display', 'none')
+            }
+
+        });
+    });
+</script>
+
+            <div id="main-content" class="post-container main-container">
+                <div id="content" class="main-container-left">
+                    
         
-        <h2 class="post-title">
-          <a href="https://blog.52naiba.cn/post/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/">个人常使用的一些脚本集合</a>
-        </h2>
-        <div class="post-excerpt">
-          
-        </div>
-        <div class="flex-box justify-between">
-          <a href="https://blog.52naiba.cn/post/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/" class="read-more">阅读更多<span class="iconfont icon-ml-readmore"></span></a>
-          <div class="flex-box post-meta-box">
-            <a class="post-meta" href="https://blog.52naiba.cn/post/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/#comments"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/"><span
-                class="iconfont icon-mr-postmeta icon-like-sp"></span></a>
-          </div>
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.52naiba.cn/post/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/">
+                        个人常使用的一些脚本集合
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2021-12-30</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            个人常使用的一些脚本集合
+一键回程路由查看脚本（兼容ARM架构）：
+bash &amp;lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/main/autoBestTrace.sh)
 
-          <div class="flex-box post-publish-date">
-            <div class="post-date">
-              30
-            </div>
-            <div class="post-month">
-              12月                            
-            </div>  
-          </div>
+WorstTrace一键查看回程路由（BestTrace替代品）
+bash &amp;lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/main/WorstTrace.sh)
 
-        </div>
+京东服务器时间同步脚本【For Linux】：
+bash &amp;lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/main/timesync.sh)
 
-      </div>
-    </article>
-    
-    <article class="list-box post type-post status-publish format-standard has-post-thumbnail hentry category-xiaoqiao">
-      
+京东服务器时间同步脚本【For Synology】：
+bash &amp;lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/main/timesync-for-synology.sh)
 
-      <div class="post-info">
-        
-        <h2 class="post-title">
-          <a href="https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/">分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本</a>
-        </h2>
-        <div class="post-excerpt">
-          
-        </div>
-        <div class="flex-box justify-between">
-          <a href="https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/" class="read-more">阅读更多<span class="iconfont icon-ml-readmore"></span></a>
-          <div class="flex-box post-meta-box">
-            <a class="post-meta" href="https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/#comments"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/"><span
-                class="iconfont icon-mr-postmeta icon-like-sp"></span></a>
-          </div>
+一键测速脚本（兼容ARM架构）：
+bash &amp;lt;(curl -Lso- https://raw.githubusercontent.com/07031218/normal-shell/main/superspeed.sh)
 
-          <div class="flex-box post-publish-date">
-            <div class="post-date">
-              30
-            </div>
-            <div class="post-month">
-              12月                            
-            </div>  
-          </div>
+一键调优脚本（提升网络链接速度）[Powered by Neko Neko Cloud &amp;amp;&amp;amp; Modify by 翔翎]
+bash &amp;lt;(curl -sL https://raw.githubusercontent.com/07031218/normal-shell/net/tools.sh)
 
-        </div>
+甲骨文一键DD到Debian 11 脚本（兼容甲骨文AMD和ARM架构,DD完默认密码password，经测试同样适用腾讯云、Do、Azure）
+bash &amp;lt;(wget --no-check-certificate -qO- &#39;https://raw.githubusercontent.com/07031218/normal-shell/main/InstallNET.sh&#39;) -d 11 -v 64 -p password
 
-      </div>
-    </article>
-    
-    <article class="list-box post type-post status-publish format-standard has-post-thumbnail hentry category-xiaoqiao">
-      
+【调用国内镜像源版】甲骨文一键DD到Debian 11 脚本（兼容甲骨文AMD和ARM架构,DD完默认密码password，经测试同样适用腾讯云、Do、Azure）
+bash &amp;lt;(wget --no-check-certificate -qO- &#39;https://cdn.jsdelivr.net/gh/07031218/normal-shell@main/InstallNET.sh&#39;) -d 11 -v 64 -p password --mirror &#39;https://mirrors.huaweicloud.com/debian/&#39;
 
-      <div class="post-info">
-        
-        <h2 class="post-title">
-          <a href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/">Cloudflare WARP 一键配置脚本 使用教程</a>
-        </h2>
-        <div class="post-excerpt">
-          
-        </div>
-        <div class="flex-box justify-between">
-          <a href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/" class="read-more">阅读更多<span class="iconfont icon-ml-readmore"></span></a>
-          <div class="flex-box post-meta-box">
-            <a class="post-meta" href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/#comments"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/"><span
-                class="iconfont icon-mr-postmeta icon-like-sp"></span></a>
-          </div>
+x-ui一键安装脚本
+bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
 
-          <div class="flex-box post-publish-date">
-            <div class="post-date">
-              18
-            </div>
-            <div class="post-month">
-              12月                            
-            </div>  
-          </div>
+流媒体解锁一键检测脚本（lmc999版本）
+bash &amp;lt;(curl -L -s https://git.io/JRw8R)
 
-        </div>
+流媒体解锁一键检测脚本（sjlleo版本,仅支持检测NF，脚本兼容linux ARM和AMD，以及MacOS 非M1版）
+bash &amp;lt;(curl -sL https://raw.githubusercontent.com/07031218/normal-shell/main/netflix-verify.sh)
 
-      </div>
-    </article>
-    
-    <article class="list-box post type-post status-publish format-standard has-post-thumbnail hentry category-xiaoqiao">
-      
+Argo Tunnel一键部署脚本
+bash &amp;lt;(curl -sL https://raw.githubusercontent.com/07031218/normal-shell/net/onekey-argo-tunnel.sh)
 
-      <div class="post-info">
-        
-        <h2 class="post-title">
-          <a href="https://blog.52naiba.cn/post/da-jian-ji-yu-telegraph-de-wu-xian-chu-cun-tu-chuang/">搭建基于telegraph的无限储存图床</a>
-        </h2>
-        <div class="post-excerpt">
-          
-        </div>
-        <div class="flex-box justify-between">
-          <a href="https://blog.52naiba.cn/post/da-jian-ji-yu-telegraph-de-wu-xian-chu-cun-tu-chuang/" class="read-more">阅读更多<span class="iconfont icon-ml-readmore"></span></a>
-          <div class="flex-box post-meta-box">
-            <a class="post-meta" href="https://blog.52naiba.cn/post/da-jian-ji-yu-telegraph-de-wu-xian-chu-cun-tu-chuang/#comments"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/da-jian-ji-yu-telegraph-de-wu-xian-chu-cun-tu-chuang/"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/da-jian-ji-yu-telegraph-de-wu-xian-chu-cun-tu-chuang/"><span
-                class="iconfont icon-mr-postmeta icon-like-sp"></span></a>
-          </div>
+plex一键部署脚本 for amd64
+wget https://github.com/07031218/normal-shell/raw/main/plex/plex -O plex &amp;amp;&amp;amp; chmod 777 plex &amp;amp;&amp;amp; cp plex /usr/bin &amp;amp;&amp;amp; plex
 
-          <div class="flex-box post-publish-date">
-            <div class="post-date">
-              15
-            </div>
-            <div class="post-month">
-              12月                            
-            </div>  
-          </div>
+plex一键部署脚本 for arm64
+wget https://github.com/07031218/normal-shell/raw/main/plex/plex-arm64 -O plex &amp;amp;&amp;amp; chmod 777 plex &amp;amp;&amp;amp; cp plex /usr/bin &amp;amp;&amp;amp; plex
 
-        </div>
+一键安装nginx并部署签发SSL
+bash &amp;lt;(curl -s https://raw.githubusercontent.com/07031218/one-key-for-let-s-Encrypt/main/run.sh) 
 
-      </div>
-    </article>
-    
-    <article class="list-box post type-post status-publish format-standard has-post-thumbnail hentry category-xiaoqiao">
-      
 
-      <div class="post-info">
-        
-        <h2 class="post-title">
-          <a href="https://blog.52naiba.cn/post/x-uizhi-chi-duo-xie-yi-duo-yong-hu-de-xray-mian-ban-v2-ui-quan-mian-ting-zhi-geng-xin-hou-xu-zhu-jian-yong-x-ui-mian-ban-qu-dai-v2-ui-mian-ban/">X-ui，支持多协议多用户的 Xray 面板！V2-ui全面停止更新，后续逐渐用 X-ui 面板取代 V2-ui 面板！</a>
-        </h2>
-        <div class="post-excerpt">
-          
-        </div>
-        <div class="flex-box justify-between">
-          <a href="https://blog.52naiba.cn/post/x-uizhi-chi-duo-xie-yi-duo-yong-hu-de-xray-mian-ban-v2-ui-quan-mian-ting-zhi-geng-xin-hou-xu-zhu-jian-yong-x-ui-mian-ban-qu-dai-v2-ui-mian-ban/" class="read-more">阅读更多<span class="iconfont icon-ml-readmore"></span></a>
-          <div class="flex-box post-meta-box">
-            <a class="post-meta" href="https://blog.52naiba.cn/post/x-uizhi-chi-duo-xie-yi-duo-yong-hu-de-xray-mian-ban-v2-ui-quan-mian-ting-zhi-geng-xin-hou-xu-zhu-jian-yong-x-ui-mian-ban-qu-dai-v2-ui-mian-ban/#comments"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/x-uizhi-chi-duo-xie-yi-duo-yong-hu-de-xray-mian-ban-v2-ui-quan-mian-ting-zhi-geng-xin-hou-xu-zhu-jian-yong-x-ui-mian-ban-qu-dai-v2-ui-mian-ban/"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/x-uizhi-chi-duo-xie-yi-duo-yong-hu-de-xray-mian-ban-v2-ui-quan-mian-ting-zhi-geng-xin-hou-xu-zhu-jian-yong-x-ui-mian-ban-qu-dai-v2-ui-mian-ban/"><span
-                class="iconfont icon-mr-postmeta icon-like-sp"></span></a>
-          </div>
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.52naiba.cn/post/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/">
+                        分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2021-12-30</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            最近一直在慢慢的学习shell,于是打算用实战来强化学到的知识点,所以花了半天时间写了一个交互式的脚本,用于自动申请Let&#39;s Encrypt泛域名证书使用.欢迎大家使用.
+本文为 Stille 原创文章.经实践,测试,整理发布.如需转载请联系作者获得授权,并注明转载地址.
 
-          <div class="flex-box post-publish-date">
-            <div class="post-date">
-              07
-            </div>
-            <div class="post-month">
-              12月                            
-            </div>  
-          </div>
+获取域名服务商 API
+申请域名最重要和最麻烦的地方就是验证域名所有权,常规情况下使用域名服务商的 API 来自动创建 txt 验证记录最为方便.
+参考以下链接获取国内用户常用的腾讯云/阿里云/Cloudflare的 API :
+https://www.ioiox.com/archives/87.html
+参考官方文档可以获取多达100多个全球各种域名服务商的 API :
+https://github.com/acmesh-official/acme.sh/wiki/dnsapi
+交互式脚本
+交互式脚本仅支持 腾讯云 / 阿里云 / Cloudflare
+执行以下命令直接使用,根据提示输入相关 API 信息即可申请.
+curl -O https://gist.githubusercontent.com/stilleshan/02d8652ce320941e497d378a04ecf016/raw/ffb5c536735a2d90390c98d7bbbe0ff63a74ba52/acme_docker.sh &amp;amp;&amp;amp; chmod +x acme_docker.sh &amp;amp;&amp;amp; ./acme_docker.sh
 
-        </div>
+非交互式固定域名证书申请
+通过简单修改脚本,可以让本脚本作为固定证书申请使用.无交互式选项直接根据设置的域名和 API 信息进行申请.建议可以设置crontab定时每月执行.
+非交互式脚本可以支持 acme.sh 官方支持的 100 多个全球各种域名服务商的 API
+编辑脚本修改 16 - 20 行.以下为示例:
+# 交互式脚本请保持以下 DOMAIN= 为空不要修改.如无需交互式,固定申请单一证书,请参考文档自行修改以下变量.
+DOMAIN=ioiox.com
+DNSAPI=&#39;dns_cf&#39;
+API_ID=&#39;export CF_Token=&amp;quot;xxxxxxxxxxxxx&amp;quot;&#39;
+API_KEY=&#39;export CF_Account_ID=&amp;quot;xxxxxxxxxxxxx&amp;quot;&#39;
+# API_ZONE=&#39;export CF_Zone_ID=&amp;quot;xxxxxxxxxxxxx&amp;quot;&#39;
+# 交互式脚本请保持以下 DOMAIN= 为空不要修改.如无需交互式,固定申请单一证书,请参考文档自行修改以上变量.
 
-      </div>
-    </article>
-    
-    <article class="list-box post type-post status-publish format-standard has-post-thumbnail hentry category-xiaoqiao">
-      
 
-      <div class="post-info">
-        
-        <h2 class="post-title">
-          <a href="https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/">Docker一键部署博客</a>
-        </h2>
-        <div class="post-excerpt">
-          
-        </div>
-        <div class="flex-box justify-between">
-          <a href="https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/" class="read-more">阅读更多<span class="iconfont icon-ml-readmore"></span></a>
-          <div class="flex-box post-meta-box">
-            <a class="post-meta" href="https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/#comments"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/"><span
-                class="iconfont icon-mr-postmeta icon-like-sp"></span></a>
-          </div>
+本脚本长期维护,后续会慢慢更新以支持更多服务商.可以访问以下gist地址star收藏:
+https://gist.github.com/stilleshan/02d8652ce320941e497d378a04ecf016
 
-          <div class="flex-box post-publish-date">
-            <div class="post-date">
-              05
-            </div>
-            <div class="post-month">
-              12月                            
-            </div>  
-          </div>
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/">
+                        Cloudflare WARP 一键配置脚本 使用教程
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2021-12-18</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            前言
+Cloudflare WARP 一键配置脚本是一个简化在 Linux VPS 上安装和配置 Cloud­flare WARP 的脚本，它支持 WARP 官方客户端和 Wire­Guard 两种主流 WARP 使用方式，适用于 IPv4/IPv6 单双栈各类的网络环境，操作系统、 CPU 架构和虚拟化平台支持全面。本篇是介绍说明及简单使用教程。
+Cloud­flare WARP 是什么？能干什么？好不好用？以及这个脚本的实现原理知识和其它周边配套设置参见《Cloudflare WARP 给 VPS 服务器额外添加 IPv4 或 IPv6 网络获得 “原生” IP》。
+项目地址
+一键安装
 
-        </div>
+Trojan 和 V2ray xray 一键安装脚本
+安装 最新版和LTS Linux 内核, BBR 和 BBR Plus 内核
+安装 wireguard 和 Cloudflare WARP, 解锁 Netflix 区域限制 和 避免弹出Google人机验证
+V2board 服务器端 V2Ray-Poseidon, Soga, XrayR, Air-Universe 一键安装脚本
+PVE Proxmox VE虚拟机 群晖NAS 安装工具脚本
+FRP 内网穿透工具 一键安装脚本
+锐角云 自动安装PVE 工具脚本
 
-      </div>
-    </article>
-    
-    <article class="list-box post type-post status-publish format-standard has-post-thumbnail hentry category-xiaoqiao">
-      
-      <a href="https://blog.52naiba.cn/post/hello-gridea/" class="title-img">
-        <amp-img class="contain" src="https://blog.52naiba.cn/post-images/hello-gridea.png" layout="fill" alt="Hello Gridea"></amp-img>
-      </a>
-      
+https://github.com/jinwyp/one_click_script
+GitHub
+https://github.com/sjlleo/netflix-verify     检查是否解锁Netflix
+https://github.com/P3TERX/warp.sh
+支持本项目欢迎随手点个 star，可以让更多的人发现、使用并受益。你的支持是持续开发维护的动力。
+脚本特点
 
-      <div class="post-info">
-        
-        <div class="flex-box meta-category">
-          <a class="post-cate" href="https://blog.52naiba.cn/tag/STa5dmtNQ/">Gridea</a></div>
-        
-        <h2 class="post-title">
-          <a href="https://blog.52naiba.cn/post/hello-gridea/">Hello Gridea</a>
-        </h2>
-        <div class="post-excerpt">
-          <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+CPU 架构支持：x86(i386)、x86_64(amd64)、ARMv8(aarch64)、ARMv7 等
+虚拟化平台支持：KVM、Xen、OpenVZ、LXC 等
+操作系统支持：Debian、Ubuntu、CentOS、Arch Linux 以及其它 DEB 系与 RHEL 系下游的最新版本
+智能识别网络方案并自动匹配最佳配置方案进行部署
+独家优化配置方案，获得更好的 WARP 网络体验
+无需更换 Linux 内核，更稳定、更安全、更自由
+直观的进程状态、网络状态和 WARP 状态显示
+Cloudflare WARP 官方 Linux 客户端支持
+“一把梭”式极致体验
+
+
+使用方法
+SSH 连上 VPS 。AD: 还没有 VPS ？赶紧点这里去选一个吧！
+
+
+无论 VPS 是 IPv4 还是 IPv6 又或都有，添加 WARP Wire­Guard 双栈全局网络，直接使用以下命令一把梭：
+# 自动配置 WARP WireGuard 双栈全局网络
+bash &amp;lt;(curl -fsSL git.io/warp.sh) d
+
+
+
+添加或置换 IPv4/IPv6 网络中的一个为 WARP Wire­Guard 网络，使用以下命令一把梭：
+# 自动配置 WARP WireGuard IPv4 网络
+bash &amp;lt;(curl -fsSL git.io/warp.sh) 4
+# 自动配置 WARP WireGuard IPv6 网络
+bash &amp;lt;(curl -fsSL git.io/warp.sh) 6
+
+
+
+Cloud­flare 官方于近期发布了 WARP Linux 客户端，同时也带来了全新的 Proxy Mode 功能，它使得我们可以让应用通过本地的 SOCKS5 代理端口去直接使用 WARP 网络。对于想尝鲜官方客户端的小伙伴，可以使用以下命令一把梭自动安装 WARP 官方客户端并开启 SOCKS5 本机代理端口 (127.0.0.1:40000)：
+# 自动配置 WARP 官方客户端 SOCKS5 代理
+bash &amp;lt;(curl -fsSL git.io/warp.sh) s5
+
+
+
+给喜欢功能菜单的小伙伴特别准备的功能，执行以下命令显示功能菜单和贴心的状态显示：
+# Cloudflare WARP 一键配置脚本 功能菜单
+bash &amp;lt;(curl -fsSL git.io/warp.sh) menu
+
+
+
+
+注意事项和其它说明
+
+脚本目前处于公测阶段，可能还存在少量未知的 bug ，虽然不会导致毁灭性的问题，但不建议在生产环境中使用。
+自动配置 WARP WireGuard 双栈全局网络已做到适配目前大多数主流的系统和 IDC 网络方案，但不排除极个别的差异没考虑到，因此可能会因为路由规则不适用而导致 SSH 失联。若失联可以使用网页 VNC 登录到 VPS 然后执行systemctl disable wg-quick@wgcf --now命令完全禁用 WARP WireGuard 服务即可恢复。
+因 WireGuard 的 bug 与 WARP 网络偶发性连接故障，可能会出现网络状态显示均为未连接且网络访问异常的情况，使用systemctl restart wg-quick@wgcf命令重启 WARP WireGuard 进程即可。若一直有问题则一直重启，直到能使用为止。
+功能菜单中的选择其它 WARP WireGuard 配置方案最初设计为自动配置时因本地源 IP 识别错误导致失联后的半自动备用方案，目前已经几乎用不到了。如果需要使用可根据实际情况与需求选择，遵循“无则添加、有则置换”原则。注意确认 IP 地址是否需要修改，如需修改可以手动输入 IP。随着脚本的完善，逐步走向智能自动化，后续这个功能菜单可能会移除。
+脚本使用 wgcf 生成通用 WireGuard 配置文件，配置完成后会原样备份至~/.wgcf目录，以便下次脚本自动调用，避免重复申请 WARP 账号导致 IP 被 Cloudflare 拉黑。
+若之前自行生成过 WireGuard 配置文件，在文件名为wgcf-profile.conf的情况下在此配置文件所在目录执行脚本会优先调用此配置文件并截取关键信息生成符合所选网络方案的新配置文件。若之前有生成过带有 WARP+ 流量的配置文件，则可以使用这个彩蛋功能。
+WARP WireGuard 双栈全局网络可能会导致 Docker 应用在 Bridge 网络模式下无法通过 IP 直接访问。可以使用 Host 网络模式，或者用 nginx 反代的方式去使用。暂时还没有找到完美的解决方案，如果有大佬知道怎么解决，欢迎分享。
+WARP 官方 Linux 客户端才上线不久，实测稳定性不佳，且系统支持不全。目前只支持在 x86_64(amd64) 架构的 Debian 10/11、Ubuntu 20.04、CentOS 8 系统中尝鲜使用。其它系统也许能正常安装，但可能存在无法正常启动的问题。
+WARP 官方客户端与 WARP WireGuard 网络可以同时使用，但 WARP 客户端的网络数据可能会走在 WARP WireGuard 隧道中，这属于套娃行为，减速效果非常明显。
+WARP 官方客户端可能无法在部分 IPv6 Only VPS 上使用，可以先添加 WARP WireGuard IPv4 网络，但正如前面所说套娃减速。
+
+遇到问题如何处理
+
+脚本运行失败或错误请在 GitHub issues 页面进行留言，提供虚拟化平台、系统版本、内核版本以及从脚本运行到末尾的详细日志等信息，以便分析问题原因改进脚本。若未提供有用信息一律当做垃圾信息处理。
+重启、重装、重买是解决问题的三大法宝。
+
+最后
+这个脚本从方案设计到代码编写全部都是由博主个人原创，且花费了大量时间和精力打磨而成，最初只是自己使用，觉得达到了近乎完美的状态也就开源分享了出来。如果觉得这个脚本对你有帮助，可以去 WARP 脚本的 Github 项目页面点下 Star 点亮小星星支持一下，也欢迎小伙伴们分享出去让更多的人看到、使用并受益。
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.52naiba.cn/post/da-jian-ji-yu-telegraph-de-wu-xian-chu-cun-tu-chuang/">
+                        搭建基于telegraph的无限储存图床
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2021-12-15</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            Telegraph是即时聊天软件Telegram的开发商推出的一个内容发布网站，它允许用户匿名发布文章,所以基于telegraph我们搭建一个无限储存空间的图床。
+github项目地址:https://github.com/cloudflytc/tgpic
+
+下载程序压缩包
+下载地址:点击下载
+上传压缩包到PHP环境中解压，然后访问网站即可上传图片
+上传图片成功后底部会出现三条图片直链,国内用户建议选择第一条，是经过wp代理加速的，第二条是telegraph官方链接，国内无法访问
+
+Demo:点击进入图床
+测试图片:
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.52naiba.cn/post/da-jian-ji-yu-telegraph-de-wu-xian-chu-cun-tu-chuang/">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.52naiba.cn/post/x-uizhi-chi-duo-xie-yi-duo-yong-hu-de-xray-mian-ban-v2-ui-quan-mian-ting-zhi-geng-xin-hou-xu-zhu-jian-yong-x-ui-mian-ban-qu-dai-v2-ui-mian-ban/">
+                        X-ui，支持多协议多用户的 Xray 面板！V2-ui全面停止更新，后续逐渐用 X-ui 面板取代 V2-ui 面板！
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2021-12-07</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            1、VPS 一台重置好主流的操作系统 （CentOS 7+、Ubuntu 16+、Debian 8+），作者使用：搬瓦工 VPS
+2、域名一个，做好相关的解析，若是需要套用 CDN，请托管域名到 cloudflare ，不会请点击
+安装 X-ui 面板
+申请 SSL 证书
+下面环境的安装方式，大家根据自己的系统选择命令安装就好了。
+更新及安装组件
+apt update -y          # Debian/Ubuntu 命令apt install -y curl    #Debian/Ubuntu 命令apt install -y socat    #Debian/Ubuntu 命令
+yum update -y          #CentOS 命令yum install -y curl    #CentOS 命令yum install -y socat    #CentOS 命令
+
+安装 Acme 脚本
+curl https://get.acme.sh | sh
+
+80 端口空闲的证书申请方式
+自行更换代码中的域名、邮箱为你解析的域名及邮箱
+~/.acme.sh/acme.sh --register-account -m xxxx@xxxx.com~/.acme.sh/acme.sh  --issue -d mydomain.com   --standalone
+
+安装证书到指定文件夹
+自行更换代码中的域名为你解析的域名
+~/.acme.sh/acme.sh --installcert -d mydomain.com --key-file /root/private.key --fullchain-file /root/cert.crt
+
+安装 &amp;amp; 升级 X-ui 面板
+安装及升级的一键代码
+bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+
+节点配置及功能讲解
+
+节点配置及龙能方面，请看 视频教程
+V2-ui - X-ui数据迁移
+安装完 X-ui 以后，输入以下代码，即可完成用户数据的迁移（不包含管理员账号及密码，仅针对已部署的节点部分）
+x-ui v2-ui
+
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.52naiba.cn/post/x-uizhi-chi-duo-xie-yi-duo-yong-hu-de-xray-mian-ban-v2-ui-quan-mian-ting-zhi-geng-xin-hou-xu-zhu-jian-yong-x-ui-mian-ban-qu-dai-v2-ui-mian-ban/">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/">
+                        Docker一键部署博客
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2021-12-05</time>
+                    
+                </div>
+                <div class="post-article">
+                    
+                            <div class="post-content">
+                                
+                                        <div class="post-content-content">
+                                            项目介绍
+Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术），同时它还有部署简单，不易对电脑环境造成污染的特点。而docker-compose则是对容器进行管理的工具，适合多容器同时使用或容器部署命令复杂时使用。
+下面我会分享如何在x86_64或arm64平台（包括但不限于CentOS7、Ubuntu20.04、Rasbianarm64）上利用docker-compose命令构建属于自己的博客（wordpress或者typecho二选一，个人推荐wordpress）
+1.环境
+1.1 环境检查
+这一步骤主要是对服务器上docker-compose和git的检查，你可以使用下面命令查询服务器是否安装docker-compose和git
+docker-compose -v
+git --version
+
+
+
+如果看到类似下面的输出，则证明服务器已经安装docker-compose和git（可能版本不太一样，但不必焦虑，请直接跳转到第2步）
+1.2 环境安装
+如果没有看到版本信息，则服务器没有安装docker-compose，你需要用下面的命令安装此工具：
+CentOS：sudo yum install docker-compose &amp;amp;&amp;amp; sudo yum install git
+Ubuntu：sudo apt install docker-compose &amp;amp;&amp;amp; sudo apt install git
+Rasbianarm64：sudo apt install docker-compose &amp;amp;&amp;amp; sudo apt install git
+
+1.3 添加docker开机自启动
+这一步骤主要是将docker添加到开机自启动中，命令如下：
+sudo systemctl enable docker
+
+2.部署博客
+2.1 wordpress 部署
+2.1.1 拉取文件并启动容器
+利用git从github拉取wordpress 的docker-compose.yml文件，命令如下：
+git clone https://github.com/laningya/docker_wordpress.git
+
+启动容器，命令如下：
+cd docker-wordpress &amp;amp;&amp;amp; sudo docker-compose up -d
+
+2.1.2 访问博客
+使用服务器IP访问博客地址
+例：内网IP：http://192.168.x.x
+如果是购买的阿里云、腾讯云等云服务器请先备案并在安全组中开放80端口
+2.1.3 配置wordpress
+语言选择：简体中文 点击继续
+
+补充说明：
+请按照自己的个人信息自行填写
+搜索引擎可见性可选可不选
+2.1.4 补充
+默认博客地址是 http://服务器IP
+默认博客后台地址是 http://服务器IP/admin
+关于wordpress的美化请自行百度
+2.2 typecho 部署
+2.2.1 拉取文件并启动容器
+利用git从github拉取typecho的docker-compose.yml文件，命令如下：
+git clone https://github.com/laningya/docker_typecho.git
+
+启动容器，命令如下：
+cd docker-typecho &amp;amp;&amp;amp; sudo docker-compose up -d
+
+2.2.2 访问博客
+使用服务器IP访问博客地址
+例：内网IP：http://192.168.x.x
+如果是购买的阿里云、腾讯云等云服务器请先备案并在安全组中开放80端口
+2.2.3 配置typecho
+点击我准备好了开始下一步
+接下来按如下图配置
+补充说明：
+数据库配置请严格按照上面格式
+管理员账号中请填写自己的IP地址或自己的域名
+用户名 密码 邮箱部分请自己填写
+
+2.2.4 补充
+默认博客地址是 http://服务器IP
+默认博客后台地址是 http://服务器IP/admin
+
+                                        </div>
+                                        
+                                            <a class="btn btn-text" href="https://blog.52naiba.cn/post/docker-yi-jian-bu-shu-bo-ke/">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+            <article class="post i-card">
+                <h2 class="post-title">
+                    <a href="https://blog.52naiba.cn/post/hello-gridea/">
+                        Hello Gridea
+                    </a>
+                </h2>
+                <div class="post-info">
+                    <time class="post-time">2018-12-12</time>
+                    
+                        <a href="https://blog.52naiba.cn/tag/STa5dmtNQ/" class="post-tag i-tag
+                            i-tag-other_4">
+            #Gridea
+        </a>
+                        
+                </div>
+                <div class="post-article">
+                    
+                        <a href="https://blog.52naiba.cn/post/hello-gridea/" class="post-feature-image" style="background-image:url(https://blog.52naiba.cn/post-images/hello-gridea.png) ">
+                        </a>
+                        
+                            <div class="post-content">
+                                
+                                    <div class="post-content-abstract">
+                                        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
 ✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 
+                                    </div>
+                                    
+                                            <a class="btn btn-text" href="https://blog.52naiba.cn/post/hello-gridea/">Read More ~</a>
+                            </div>
+                </div>
+            </article>
+            
+                <!-- 翻页 -->
+                
+                </div>
+                <!--  -->
+                <div class="main-container-middle"></div>
+                <!--  -->
+                <div id="sidebar" class="main-container-right">
+
+                    <!-- 个人信息 -->
+                    
+    <div class="id_card i-card">
+        <div class="id_card-avatar" style="background-image: url(https://blog.52naiba.cn/images/avatar.png?v=1640843834022)">
         </div>
-        <div class="flex-box justify-between">
-          <a href="https://blog.52naiba.cn/post/hello-gridea/" class="read-more">阅读更多<span class="iconfont icon-ml-readmore"></span></a>
-          <div class="flex-box post-meta-box">
-            <a class="post-meta" href="https://blog.52naiba.cn/post/hello-gridea/#comments"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/hello-gridea/"><span class="iconfont icon-mr-postmeta"></span></a>
-            <a class="post-meta" href="https://blog.52naiba.cn/post/hello-gridea/"><span
-                class="iconfont icon-mr-postmeta icon-like-sp"></span></a>
-          </div>
-
-          <div class="flex-box post-publish-date">
-            <div class="post-date">
-              12
-            </div>
-            <div class="post-month">
-              12月                            
-            </div>  
-          </div>
-
-        </div>
-
-      </div>
-    </article>
-    
-
-  </div>
-  <div>
-    <nav class="navigation pagination" role="navigation" aria-label="文章">
-      <h2 class="screen-reader-text">文章导航</h2>
-      <div class="nav-links">
-        
-        
-      </div>
-    </nav>
-  </div>
-</div>
-    <div class="sidebar">
-  <aside id="profile-2" class="widget widget_profile">
-    <div class="profile-box">
-      <div class="profile-avatar">
-        <amp-img src="https://blog.52naiba.cn/images/avatar.png?v=1640842438377" alt="avatar"
-          layout="fill"></amp-img>
-      </div>
-      <div class="profile-content">
-        <div class="amp-wp-681d4ff">
-          温故而知新
-        </div>
-
-      </div>
-    </div>
-  </aside>
-  
-    <aside id="search-10" class="widget widget_search">
-      <form target="_top" role="search" method=get class="search-form" action="https://www.google.com/search">
-        <input type=hidden name=domains value="https://blog.52naiba.cn">
-        <input type=hidden name=sitesearch value="https://blog.52naiba.cn">
-        <input name="hl" value="zh-CN" type="hidden">
-        <input required type="text" class="search-field" placeholder="搜索…" name="q">
-        <button type="submit"
-          class="search-submit"></button>
-      </form>
-    </aside>
-    
-    
-
-    
-    <aside id="recent-posts-2" class="widget widget_recent_entries">
-      <h4 class="widget-title">近期文章</h4>
-       <ul>
-        
-          
-        <li>
-         <a href="https://blog.52naiba.cn/post/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/" aria-current="page">个人常使用的一些脚本集合</a>
-        </li>
-        
-        
-          
-        <li>
-         <a href="https://blog.52naiba.cn/post/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/" aria-current="page">分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本</a>
-        </li>
-        
-        
-          
-        <li>
-         <a href="https://blog.52naiba.cn/post/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/" aria-current="page">Cloudflare WARP 一键配置脚本 使用教程</a>
-        </li>
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </ul>
-   </aside>
-   
-
-   
-    <aside id="categories-2" class="widget widget_categories">
-      <h4 class="widget-title">标签</h4>
-      <ul>
-          
-            <li class="cat-item"><a href="https://blog.52naiba.cn/tag/STa5dmtNQ/">
+        <h1 class="id_card-title">
             Gridea
-          </a>
-          
-        </li>
-  
-      </ul>
-    </aside>
-    
+        </h1>
+        <h2 class="id_card-description">
+            温故而知新
+        </h2>
+        <!--  -->
+        <div class="id_card-sns">
+            <!-- github -->
+            
+                    <!-- twitter -->
+                    
+                            <!-- weibo -->
+                            
+                                    <!-- facebook -->
+                                    
 
-  <aside id="linkcat-2" class="widget widget_links">
-  <h4 class="widget-title">友链</h4>
-  <ul class="xoxo blogroll">
-    
-      
-    
-  </ul>
-</aside>
-
-
-</div>
-    <div class="scrolltop-wrap">
-  <span tabindex="0" role="button" class="go-top" on="tap:commonTop.scrollTo(duration=500, position=top)">
-    <span class="iconfont"></span>
-  </span>
-</div>
-
-    
-  </main>
-
-  <footer>
-  <div class="footer-container">
-    <div class="footer-menus">
+        </div>
     </div>
-    <div class="footer-copyright">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-      
-      
-        <p>
-        主题版本：1.3.0-beta.0；最新版本：<br><br><br><br>
-        <a href="https://github.com/jiansing/gridea-theme-inlineamp/releases" rel="nofollow">
-        <amp-img alt="InlineAMP release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/jiansing/gridea-theme-inlineamp?include_prereleases" height="20" width="140"></amp-img>
-        </p>
-        
+    
+
+                        <!-- 公告栏 -->
+                        
+
+                </div>
+            </div>
+
+
+
+            <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://blog.52naiba.cn/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
 
     </div>
-  </div>
-</footer>
-
-  
-  
-
+    <script>
+        $('#sidebar').stickySidebar({
+            topSpacing: 80,
+            // bottomSpacing: 60
+        });
+    </script>
 </body>
 
 </html>
