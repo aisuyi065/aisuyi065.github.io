@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.52naiba.cn</id>
     <title>Gridea</title>
-    <updated>2021-12-30T06:00:44.414Z</updated>
+    <updated>2021-12-31T13:08:33.254Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.52naiba.cn"/>
     <link rel="self" href="https://blog.52naiba.cn/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://blog.52naiba.cn/images/avatar.png</logo>
     <icon>https://blog.52naiba.cn/favicon.ico</icon>
     <rights>All rights reserved 2021, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[hysteria一款为恶劣网络进行优化的工具教程]]></title>
+        <id>https://blog.52naiba.cn/hysteria-yi-kuan-wei-e-lie-wang-luo-jin-xing-you-hua-de-gong-ju-jiao-cheng/</id>
+        <link href="https://blog.52naiba.cn/hysteria-yi-kuan-wei-e-lie-wang-luo-jin-xing-you-hua-de-gong-ju-jiao-cheng/">
+        </link>
+        <updated>2021-12-31T13:08:11.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[个人常使用的一些脚本集合]]></title>
         <id>https://blog.52naiba.cn/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/</id>

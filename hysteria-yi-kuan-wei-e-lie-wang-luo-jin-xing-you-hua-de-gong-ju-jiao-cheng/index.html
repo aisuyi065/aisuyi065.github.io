@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>hysteria一款为恶劣网络进行优化的工具教程 | Gridea</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1640956110743">
+<link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="hysteria一款为恶劣网络进行优化的工具教程
+Hi Hysteria
+github: https://github.com/emptysuns/Hi_Hysteria
+一·简介
+
+Hysteria 是一个功能丰富的，专为恶劣网络环境进行..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://blog.52naiba.cn">
+        <img src="https://blog.52naiba.cn/images/avatar.png?v=1640956110743" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://blog.52naiba.cn/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">hysteria一款为恶劣网络进行优化的工具教程</h2>
+            <div class="post-date">2021-12-31</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="hysteria一款为恶劣网络进行优化的工具教程">hysteria一款为恶劣网络进行优化的工具教程</h1>
+<h1 id="hi-hysteria">Hi Hysteria</h1>
+<p>github: https://github.com/emptysuns/Hi_Hysteria</p>
+<h2 id="一简介">一·简介</h2>
+<blockquote>
+<p>Hysteria 是一个功能丰富的，专为恶劣网络环境进行优化的网络工具（双边加速），比如卫星网络、拥挤的公共 Wi-Fi、在<strong>中国连接国外服务器</strong>等。 基于修改版的 QUIC 协议。<br>
+by:<a href="https://github.com/HyNetwork">Hynetwork</a>（Thank you!）</p>
+</blockquote>
+<p>Hysteria这是一款由go编写的非常优秀的“轻量”代理程序，它很好的解决了在搭建富强魔法服务器时最大的痛点——<strong>线路拉跨</strong>。</p>
+<p>在魔法咏唱时最难的不是搭建维护，而是在晚高峰时期的交付质量。<s>当三大运营商晚高变成了：奠信、连不通、移不动时，你我都有感触。</s> 虽然是走的udp但是因为加了混淆使暂时不会被运营商针对性的QoS。</p>
+<p>1、原项目提供的bench:</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/HyNetwork/hysteria/master/docs/bench/bench.png" alt="image" loading="lazy"></figure>
+<p>2、50mbps北方电信,北京出口 直连落地vir San Jose机房163线路，22-23点测试YT 1080p60直播流:</p>
+<figure data-type="image" tabindex="2"><img src="https://cloud.imoeq.com/0:/normal/img/hihysteria/speed.png" alt="image" loading="lazy"></figure>
+<pre><code>190 dropped of 131329
+</code></pre>
+<p>3、无对钟国大陆线路优化，洛杉矶shockhosting机房，1c128m ovznat 4k@p60：<br>
+<img src="https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/yt.jpg" alt="image" loading="lazy"></p>
+<pre><code>139783 Kbps
+</code></pre>
+<p>该项目仅作学习用途，请查看的访客在5s之内立即删除并停止使用。</p>
+<p>由它所引起的任何问题，作者并不承担风险和任何法律责任。</p>
+<p>因为脚本现处于0.x的测试版本，可能会有一些bug，如果遇到请发issue，欢迎star，您的⭐是我维护的动力。</p>
+<pre><code>(2021/12/19 21:16) v0.2.4: 
+1、hysteria版本升级成了0.9.1，请重新下载&quot;cmd客户端&quot;,version:0.2c
+2、增加faketcp模式配置，详情请查看：“使用前注意”条目
+3、outbound被鸽了
+4、客户端增加socks5（端口:8889）代理方式,user：pekora;password:pekopeko。可自行修改用户密码
+5、增加自定义dns如8.8.8.8等，防止运营商dns劫持攻击
+ 
+(2021/12/10 18:59) v0.2.3a: 
+1、hysteria版本升级成了0.9.0,请重新下载&quot;cmd客户端&quot;，version:0.2b（注: 因为0.9.0新的特征ipv6_only开启后无法解析ipv4，可以等下个版本所支持的outbound特征，这里就不特意添加了
+2、刷新了acl。
+ 
+(2021/11/26 10:30) v0.2.3: 
+1、alpn改成了h3(虽然没什么必要)
+2、hysteria版本升级成了0.8.6请重新下载&quot;cmd客户端?!&quot;，version:0.2a
+ 
+(2021/11/08 19:50) v0.2.2: 
+1、整合自签/ACME
+2、更改buffer计算方式提升速度
+3、修复自签ipv6时多符号bug
+4、增加随机端口功能
+5、增加每一天自动重启服务端功能防止内存占用过大
+ 
+(2021/11/06 21:16) v0.2.1: 
+1、提供自签证书安装，为了有些ACME死活无法验证用户
+ 
+(2021/10/05 18:36) v0.2: 
+1、优化客户端(！？)结构
+2、增加后台运行功能
+ 
+(2021/10/04 16:19) v0.1: 
+1、修复因dns污染无法代理的bug并增加去广告规则
+2、增加arm和mipsle架构适配
+3、增加客户端防呆
+</code></pre>
+<h2 id="二使用">二·使用</h2>
+<h3 id="使用前须知">使用前须知</h3>
+<h4 id="防火墙问题">防火墙问题：</h4>
+<p>请提前放行防火墙，保证该udp端口可达！</p>
+<p>对于faketcp模式，则为放行server的tcp端口。</p>
+<p>如果使用不使用自签方式，则应该放行TCP 80/443供hysteria内置的ACME验证。</p>
+<h4 id="hysteria-faketcp模式介绍默认不开启可跳过不查看">hysteria faketcp模式介绍：(默认不开启，可跳过不查看)</h4>
+<p>v0.9.1 支持faketcp，将hysteria的UDP传输过程伪装成TCP，可以躲过运营商和“比较专业”的IDC服务商的QoS设备的对UDP的限速、阻断。</p>
+<p>目前faketcp模式客户端只支持在linux类设备使用，<strong>windows无法使用</strong>（但是可配合udp2raw伪装tcp）。</p>
+<p>而且在操作系统中server和client这二者必须都是root用户运行才能开启faketcp。这其中当然也包括安卓，<strong>必须root后才能使用</strong>。</p>
+<p>由于本身就具有<code>obfs</code>选项，能将hysteria/QUIC混淆成不知名的UDP流量可绕过针对性的QoS/DPI检测，一般情况下运营商不会限制hysteria传输，所以我的建议是：</p>
+<p><strong>追求代理性能时不要开启它</strong>。当下行速度一直被限制在例如128kB/s这种非常非常低的速率情况时，你确认被限制UDP后再重新安装后开启，它并不能&quot;增速&quot;，反而会增加cpu的开销，给hysteria“减速”，默认传输方式即可。</p>
+<p><strong>追求稳定性且满足root使用环境时，能开faketcp就开faketcp</strong>。</p>
+<h3 id="安装依赖">安装依赖</h3>
+<pre><code># centos
+sudo su root  #Change to the user root!
+yum install -y wget curl
+# debian/ubuntu
+sudo su root  #Change to the user root!
+apt-get install -y wget curl
+</code></pre>
+<h3 id="拉取安装">拉取安装</h3>
+<pre><code>bash &lt;(curl -fsSL https://git.io/hysteria.sh)
+</code></pre>
+<h3 id="配置过程">配置过程</h3>
+<pre><code>******************************************************************
+ ██      ██                    ██                  ██          
+░██     ░██  ██   ██          ░██                 ░░           
+░██     ░██ ░░██ ██   ██████ ██████  █████  ██████ ██  ██████  
+░██████████  ░░███   ██░░░░ ░░░██░  ██░░░██░░██░░█░██ ░░░░░░██ 
+░██░░░░░░██   ░██   ░░█████   ░██  ░███████ ░██ ░ ░██  ███████ 
+░██     ░██   ██     ░░░░░██  ░██  ░██░░░░  ░██   ░██ ██░░░░██ 
+░██     ░██  ██      ██████   ░░██ ░░██████░███   ░██░░████████
+░░      ░░  ░░      ░░░░░░     ░░   ░░░░░░ ░░░    ░░  ░░░░░░░░ 
+Version: 0.2.4
+Github: https://github.com/emptysuns/Hi_Hysteria
+******************************************************************
+Ready to install.
+ 
+The hysteria latest version: v0.9.1. Download...
+ 
+Download completed.
+ 
+开始配置: 
+请输入您的域名(不输入回车，则默认自签pan.baidu.com证书，不推荐):
+a.com
+是否启用faketcp,输入1启用,默认不启用(回车)：
+ 
+传输协议:udp
+ 
+请输入你想要开启的端口（此端口是server端口，请提前放行防火墙，建议10000-65535，回车随机）：
+ 
+随机端口：29714
+ 
+请输入您到此服务器的平均延迟,关系到转发速度（回车默认200ms）:
+100
+ 
+期望速度，请如实填写，这是客户端的峰值速度，服务端默认不受限。期望过低或者过高会影响转发速度！
+请输入客户端期望的下行速度:(默认50mbps):
+200
+请输入客户端期望的上行速度(默认10mbps):
+40
+请输入混淆口令（相当于连接密钥）:
+mikomiko
+ 
+配置录入完成！
+ 
+执行配置...
+net.core.rmem_max=4000000
+Created symlink /etc/systemd/system/multi-user.target.wants/hysteria.service → /etc/systemd/system/hysteria.service.
+所有安装已经完成，配置文件输出如下且已经在本目录生成（可自行复制粘贴到本地）！
+ 
+ 
+Tips:客户端默认只开启http(8888)、socks5代理(8889, user:pekora;password:pekopeko)!其他方式请参照文档自行修改客户端config.json
+↓***********************************↓↓↓copy↓↓↓*******************************↓
+{
+&quot;server&quot;: &quot;a.com:29714&quot;,
+&quot;protocol&quot;: &quot;udp&quot;,
+&quot;up_mbps&quot;: 40,
+&quot;down_mbps&quot;: 200,
+&quot;http&quot;: {
+&quot;listen&quot;: &quot;127.0.0.1:8888&quot;,
+&quot;timeout&quot; : 300,
+&quot;disable_udp&quot;: false
+},
+&quot;socks5&quot;: {
+&quot;listen&quot;: &quot;127.0.0.1:8889&quot;,
+&quot;timeout&quot;: 300,
+&quot;disable_udp&quot;: false,
+&quot;user&quot;: &quot;pekora&quot;,
+&quot;password&quot;: &quot;pekopeko&quot;
+},
+&quot;alpn&quot;: &quot;h3&quot;,
+&quot;acl&quot;: &quot;acl/routes.acl&quot;,
+&quot;obfs&quot;: &quot;mikomiko&quot;,
+&quot;auth_str&quot;: &quot;pekopeko&quot;,
+&quot;server_name&quot;: &quot;a.com&quot;,
+&quot;insecure&quot;: false,
+&quot;recv_window_conn&quot;: 10485760,
+&quot;recv_window&quot;: 41943040,
+&quot;resolver&quot;: &quot;
+
+</code></pre>
+<h3 id="cmd客户端介绍">cmd客户端介绍</h3>
+<p>本项目只介绍如何在windows环境下使用，其他环境请参考<a href="https://github.com/HyNetwork/hysteria">官方原文</a>。</p>
+<p>因为暂时没有hysteria的图形界面，所以我用批处理写了一个简单的“客户端?!&quot;，支持自动改代理和清除代理，实际使用没问题。<br>
+可自行到<a href="https://github.com/emptysuns/Hi_Hysteria/releases">release</a>中下载最新版本。</p>
+<p>欢迎其他开发者贡献新的UI或者插件。</p>
+<p>当出现<strong>安装完毕</strong>字样后，<strong>会自动打印生成的配置信息</strong>，同时<strong>当前目录</strong>下会生成一个config.json文件。</p>
+<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/result.png" alt="image" loading="lazy"></figure>
+<p>可以本地新建一个config.json（<strong>一定要是这个名称！</strong>）文件，复制粘贴到本地<strong>conf</strong>文件夹下，也可以直接下载生成的文件到本地<strong>conf</strong>文件夹下。</p>
+<p>将config.json加入<a href="https://github.com/emptysuns/Hi_Hysteria/releases"><strong>release</strong></a>中提供的简单的windows cmd客户端的解压目录中.</p>
+<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/s1.png" alt="image" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/s2.png" alt="image" loading="lazy"></figure>
+<p>如果本地配置丢失?使用cat打印config.json后复制:</p>
+<pre><code>cat config.json
+ 
+# cat config.json 
+{
+&quot;server&quot;: &quot;a.com:29714&quot;,
+&quot;protocol&quot;: &quot;udp&quot;,
+&quot;up_mbps&quot;: 40,
+&quot;down_mbps&quot;: 200,
+&quot;http&quot;: {
+&quot;listen&quot;: &quot;127.0.0.1:8888&quot;,
+&quot;timeout&quot; : 300,
+&quot;disable_udp&quot;: false
+},
+&quot;socks5&quot;: {
+&quot;listen&quot;: &quot;127.0.0.1:8889&quot;,
+&quot;timeout&quot;: 300,
+&quot;disable_udp&quot;: false,
+&quot;user&quot;: &quot;pekora&quot;,
+&quot;password&quot;: &quot;pekopeko&quot;
+},
+&quot;alpn&quot;: &quot;h3&quot;,
+&quot;acl&quot;: &quot;acl/routes.acl&quot;,
+&quot;obfs&quot;: &quot;mikomiko&quot;,
+&quot;auth_str&quot;: &quot;pekopeko&quot;,
+&quot;server_name&quot;: &quot;a.com&quot;,
+&quot;insecure&quot;: false,
+&quot;recv_window_conn&quot;: 10485760,
+&quot;recv_window&quot;: 41943040,
+&quot;resolver&quot;: &quot;119.29.29.29:53&quot;,
+&quot;disable_mtu_discovery&quot;: false
+}
+ 
+ 
+ctrl+c and +v.
+</code></pre>
+<h3 id="客户端使用">客户端使用</h3>
+<p>提供两种运行方法：后台运行（无cmd窗口无感） 和 前台运行（必须得有cmd窗口，但是可查看当前日志）</p>
+<p><strong>启动之前</strong>请把config.json放到conf文件夹！</p>
+<hr>
+<ul>
+<li>方法一：后台运行（推荐）</li>
+</ul>
+<p>运行:双击back_start.bat</p>
+<p>停止:双击back_stop.bat</p>
+<p>运行back_start.bat后，可以回车关闭此窗口，不需保留。</p>
+<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/tips.png" alt="image" loading="lazy"></figure>
+<p>停止后台运行：</p>
+<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/back_stop.png" alt="image" loading="lazy"></figure>
+<p>批处理能力有限，请谅解.</p>
+<hr>
+<ul>
+<li>方法二：前台运行</li>
+</ul>
+<p>运行:双击run.bat</p>
+<p>停止:回车，或者键入其他非'n'的字符</p>
+<p>打开run.bat运行，运行时按回车键停止，防呆键入n继续运行</p>
+<p><strong>直接键入Enter关闭客户端！</strong></p>
+<p><strong>直接键入Enter关闭客户端！</strong></p>
+<p><strong>直接键入Enter关闭客户端！</strong></p>
+<p><strong>切记不要直接关闭cmd窗口！</strong></p>
+<p><strong>切记不要直接关闭cmd窗口！</strong></p>
+<p><strong>切记不要直接关闭cmd窗口！</strong></p>
+<p>批处理能力有限，请谅解.</p>
+<p>启动</p>
+<figure data-type="image" tabindex="8"><img src="https://cloud.iacg.cf/0:/normal/img/hihysteria/mark.png" alt="image" loading="lazy"></figure>
+<p>防呆/关闭</p>
+<figure data-type="image" tabindex="9"><img src="https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/stop.png" alt="image" loading="lazy"></figure>
+<p><strong>Tips:前台运行模式下，不小心关掉窗口导致无法上网时，运行back_stop.bat可以清除代理和关闭hysteria。</strong></p>
+<hr>
+<h3 id="客户端配置未生效">客户端配置未生效？</h3>
+<p>如上图启动成功，但代理并未启用，请手动打开设置-&gt;网络-&gt;代理,查看配置是否生效</p>
+<figure data-type="image" tabindex="10"><img src="https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/proxy.png" alt="image" loading="lazy"></figure>
+<h3 id="配置开机自启">配置开机自启</h3>
+<p><s>不会有人不知道吧:)</s></p>
+<p>对back_start.bat(<strong>后台模式</strong>) 或者 run.bat(<strong>前台模式</strong>)文件创建一个<strong>快捷方式</strong></p>
+<p>win+r 键入</p>
+<pre><code>shell:startup
+</code></pre>
+<p>打开自启目录将快捷方式<strong>复制</strong>进去，下次开机就会自启动。</p>
+<figure data-type="image" tabindex="11"><img src="https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/startup.png" alt="image" loading="lazy"></figure>
+<p>这里用后台做演示，前台同理</p>
+<h2 id="三服务端管理">三·服务端管理</h2>
+<ul>
+<li>重启</li>
+</ul>
+<pre><code>systemctl restart hysteria
+</code></pre>
+<ul>
+<li>停止</li>
+</ul>
+<pre><code>systemctl stop hysteria
+</code></pre>
+<ul>
+<li>状态</li>
+</ul>
+<pre><code>systemctl status hysteria -l
+</code></pre>
+<ul>
+<li>卸载</li>
+</ul>
+<pre><code>bash &lt;(curl -fsSL https://git.io/rmhysteria.sh)
+</code></pre>
+<ul>
+<li>重新安装/升级</li>
+</ul>
+<pre><code>bash &lt;(curl -fsSL https://git.io/rehysteria.sh)
+</code></pre>
+<h2 id="四结语">四·结语</h2>
+<p>魔改UDP的QUIC协议，加了tls和混淆，个人跑了一段时间大流量，未被运营商QoS，落地ip并没有被墙，也不知道什么时候被针对，大家且用且珍惜吧。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://blog.52naiba.cn/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/">
+                  <h3 class="post-title">
+                    个人常使用的一些脚本集合
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'disqus_VB5MsU1LjI',
+      apikey: 'dMP3jABp5m3Xm3lr2VvyrqTP1WliooGhnGwIsjChrhYOsxvevWjh89U1SDXCQyzW',
+    }
+    if ('rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz') {
+      options.api = 'rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz'
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>
