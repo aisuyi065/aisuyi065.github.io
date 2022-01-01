@@ -2,14 +2,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.52naiba.cn</id>
     <title>Gridea</title>
-    <updated>2021-12-31T13:26:15.215Z</updated>
+    <updated>2022-01-01T04:20:02.458Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.52naiba.cn"/>
     <link rel="self" href="https://blog.52naiba.cn/atom.xml"/>
     <subtitle>温故而知新</subtitle>
     <logo>https://blog.52naiba.cn/images/avatar.png</logo>
     <icon>https://blog.52naiba.cn/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[Go语言开发的端口转发工具：port-forward]]></title>
+        <id>https://blog.52naiba.cn/go-yu-yan-kai-fa-de-duan-kou-zhuan-fa-gong-ju-port-forward/</id>
+        <link href="https://blog.52naiba.cn/go-yu-yan-kai-fa-de-duan-kou-zhuan-fa-gong-ju-port-forward/">
+        </link>
+        <updated>2022-01-01T04:19:42.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[hysteria一款为恶劣网络进行优化的工具教程]]></title>
         <id>https://blog.52naiba.cn/hysteria-yi-kuan-wei-e-lie-wang-luo-jin-xing-you-hua-de-gong-ju-jiao-cheng/</id>
