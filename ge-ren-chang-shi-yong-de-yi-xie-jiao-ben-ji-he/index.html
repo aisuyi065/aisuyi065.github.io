@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641010792063">
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641010860823">
 <link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
 
 
@@ -36,7 +36,7 @@ bash &lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/mai
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://blog.52naiba.cn">
-        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641010792063" class="site-logo">
+        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641010860823" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -147,6 +147,12 @@ bash &lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/mai
 </code></pre>
 <p>一键安装nginx并部署签发SSL</p>
 <pre><code>bash &lt;(curl -s https://raw.githubusercontent.com/07031218/one-key-for-let-s-Encrypt/main/run.sh) 
+</code></pre>
+<p>利用docker快速搭建speedtest html5在线测速</p>
+<pre><code>curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker
+docker run -d --restart=always -p 6688:80 ilemonrain/html5-speedtest:alpine
 </code></pre>
 
             </div>
