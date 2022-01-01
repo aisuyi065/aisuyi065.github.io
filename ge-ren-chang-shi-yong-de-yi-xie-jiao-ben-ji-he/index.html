@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641010860823">
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641010931958">
 <link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
 
 
@@ -25,8 +25,10 @@
 
 
     <meta name="description" content="个人常使用的一些脚本集合
-一键回程路由查看脚本（兼容ARM架构）：
-bash &lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/main/auto..." />
+CentOS下利用speedtest进行速度测试
+官方安装方法：
+wget https://bintray.com/ookla/rhel/rpm -O bintray-ookla-rhel.repo
+sudo mv..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -36,7 +38,7 @@ bash &lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/mai
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://blog.52naiba.cn">
-        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641010860823" class="site-logo">
+        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641010931958" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -103,6 +105,26 @@ bash &lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/mai
             
             <div class="post-content" v-pre>
               <h1 id="个人常使用的一些脚本集合"><strong>个人常使用的一些脚本集合</strong></h1>
+<p>CentOS下利用speedtest进行速度测试<br>
+官方安装方法：</p>
+<pre><code>wget https://bintray.com/ookla/rhel/rpm -O bintray-ookla-rhel.repo
+sudo mv bintray-ookla-rhel.repo /etc/yum.repos.d/
+yum install speedtest
+</code></pre>
+<p>博客提取rpm安装办法：</p>
+<pre><code>rpm -ivh https://cikeblog.com/s/speedtest.rpm
+</code></pre>
+<p>使用办法：</p>
+<pre><code>[root@VM-8286 ~]# speedtest
+
+Speedtest by Ookla
+
+Server: China Telecom AnHui 5G - Hefei (id = 17145)
+ISP: China Unicom Liaoning
+Latency: 14.88 ms (0.26 ms jitter)
+Download: 188.30 Mbps (data used: 178.1 MB)
+Upload: 184.98 Mbps (data used: 284.5 MB)
+</code></pre>
 <p>一键回程路由查看脚本（兼容ARM架构）：</p>
 <pre><code>bash &lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/main/autoBestTrace.sh)
 </code></pre>
