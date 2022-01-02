@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Go语言开发的端口转发工具：port-forward | Gridea</title>
+<title>用dd命令方式刷机安装软路由固件，如果使用dd命令方式升级软路由 | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,12 +24,11 @@
 
 
 
-    <meta name="description" content="预览图：
-
-部署方法：
-下载地址：http://git.oschina.net/tavenli/port-forward/releases
-下载编译好的程序包，并解压程序包，
-执行 start.sh （Linux）或 start.bat （..." />
+    <meta name="description" content="准备
+首先把下载 openwrt 固件改名称为 op.img（提前把固件改个名字）
+刷机
+登陆 OPENWRT 网页后台进到系统里面点文件传输再点选择文件找到你改过名的固件
+再点上传【其实就是将 img 文件上传到'/tmp/upload/..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -101,46 +100,37 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Go语言开发的端口转发工具：port-forward</h2>
-            <div class="post-date">2022-01-01</div>
+            <h2 class="post-title">用dd命令方式刷机安装软路由固件，如果使用dd命令方式升级软路由</h2>
+            <div class="post-date">2022-01-02</div>
             
             <div class="post-content" v-pre>
-              <p>预览图：</p>
-<figure data-type="image" tabindex="1"><img src="https://cikeblog.com/wp-content/uploads/2020/02/port-forward1.jpg" alt="img" loading="lazy"></figure>
-<p><strong>部署方法：</strong></p>
-<p>下载地址：<a href="https://cikeblog.com/goto/6inh">http://git.oschina.net/tavenli/port-forward/releases</a></p>
-<pre><code>下载编译好的程序包，并解压程序包，
-执行 start.sh （Linux）或 start.bat （Win）命令
-打开浏览器，进入控制台，打开 http://127.0.0.1:8080/login
-输入用户 admin 密码 123456 进入控制台。
-</code></pre>
-<p>注意：由于需要登录后才能下载，所以博客做了一个Linux版本的分流地址:<br>
-https://cikeblog.com/s/forward.zip</p>
-<p><strong>附上shell代码：</strong></p>
-<pre><code>yum install unzip -y
-wget https://cikeblog.com/s/forward.zip
-unzip forward.zip
-cd forward-server
-chmod +x *
-./start.sh
-</code></pre>
-<p>然后打开浏览器，进入控制台，打开 http://127.0.0.1:8080<br>
-输入用户 admin 密码 123456 即可进入控制台。</p>
-<p>注意：部分nat机器未分配8080端口，所以我们需要进行端口转发，可以使用博客推荐的socat进行转发，也可以直接使用iptables，简单方便。</p>
-<p>例如：将本地8080端口转发到10000端口：</p>
-<pre><code>iptables -t nat -A PREROUTING -p tcp --dport 10000 -j REDIRECT --to-ports 8080
-iptables-save
-</code></pre>
-<p>这样就可以使用 http://127.0.0.1:10000进入控制台。</p>
+              <p>准备<br>
+首先把下载 openwrt 固件改名称为 op.img（提前把固件改个名字）<br>
+刷机<br>
+登陆 OPENWRT 网页后台进到系统里面点文件传输再点选择文件找到你改过名的固件<br>
+再点上传【其实就是将 img 文件上传到'/tmp/upload/'文件夹，你也可以用其他方式上传】<br>
+这里等他上传完了就好了<br>
+SSH 登陆路由，我用的是putty 软件</p>
+<p>输入你登陆路由器用户名和密码<br>
+Openwrt 用户名 root 密码就是你登陆路由器密码【注意密码这里输入是看不到的】然后回<br>
+车<br>
+输入命令 ls /tmp/upload 回车查看你刚刚上传的固件我这里看到的就是 op.img 就表示上传<br>
+成功了<br>
+开始写盘<br>
+输入命令 dd if=/tmp/upload/op.img of=/dev/sda 回车（op.img 为固件的名称）【注意：此命令将会清除原盘所有数据和分区，请注意备份。】<br>
+然后是等待刷写，然后出现下面这两排字母表示刷机成功了<br>
+1087522+0 records in<br>
+1087522+0 records out<br>
+最后输入 reboot 重启路由器就是你全新的固件了和全新写盘一样效果</p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://blog.52naiba.cn/hysteria-yi-kuan-wei-e-lie-wang-luo-jin-xing-you-hua-de-gong-ju-jiao-cheng/">
+                <a href="https://blog.52naiba.cn/go-yu-yan-kai-fa-de-duan-kou-zhuan-fa-gong-ju-port-forward/">
                   <h3 class="post-title">
-                    hysteria一款为恶劣网络进行优化的工具教程
+                    Go语言开发的端口转发工具：port-forward
                   </h3>
                 </a>
               </div>
