@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>openwrt编译教程及踩坑记录（持续更新） | Gridea</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641189121784">
+<link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="编译openwrt建议在非大陆的云服务器上进行（竞价实例真香，比去网吧打游戏还便宜），可以有效提高下载依赖等文件的成功率，如果持续需要编译，可以编译一次全插件全驱动的，然后吧dl文件夹打个包下载到本地完成之后的编译，避免持续缴费
+建议使用U..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://blog.52naiba.cn">
+        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641189121784" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://blog.52naiba.cn/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">openwrt编译教程及踩坑记录（持续更新）</h2>
+            <div class="post-date">2022-01-03</div>
+            
+            <div class="post-content" v-pre>
+              <p>编译openwrt建议在非大陆的云服务器上进行（竞价实例真香，比去网吧打游戏还便宜），可以有效提高下载依赖等文件的成功率，如果持续需要编译，可以编译一次全插件全驱动的，然后吧dl文件夹打个包下载到本地完成之后的编译，避免持续缴费</p>
+<p>建议使用Ubuntu系统，教程多，出了问题搜起来也简单一些，可以用WSL但是不建议在ntfs以及refs文件系统中编译，不建议使用powershell进行编译</p>
+<p>然后安利一下Microsoft Terminal <a href="https://link.zhihu.com/?target=https%3A//github.com/microsoft/terminal">https://github.com/microsoft/terminal</a></p>
+<p>也可以在Windows应用商店下载</p>
+<figure data-type="image" tabindex="1"><img src="https://pic4.zhimg.com/80/v2-95b0bc29e566098b3e5cc664f956d7eb_720w.jpg" alt="img" loading="lazy"></figure>
+<p>One Half Dark这个默认配色深得我心</p>
+<hr>
+<h2 id="正文">正文：</h2>
+<p>不要使用root用户，Ubuntu默认用户是ubuntu可以直接使用，其他系统或登录就是root的情况，考虑新建一个用户再来进行编译</p>
+<p>以下内容可以直接复制到终端中运行，#开头的行会被终端忽略，一起复制也没有问题</p>
+<pre><code class="language-text">#编译前的准备
+
+####更新软件（可选）####
+sudo sh -c &quot;apt update &amp;&amp; apt upgrade -y&quot;
+########################
+
+#安装依赖
+sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
+
+#克隆源码
+git clone https://github.com/coolsnowwolf/lede.git
+
+#进入源码文件夹
+cd lede
+
+######添加自定义源（可选）##########
+cat &gt;&gt; feeds.conf.default &lt;&lt;EOF
+src-git kenzo https://github.com/kenzok8/openwrt-packages
+src-git passwall https://github.com/xiaorouji/openwrt-passwall
+src-git nas https://github.com/linkease/nas-packages.git
+EOF
+####################################
+
+#更新并安装feeds.conf.default中配置的源
+./scripts/feeds update -a &amp;&amp; ./scripts/feeds install -a
+
+######添加 OpenAppFilter 应用过滤插件（可选）####
+git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+#################################################
+
+######更改默认主题（可选）###########
+# 删除自定义源默认的 argon 主题
+rm -rf package/lean/luci-theme-argon
+# 拉取 argon 原作者的源码
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
+# 替换默认主题为 luci-theme-argon
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci/Makefile
+#make menuconfig时记得勾选LuCI ---&gt; Applications ---&gt; luci-app-argon-config
+#####################################
+
+####设置路由器默认的管理地址为.5.1（可选）###
+sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
+#############################################
+
+#根据需要选插件
+make menuconfig
+#记得在Target Images适当扩大系统分区和镜像大小
+#系统分区，驱动或插件多的话需要适当扩大这个分区
+#(128) Kernel partition size (in MB)
+#文件系统分区，基本可以理解为安装后默认的/overlay分区大小
+#(512) Root filesystem partition size (in MB)
+
+#下载编译所需的软件包
+make download -j8 V=s
+
+#看看有没有没下完整的包，这是查看dl目录下有没有1k以下的文件，有的话建议删除重新下，很可能没下完整
+find dl -size -1024c -exec ls -l {} \;
+</code></pre>
+<p>现在区分首次编译和二次编译</p>
+<h3 id="首次编译">首次编译</h3>
+<pre><code class="language-text"># -j1：单线程编译
+make -j1 V=s
+#这时候如果报错bash: po2lmo: command not found，八成是base没有先编译出来
+#可以运行以下命令先编译base，然后重新执行make -j1 V=s
+make package/feeds/luci/luci-base/compile V=s
+#剩下的可能就是插件冲突之类的，没有很好的办法，慢慢排查吧
+</code></pre>
+<h3 id="二次编译">二次编译</h3>
+<pre><code class="language-text">#首先肯定是要进入lede目录: cd lede
+
+#拉取最新代码
+git pull
+#更新下载安装订阅源包含的软件包
+./scripts/feeds update -a &amp;&amp; ./scripts/feeds install -af
+
+#清理旧文件
+#如果只是调整检查和驱动等
+make clean
+#如果需要调整架构，或者之前编译出错
+make dirclean
+#删除旧的配置文件
+rm -rf ./tmp &amp;&amp; rm -rf .config
+#选择插件
+make menuconfig
+#下载包
+make download -j8 V=s
+#优先使用多线程编译，出错则使用单线程并输出详细信息
+make -j$(nproc) ||  make -j1 V=s
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://blog.52naiba.cn/yong-dd-ming-ling-fang-shi-shua-ji-an-zhuang-ruan-lu-you-gu-jian-ru-guo-shi-yong-dd-ming-ling-fang-shi-sheng-ji-ruan-lu-you/">
+                  <h3 class="post-title">
+                    用dd命令方式刷机安装软路由固件，如果使用dd命令方式升级软路由
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'disqus_VB5MsU1LjI',
+      apikey: 'dMP3jABp5m3Xm3lr2VvyrqTP1WliooGhnGwIsjChrhYOsxvevWjh89U1SDXCQyzW',
+    }
+    if ('rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz') {
+      options.api = 'rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz'
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>
