@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>X-ui，支持多协议多用户的 Xray 面板！V2-ui全面停止更新，后续逐渐用 X-ui 面板取代 V2-ui 面板！ | Gridea</title>
+<title>warp解锁奈飞，后台监控自动刷新ip 脚本 | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,9 +24,10 @@
 
 
 
-    <meta name="description" content="1、VPS 一台重置好主流的操作系统 （CentOS 7+、Ubuntu 16+、Debian 8+），作者使用：搬瓦工 VPS
-2、域名一个，做好相关的解析，若是需要套用 CDN，请托管域名到 cloudflare ，不会请点击
-安装 X..." />
+    <meta name="description" content="分享 某位大佬的github脚本
+https://github.com/luoxue-bot/warp_auto_change_ip
+目前的warp ipv4可以解锁奈飞，但用一段时间会失效（大概1天-1周不等）
+而每次执行重启命令rest..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -98,50 +99,56 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">X-ui，支持多协议多用户的 Xray 面板！V2-ui全面停止更新，后续逐渐用 X-ui 面板取代 V2-ui 面板！</h2>
-            <div class="post-date">2021-12-07</div>
+            <h2 class="post-title">warp解锁奈飞，后台监控自动刷新ip 脚本</h2>
+            <div class="post-date">2022-01-04</div>
             
             <div class="post-content" v-pre>
-              <p>1、VPS 一台重置好主流的操作系统 （CentOS 7+、Ubuntu 16+、Debian 8+），作者使用：<a href="https://www.v2rayssr.com/bwg.html">搬瓦工 VPS</a></p>
-<p>2、域名一个，做好相关的解析，若是需要套用 CDN，请托管域名到 cloudflare ，<a href="https://www.v2rayssr.com/yumingreg.html">不会请点击</a></p>
-<h2 id="安装-x-ui-面板">安装 X-ui 面板</h2>
-<h3 id="申请-ssl-证书">申请 SSL 证书</h3>
-<p>下面环境的安装方式，大家根据自己的系统选择命令安装就好了。</p>
-<h4 id="更新及安装组件">更新及安装组件</h4>
-<pre><code>apt update -y          # Debian/Ubuntu 命令apt install -y curl    #Debian/Ubuntu 命令apt install -y socat    #Debian/Ubuntu 命令
-yum update -y          #CentOS 命令yum install -y curl    #CentOS 命令yum install -y socat    #CentOS 命令
-</code></pre>
-<h4 id="安装-acme-脚本">安装 Acme 脚本</h4>
-<pre><code>curl https://get.acme.sh | sh
-</code></pre>
-<h4 id="80-端口空闲的证书申请方式">80 端口空闲的证书申请方式</h4>
-<p>自行更换代码中的域名、邮箱为你解析的域名及邮箱</p>
-<pre><code>~/.acme.sh/acme.sh --register-account -m xxxx@xxxx.com~/.acme.sh/acme.sh  --issue -d mydomain.com   --standalone
-</code></pre>
-<h4 id="安装证书到指定文件夹">安装证书到指定文件夹</h4>
-<p>自行更换代码中的域名为你解析的域名</p>
-<pre><code>~/.acme.sh/acme.sh --installcert -d mydomain.com --key-file /root/private.key --fullchain-file /root/cert.crt
-</code></pre>
-<h3 id="安装-升级-x-ui-面板">安装 &amp; 升级 X-ui 面板</h3>
-<h4 id="安装及升级的一键代码">安装及升级的一键代码</h4>
-<pre><code>bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
-</code></pre>
-<h4 id="节点配置及功能讲解">节点配置及功能讲解</h4>
-<figure data-type="image" tabindex="1"><img src="https://www.v2rayssr.com/wp-content/uploads/2021/07/2.png" alt="img" loading="lazy"></figure>
-<p>节点配置及龙能方面，请看 <a href="https://www.v2rayssr.com/go?url=https://youtu.be/6ztPETEiY8M">视频教程</a></p>
-<h4 id="v2-ui-x-ui数据迁移">V2-ui - X-ui数据迁移</h4>
-<p>安装完 X-ui 以后，输入以下代码，即可完成用户数据的迁移（不包含管理员账号及密码，仅针对已部署的节点部分）</p>
-<pre><code>x-ui v2-ui
-</code></pre>
+              <p>分享 某位大佬的github脚本<br>
+https://github.com/luoxue-bot/warp_auto_change_ip</p>
+<p>目前的warp ipv4可以解锁奈飞，但用一段时间会失效（大概1天-1周不等）<br>
+而每次执行重启命令restart wg-quick@wgcf  就会刷新它的ip<br>
+这个脚本就是每隔一段时间（可设置），检测一下解锁nf是否有效，如果失效了，不断重启warp直到刷出了可以解锁奈飞的ip</p>
+<p>（此脚本使用warp的ipv4，但不影响ssh的正常登录）</p>
+<p>注意：脚本需要挂在后台，可以使用screen<br>
+进入screen后运行脚本</p>
+<p>设置：每隔多长时间检测一下ip的解锁是否有效<br>
+脚本36行        echo -e &quot;Region: ${region} Done, monitoring...&quot;<br>
+脚本37行        sleep 6<br>
+第37行的sleep 6可以改成任意时间，单位是秒，一般来说，1分钟即sleep 60就行，ip基本都可以存活一整天以上，不需要那么频繁的检测</p>
+<p>（先进入screen）<br>
+wget https://github.com/luoxue-bot/warp_auto_change_ip/raw/main/warp_change_ip.sh &amp;&amp; chmod +x warp_change_ip.sh &amp;&amp; ./warp_change_ip.sh</p>
+<p>如果之前没用安装过warp，首次运行脚本，根据提示&quot;Is warp installed? [y/n] &quot; 选择n，它会安装warp<br>
+然后再次运行脚本，选y</p>
+<p>接下来，&quot;Input the region you want(e.g. HK,SG):&quot;<br>
+这个地方输入vps所在的国家名字，例如HK US SG UK<br>
+注意：一定要大写字母，小写不行<br>
+美国的小鸡不可能刷出新加坡的ip，所以填小鸡的真实位置即可</p>
+<p>当显示“Region: XX Done, monitoring...&quot;的时候，就说明ok了<br>
+从screen退出，运行流媒体检测脚本<br>
+bash &lt;(curl -L -s check.unlock.media)<br>
+会看到“您的网络为: Cloudflare Warp”，ipv4可以解锁奈飞</p>
+<p>和 &quot;题字&quot;(v2，trojan)  的使用相关：<br>
+先搭好 题字，确认是通的能上网。再运行这个，不需要额外的设置，直接就可以上网看奈飞了</p>
+<p>开启warp后，ipv4的流量会被接管，这时无法申请域名的证书。停止，申请证书，再打开 即可</p>
+<p>停止warp<br>
+systemctl stop wg-quick@wgcf<br>
+启动<br>
+systemctl start wg-quick@wgcf<br>
+重启<br>
+systemctl restart wg-quick@wgcf</p>
+<p>--<br>
+解锁的效果图，新加坡，美国</p>
+<figure data-type="image" tabindex="1"><img src="https://i.w3tt.com/2021/11/28/BnyvU.png" alt="img" loading="lazy"></figure>
+<p><img src="https://i.w3tt.com/2021/11/28/BngcY.png" alt="img" loading="lazy"><img src="https://cdn.jsdelivr.net/gh/master-of-forums/master-of-forums/public/images/patch.gif" alt="img" loading="lazy"></p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://blog.52naiba.cn/docker-yi-jian-bu-shu-bo-ke/">
+                <a href="https://blog.52naiba.cn/openwrt-bian-yi-jiao-cheng-ji-cai-keng-ji-lu-chi-xu-geng-xin/">
                   <h3 class="post-title">
-                    Docker一键部署博客
+                    openwrt编译教程及踩坑记录（持续更新）
                   </h3>
                 </a>
               </div>
