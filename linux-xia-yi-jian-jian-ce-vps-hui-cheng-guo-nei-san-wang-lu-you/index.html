@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本 | Gridea</title>
+<title># Linux下，一键检测VPS回程国内三网路由 | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,8 +24,9 @@
 
 
 
-    <meta name="description" content="最近一直在慢慢的学习shell,于是打算用实战来强化学到的知识点,所以花了半天时间写了一个交互式的脚本,用于自动申请Let's Encrypt泛域名证书使用.欢迎大家使用.
-本文为 Stille 原创文章.经实践,测试,整理发布.如需转载请..." />
+    <meta name="description" content="Linux下，一键检测VPS回程国内三网路由
+检测VPS回程国内三网路由，用法：
+curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|ba..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -97,48 +98,44 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">分享基于 docker 容器化申请 Let&#39;s Encrypt 泛域名证书的一键脚本</h2>
-            <div class="post-date">2021-12-30</div>
+            <h2 class="post-title"># Linux下，一键检测VPS回程国内三网路由</h2>
+            <div class="post-date">2022-01-05</div>
             
             <div class="post-content" v-pre>
-              <p>最近一直在慢慢的学习<code>shell</code>,于是打算用实战来强化学到的知识点,所以花了半天时间写了一个交互式的脚本,用于自动申请<code>Let's Encrypt</code>泛域名证书使用.欢迎大家使用.</p>
-<p>本文为<a href="https://www.ioiox.com/stille.html"> Stille </a>原创文章.经实践,测试,整理发布.如需转载请联系作者获得授权,并注明转载地址.</p>
-<hr>
-<h3 id="获取域名服务商-api">获取域名服务商 API</h3>
-<p>申请域名最重要和最麻烦的地方就是验证域名所有权,常规情况下使用域名服务商的 API 来自动创建 txt 验证记录最为方便.</p>
-<p>参考以下链接获取国内用户常用的<code>腾讯云</code>/<code>阿里云</code>/<code>Cloudflare</code>的 API :</p>
-<p>https://www.ioiox.com/archives/87.html</p>
-<p>参考官方文档可以获取多达<code>100</code>多个全球各种域名服务商的 API :</p>
-<p>https://github.com/acmesh-official/acme.sh/wiki/dnsapi</p>
-<h3 id="交互式脚本">交互式脚本</h3>
-<p>交互式脚本仅支持 <strong>腾讯云 / 阿里云 / Cloudflare</strong></p>
-<p>执行以下命令直接使用,根据提示输入相关 API 信息即可申请.</p>
-<pre><code>curl -O https://gist.githubusercontent.com/stilleshan/02d8652ce320941e497d378a04ecf016/raw/ffb5c536735a2d90390c98d7bbbe0ff63a74ba52/acme_docker.sh &amp;&amp; chmod +x acme_docker.sh &amp;&amp; ./acme_docker.sh
-</code></pre>
-<h3 id="非交互式固定域名证书申请">非交互式固定域名证书申请</h3>
-<p>通过简单修改脚本,可以让本脚本作为固定证书申请使用.无交互式选项直接根据设置的域名和 API 信息进行申请.建议可以设置<code>crontab</code>定时每月执行.</p>
-<p>非交互式脚本可以支持 <strong>acme.sh</strong> 官方支持的 <strong>100</strong> 多个全球各种域名服务商的 API</p>
-<p>编辑脚本修改 16 - 20 行.以下为示例:</p>
-<pre><code># 交互式脚本请保持以下 DOMAIN= 为空不要修改.如无需交互式,固定申请单一证书,请参考文档自行修改以下变量.
-DOMAIN=ioiox.com
-DNSAPI='dns_cf'
-API_ID='export CF_Token=&quot;xxxxxxxxxxxxx&quot;'
-API_KEY='export CF_Account_ID=&quot;xxxxxxxxxxxxx&quot;'
-# API_ZONE='export CF_Zone_ID=&quot;xxxxxxxxxxxxx&quot;'
-# 交互式脚本请保持以下 DOMAIN= 为空不要修改.如无需交互式,固定申请单一证书,请参考文档自行修改以上变量.
-</code></pre>
-<hr>
-<p>本脚本长期维护,后续会慢慢更新以支持更多服务商.可以访问以下<code>gist</code>地址<code>star</code>收藏:<br>
-https://gist.github.com/stilleshan/02d8652ce320941e497d378a04ecf016</p>
+              <h1 id="linux下一键检测vps回程国内三网路由">Linux下，一键检测VPS回程国内三网路由</h1>
+<p>检测VPS回程国内三网路由，用法：</p>
+<p>curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bash</p>
+<p>支持的线路为：电信CN2 GT，电信CN2 GIA，联通169，电信163，联通9929，联通4837，移动CMI</p>
+<p>电信目标IP：</p>
+<p>#深圳电信： ./besttrace 58.60.188.222</p>
+<p>mtr -c 100 --report 58.60.188.222</p>
+<p>#上海电信： ./besttrace 202.96.209.133</p>
+<p>mtr -c 100 --report 202.96.209.133</p>
+<p>#北京电信： ./besttrace 219.141.136.12</p>
+<p>mtr -c 100 --report 219.141.136.12</p>
+<p>联通目标IP：</p>
+<p>#深圳联通： ./besttrace 210.21.196.6</p>
+<p>mtr -c 100 --report 210.21.196.6</p>
+<p>#上海联通： ./besttrace 210.22.97.1</p>
+<p>mtr -c 100 --report 210.22.97.1</p>
+<p>#北京联通： ./besttrace 202.106.50.1</p>
+<p>mtr -c 100 --report 202.106.50.1</p>
+<p>移动目标IP：</p>
+<p>#深圳移动： ./besttrace 120.196.165.24</p>
+<p>mtr -c 100 --report 120.196.165.24</p>
+<p>#上海移动： ./besttrace 211.136.112.200</p>
+<p>mtr -c 100 --report 211.136.112.200</p>
+<p>#北京移动： ./besttrace 221.179.155.161</p>
+<p>mtr -c 100 --report 221.179.155.161</p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://blog.52naiba.cn/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/">
+                <a href="https://blog.52naiba.cn/warp-jie-suo-nai-fei-hou-tai-jian-kong-zi-dong-shua-xin-ip-jiao-ben/">
                   <h3 class="post-title">
-                    Cloudflare WARP 一键配置脚本 使用教程
+                    warp解锁奈飞，后台监控自动刷新ip 脚本
                   </h3>
                 </a>
               </div>
