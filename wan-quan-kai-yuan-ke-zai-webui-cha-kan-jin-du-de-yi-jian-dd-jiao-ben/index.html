@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>[完全开源] 可在WebUI查看进度的一键DD脚本* | Gridea</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641441189936">
+<link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="[完全开源] 可在WebUI查看进度的一键DD脚本
+脚本介绍
+该脚本可在DD系统时为您提供一个WebUI以帮助您了解到目前的DD状态.
+基于现有非常成熟的一键重装脚本修改, 只修改脚本内DD相关逻辑, 无任何学习成本.
+脚本执行环境暂只支持..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://blog.52naiba.cn">
+        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641441189936" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://blog.52naiba.cn/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">[完全开源] 可在WebUI查看进度的一键DD脚本*</h2>
+            <div class="post-date">2022-01-06</div>
+            
+            <div class="post-content" v-pre>
+              <p><strong>[完全开源] 可在WebUI查看进度的一键DD脚本</strong></p>
+<p>脚本介绍</p>
+<p>该脚本可在DD系统时为您提供一个WebUI以帮助您了解到目前的DD状态.</p>
+<p>基于现有非常成熟的一键重装脚本修改, 只修改脚本内DD相关逻辑, 无任何学习成本.</p>
+<p>脚本执行环境暂只支持linux amd64, 可DD Windows等系统(跟原来脚本一样).</p>
+<p>WebUI是在网上找的一个跳转页面模板魔改的</p>
+<p>特别感谢</p>
+<p>Shell原作者: MoeClub</p>
+<p>Shell二次修改: cxthhhhh</p>
+<p>使用方法</p>
+<p>基础用法同原始脚本, 高级用法可自行查看shell文件(部分功能可能未经过全面测试, 需要您自行承担后果).</p>
+<p>脚本最后会显示您的WebUI地址, 此地址不会再次显示在任何地方, DD结束后WebUI也将会自动消失.</p>
+<p>Shell地址: https://github.com/flyqie/dd-shell</p>
+<p>Go程序地址: https://github.com/flyqie/dd-web</p>
+<p>脚本直链地址: https://raw.githubusercontent.com/flyqie/dd-shell/master/Core_Install.sh</p>
+<p>演示图</p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2021/11/21/AxLoMDgaOXJEbm6.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2021/11/21/XPCsS9D4q3ATmrn.png" alt="img" loading="lazy"></figure>
+<p>风险说明</p>
+<p>由于该脚本使用环境复杂, 故无法完全测试, 可能会导致您的服务器无**常运行,数据丢失.</p>
+<p>部分VPS商家明令禁止DD系统, 可能会导致您的服务器被终止.</p>
+<p>DD时会占用较高资源(不是说脚本占资源哈, 是指DD系统这个行为本身), 可能导致您的服务器被暂停或终止.</p>
+<p>作者无法知晓及监控用户行为, 也不承担对该脚本的任何责任(包括但不限于法律责任、数据损失责任)</p>
+<p>技术相关说明</p>
+<p>该脚本主要修改了原始的wget + gzip + dd步骤, 将其全部使用go实现, 同时加入了WebUI, WebUI与服务器之间通过ws进行沟通.</p>
+<p>已测试环境</p>
+<p>Proxmoxve 6 KVM</p>
+<p>Vultr KVM</p>
+<p>(其他没测试, 欢迎各位大佬提交测试结果, 目前好像没发现因为该脚本导致的DD失败的情况)</p>
+<p>注意事项</p>
+<p>脚本自动重启后能Ping通但无法访问WebUI是正常的, 会先配置临时运行环境(这部分没改动), 等临时运行环境配置完开始DD后WebUI才可访问.</p>
+<p>默认情况下, 如果DD出现错误WebUI会一直可用并展示错误详情, 如果DD成功了会自动重启, 此配置可通过脚本参数修改.</p>
+<p>脚本意义</p>
+<p>个人认为这个脚本没什么特别大的意义, 无非也就是让DD过程变得更加的清晰, 能够比较准确的判断是哪个地方出了问题, 并没有考虑到在重启后DD没开始之前出现的问题该如何排查.</p>
+<p>顺便说下之前被封的某人, 他确实有技术, 他的脚本也不只是让DD脚本有了进度条, 但是这人情商好像不太行, 做事欠考虑.</p>
+<p>另外, 之前5刀带IPMI的杜甫真的香, 可惜俺没有, 有IKVM真的省了很多事啊<img src="https://hostloc.com/static/image/smiley/yct/016.gif" alt="img" loading="lazy"> .</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://blog.52naiba.cn/linux-xia-yi-jian-jian-ce-vps-hui-cheng-guo-nei-san-wang-lu-you/">
+                  <h3 class="post-title">
+                    # Linux下，一键检测VPS回程国内三网路由
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'disqus_VB5MsU1LjI',
+      apikey: 'dMP3jABp5m3Xm3lr2VvyrqTP1WliooGhnGwIsjChrhYOsxvevWjh89U1SDXCQyzW',
+    }
+    if ('rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz') {
+      options.api = 'rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz'
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>
