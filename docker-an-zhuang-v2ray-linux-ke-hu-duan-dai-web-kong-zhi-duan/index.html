@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>X-ui，支持多协议多用户的 Xray 面板！V2-ui全面停止更新，后续逐渐用 X-ui 面板取代 V2-ui 面板！ | Gridea</title>
+<title>Docker安装V2ray linux客户端带web控制端 | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,9 +24,12 @@
 
 
 
-    <meta name="description" content="1、VPS 一台重置好主流的操作系统 （CentOS 7+、Ubuntu 16+、Debian 8+），作者使用：搬瓦工 VPS
-2、域名一个，做好相关的解析，若是需要套用 CDN，请托管域名到 cloudflare ，不会请点击
-安装 X..." />
+    <meta name="description" content="v2ray用户安装文档
+https://v2raya.org/docs/prologue/installation/docker/
+Docker
+Docker 镜像内集成了 V2Ray 内核，因此内核无需额外被安装。
+Docker 方式
+使..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -98,50 +101,50 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">X-ui，支持多协议多用户的 Xray 面板！V2-ui全面停止更新，后续逐渐用 X-ui 面板取代 V2-ui 面板！</h2>
-            <div class="post-date">2021-12-07</div>
+            <h2 class="post-title">Docker安装V2ray linux客户端带web控制端</h2>
+            <div class="post-date">2022-01-09</div>
             
             <div class="post-content" v-pre>
-              <p>1、VPS 一台重置好主流的操作系统 （CentOS 7+、Ubuntu 16+、Debian 8+），作者使用：<a href="https://www.v2rayssr.com/bwg.html">搬瓦工 VPS</a></p>
-<p>2、域名一个，做好相关的解析，若是需要套用 CDN，请托管域名到 cloudflare ，<a href="https://www.v2rayssr.com/yumingreg.html">不会请点击</a></p>
-<h2 id="安装-x-ui-面板">安装 X-ui 面板</h2>
-<h3 id="申请-ssl-证书">申请 SSL 证书</h3>
-<p>下面环境的安装方式，大家根据自己的系统选择命令安装就好了。</p>
-<h4 id="更新及安装组件">更新及安装组件</h4>
-<pre><code>apt update -y          # Debian/Ubuntu 命令apt install -y curl    #Debian/Ubuntu 命令apt install -y socat    #Debian/Ubuntu 命令
-yum update -y          #CentOS 命令yum install -y curl    #CentOS 命令yum install -y socat    #CentOS 命令
+              <p>v2ray用户安装文档</p>
+<p>https://v2raya.org/docs/prologue/installation/docker/</p>
+<h1 id="docker">Docker</h1>
+<p>Docker 镜像内集成了 V2Ray 内核，因此内核无需额外被安装。</p>
+<h3 id="docker-方式">Docker 方式</h3>
+<p>使用 docker 命令部署。</p>
+<pre><code class="language-bash"># run v2raya
+docker run -d \
+  --restart=always \
+  --privileged \
+  --network=host \
+  --name v2raya \
+  -e V2RAYA_ADDRESS=0.0.0.0:2017 \
+      -v /lib/modules:/lib/modules \
+  -v /etc/resolv.conf:/etc/resolv.conf \
+  -v /etc/v2raya:/etc/v2raya \
+  mzz2017/v2raya
 </code></pre>
-<h4 id="安装-acme-脚本">安装 Acme 脚本</h4>
-<pre><code>curl https://get.acme.sh | sh
+<hr>
+<p>如果你使用 MacOSX 或其他不支持 host 模式的环境，在该情况下<strong>无法使用全局透明代理</strong>，或者你不希望使用全局透明代理，docker 命令会略有不同：</p>
+<pre><code class="language-bash"># run v2raya
+docker run -d \
+  -p 2017:2017 \
+  -p 20170-20172:20170-20172 \
+  --restart=always \
+  --name v2raya \
+  -v /etc/v2raya:/etc/v2raya \
+  mzz2017/v2raya
 </code></pre>
-<h4 id="80-端口空闲的证书申请方式">80 端口空闲的证书申请方式</h4>
-<p>自行更换代码中的域名、邮箱为你解析的域名及邮箱</p>
-<pre><code>~/.acme.sh/acme.sh --register-account -m xxxx@xxxx.com~/.acme.sh/acme.sh  --issue -d mydomain.com   --standalone
-</code></pre>
-<h4 id="安装证书到指定文件夹">安装证书到指定文件夹</h4>
-<p>自行更换代码中的域名为你解析的域名</p>
-<pre><code>~/.acme.sh/acme.sh --installcert -d mydomain.com --key-file /root/private.key --fullchain-file /root/cert.crt
-</code></pre>
-<h3 id="安装-升级-x-ui-面板">安装 &amp; 升级 X-ui 面板</h3>
-<h4 id="安装及升级的一键代码">安装及升级的一键代码</h4>
-<pre><code>bash &lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
-</code></pre>
-<h4 id="节点配置及功能讲解">节点配置及功能讲解</h4>
-<figure data-type="image" tabindex="1"><img src="https://www.v2rayssr.com/wp-content/uploads/2021/07/2.png" alt="img" loading="lazy"></figure>
-<p>节点配置及龙能方面，请看 <a href="https://www.v2rayssr.com/go?url=https://youtu.be/6ztPETEiY8M">视频教程</a></p>
-<h4 id="v2-ui-x-ui数据迁移">V2-ui - X-ui数据迁移</h4>
-<p>安装完 X-ui 以后，输入以下代码，即可完成用户数据的迁移（不包含管理员账号及密码，仅针对已部署的节点部分）</p>
-<pre><code>x-ui v2-ui
-</code></pre>
+<p>如果你通过 2017 端口 如 <a href="http://localhost:2017/">http://localhost:2017</a> 无法访问 UI 界面，请检查你的服务是否已经启动。<a href="https://github.com/v2rayA/v2rayA/issues/237">相关问题</a></p>
+<p>接下来进入 UI，本节将介绍 v2rayA 的基本操作流程。</p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://blog.52naiba.cn/docker-yi-jian-bu-shu-bo-ke/">
+                <a href="https://blog.52naiba.cn/wan-quan-kai-yuan-ke-zai-webui-cha-kan-jin-du-de-yi-jian-dd-jiao-ben/">
                   <h3 class="post-title">
-                    Docker一键部署博客
+                    [完全开源] 可在WebUI查看进度的一键DD脚本*
                   </h3>
                 </a>
               </div>
