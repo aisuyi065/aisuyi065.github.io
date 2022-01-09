@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641728050012">
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641728111861">
 <link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
 
 
@@ -26,10 +26,10 @@
 
     <meta name="description" content="v2ray用户安装文档
 https://v2raya.org/docs/prologue/installation/docker/
-Docker
-Docker 镜像内集成了 V2Ray 内核，因此内核无需额外被安装。
-Docker 方式
-使..." />
+Docker安装
+使用官方安装脚本自动安装
+安装命令如下：
+curl -fsSL https://get.d..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -39,7 +39,7 @@ Docker 方式
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://blog.52naiba.cn">
-        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641728050012" class="site-logo">
+        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641728111861" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -107,9 +107,16 @@ Docker 方式
             <div class="post-content" v-pre>
               <p>v2ray用户安装文档</p>
 <p>https://v2raya.org/docs/prologue/installation/docker/</p>
-<h1 id="docker">Docker</h1>
+<h1 id="docker安装">Docker安装</h1>
+<h2 id="使用官方安装脚本自动安装">使用官方安装脚本自动安装</h2>
+<p>安装命令如下：</p>
+<pre><code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+</code></pre>
+<p>也可以使用国内 daocloud 一键安装命令：</p>
+<pre><code>curl -sSL https://get.daocloud.io/docker | sh
+</code></pre>
 <p>Docker 镜像内集成了 V2Ray 内核，因此内核无需额外被安装。</p>
-<h3 id="docker-方式">Docker 方式</h3>
+<h3 id="docker-部署">Docker 部署</h3>
 <p>使用 docker 命令部署。</p>
 <pre><code class="language-bash"># run v2raya
 docker run -d \
