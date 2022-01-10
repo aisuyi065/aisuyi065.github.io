@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Docker安装MyNodeQuery探针 | Gridea</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641815436490">
+<link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+MyNodeQuery
+简介
+MyNodeQuery可以说是代替NodeQuery的个人版，一款简洁好用的探针，没有多余的元素，延续NodeQuery的生命。
+演示站点：https://status.idcoffer.com
+使用
+依赖
+..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://blog.52naiba.cn">
+        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641815436490" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://blog.52naiba.cn/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Docker安装MyNodeQuery探针</h2>
+            <div class="post-date">2022-01-10</div>
+            
+            <div class="post-content" v-pre>
+              <figure data-type="image" tabindex="1"><img src="https://www.idcoffer.com/wp-content/uploads/2022/01/20220106-001.png" alt="img" loading="lazy"></figure>
+<h1 id="mynodequery">MyNodeQuery</h1>
+<h2 id="简介">简介</h2>
+<p>MyNodeQuery可以说是代替NodeQuery的个人版，一款简洁好用的探针，没有多余的元素，延续NodeQuery的生命。</p>
+<p>演示站点：<a href="https://status.idcoffer.com/">https://status.idcoffer.com</a></p>
+<h2 id="使用">使用</h2>
+<h3 id="依赖">依赖</h3>
+<ul>
+<li>MySql 5.7 或更高版本；</li>
+<li>Redis （可选）</li>
+<li>Docker</li>
+</ul>
+<h3 id="安装">安装</h3>
+<p>目前仅提供docker版本</p>
+<pre><code class="language-console">docker run -d --name=mynodequery -p 5000:5000 jaydenlee2019/mynodequery:latest
+</code></pre>
+<h4 id="如何解决每次更新都要从新install的问题">如何解决每次更新都要从新Install的问题？</h4>
+<ol>
+<li>
+<p>创建一个文本</p>
+<pre><code>/etc/mynodequery/appsettings.json
+</code></pre>
+<p>，内容为：</p>
+<pre><code class="language-json">{
+ &quot;Logging&quot;: {
+     &quot;LogLevel&quot;: {
+         &quot;Default&quot;: &quot;Information&quot;,
+         &quot;Microsoft&quot;: &quot;Warning&quot;,
+         &quot;Microsoft.Hosting.Lifetime&quot;: &quot;Information&quot;
+     }
+ },
+ &quot;Redis&quot;: {
+     &quot;Configuration&quot;: &quot;&quot;
+ },
+ &quot;MySql&quot;: {
+     &quot;ConnectionString&quot;: &quot;&quot;
+ },
+ &quot;AllowedHosts&quot;: &quot;*&quot;,
+ &quot;Installed&quot;: &quot;false&quot;,
+ &quot;ReadNodeIpHeaderKey&quot;: &quot;X-Real-IP&quot;
+}
+</code></pre>
+</li>
+<li>
+<p>在docker run 语句中加入 <code>-v /etc/mynodequery/appsettings.json:/app/appsettings.json</code> 即可解决。</p>
+</li>
+</ol>
+<h2 id="更新">更新</h2>
+<h3 id="1003">1.0.0.3</h3>
+<ol>
+<li>修复已知bugs</li>
+<li>开放Telegram通知功能</li>
+<li>增加自定义获取节点IP请求头设置（在设置中可以找到，并添加 /Setting/MyHeaders 页辅助设置）</li>
+<li>仪表盘自动刷新修改为5秒</li>
+</ol>
+<h3 id="1002">1.0.0.2</h3>
+<ol>
+<li>增加基础SEO支持;</li>
+<li><s>增加Telegram通知;</s>（目前内测中）</li>
+<li>修复已知bugs</li>
+</ol>
+<h3 id="1001">1.0.0.1</h3>
+<ol>
+<li>修复上行下行显示错误问题；</li>
+<li>修复站点设置缓存导致无法添加节点问题。</li>
+</ol>
+<h2 id="其他">其他</h2>
+<h3 id="更新注意事项">更新注意事项</h3>
+<p>如果是从1.0.0.1或更早版本升级，请在MySql客户端执行以下SQL语句：</p>
+<pre><code class="language-sql">alter table md_nodes modify  column DeleteTime datetime;
+alter table md_nodes modify  column LastUptime datetime;
+alter table md_nodes modify  column AgentUptime datetime;
+alter table md_nodes add NodeStatus varchar(10) default 'Unknown';
+update md_nodes set NodeStatus='Online' where AgentUptime is not null and date_add(AgentUptime, interval 70 second) &gt;= Now();
+</code></pre>
+<h3 id="资源消耗">资源消耗</h3>
+<p>CPU是AMD EPYC 7402P</p>
+<figure data-type="image" tabindex="2"><img src="https://www.idcoffer.com/wp-content/uploads/2022/01/20210106-002.jpg" alt="img" loading="lazy"></figure>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://blog.52naiba.cn/docker-an-zhuang-v2ray-linux-ke-hu-duan-dai-web-kong-zhi-duan/">
+                  <h3 class="post-title">
+                    Docker安装V2ray linux客户端带web控制端
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'disqus_VB5MsU1LjI',
+      apikey: 'dMP3jABp5m3Xm3lr2VvyrqTP1WliooGhnGwIsjChrhYOsxvevWjh89U1SDXCQyzW',
+    }
+    if ('rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz') {
+      options.api = 'rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz'
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>
