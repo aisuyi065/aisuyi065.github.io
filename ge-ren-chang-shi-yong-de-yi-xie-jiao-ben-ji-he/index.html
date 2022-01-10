@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641815541734">
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641819527990">
 <link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
 
 
@@ -38,7 +38,7 @@ sudo mv..." />
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://blog.52naiba.cn">
-        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641815541734" class="site-logo">
+        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641819527990" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -176,6 +176,182 @@ systemctl start docker
 systemctl enable docker
 docker run -d --restart=always -p 6688:80 ilemonrain/html5-speedtest:alpine
 </code></pre>
+<p>综合工具箱（强烈推荐，集成了很多脚本）<br>
+wget -O box.sh https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh &amp;&amp; chmod +x box.sh &amp;&amp; clear &amp;&amp; ./box.sh<br>
+DD相关<br>
+1、MoeClub脚本<br>
+重点推荐：</p>
+<p>时间：22/11/2021 15:21 萌咖更新脚本：</p>
+<p>1.新增对 Oracle AMD，Oracle ARM全面支持. 可支持从 Ubuntu, Oracle Linux 等系统网络重装.<br>
+2.更新 dd 镜像的基础系统版本.<br>
+3.移除对外部 wget 的依赖.<br>
+4.新增 -port 参数, 可更改默认SSH端口.<br>
+5.更新 内置的网络参数计算 逻辑.<br>
+6.更新 grub 配置文件定位逻辑, 可支持任意引导grub的系统.</p>
+<p>以下系统已通过测试(其他自测):<br>
+Debian: 9, 10, 11;<br>
+Ubuntu: 18.04, 20.04;<br>
+CentOS: 6.10;<br>
+以下平台已通过测试(其他自测):<br>
+Oracle、Do、Azure</p>
+<p>bash &lt;(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 10 -v 64 -p &quot;自定义root密码&quot; -port &quot;自定义ssh端口&quot;<br>
+-d 10 -v 64<br>
+-d 9 -v 64<br>
+-u 20.04 -v 64<br>
+-u 18.04 -v 64</p>
+<p>开机改密码脚本：</p>
+<p>开机改密：</p>
+<p>#!/bin/bash<br>
+echo root:Vicer |sudo chpasswd root<br>
+sudo sed -i 's/^#?PermitRootLogin.<em>/PermitRootLogin yes/g' /etc/ssh/sshd_config;<br>
+sudo sed -i 's/^#?PasswordAuthentication.</em>/PasswordAuthentication yes/g' /etc/ssh/sshd_config;<br>
+sudo reboot<br>
+2、另一位大佬的脚本<br>
+wget --no-check-certificate -O AutoReinstall.sh https://git.io/AutoReinstall.sh &amp;&amp; bash AutoReinstall.sh<br>
+CentOS默认密码Pwd@CentOS 其它系统Pwd@Linux</p>
+<p>OpenVZ / LXC 架构系统不适用</p>
+<p>来源：https://blog.hicasper.com/post/135.html 参考：https://www.ydyno.com/archives/1245.html 感谢大佬的付出！</p>
+<p>bash &lt;(wget --no-check-certificate -qO- 'https://file.geekn.net/CNODnjau/InstallNET.sh') -d 11 -v 64 -a -firmware<br>
+-firmware 额外的驱动支持<br>
+-d 后面是系统版本号<br>
+-v 后面写64位 32位<br>
+-a （不清楚这个干啥的但是每个脚本都带）<br>
+--mirror 后面是镜像源地址</p>
+<p>-p 后面写自定义密码</p>
+<p>镜像站地址<br>
+官方给出的地址列表：https://www.debian.org/mirror/list</p>
+<p>一些国内的<br>
+ftp.cn.debian.org<br>
+mirror.bjtu.edu.cn<br>
+mirror.lzu.edu.cn<br>
+mirror.nju.edu.cn<br>
+mirrors.163.com<br>
+mirrors.bfsu.edu.cn<br>
+mirrors.hit.edu.cn<br>
+mirrors.huaweicloud.com<br>
+mirror.sjtu.edu.cn<br>
+mirrors.tuna.tsinghua.edu.cn<br>
+mirrors.ustc.edu.cn</p>
+<p>使用方法：（大致都是一样的）</p>
+<p>清华源<br>
+--mirror 'https://mirrors.ustc.edu.cn/debian/'</p>
+<p>腾讯源<br>
+--mirror 'https://mirrors.aliyun.com/debian/'</p>
+<p>阿里源<br>
+--mirror 'https://mirrors.aliyun.com/debian/'</p>
+<p>华为源<br>
+--mirror 'https://mirrors.huaweicloud.com/debian/'<br>
+测试相关<br>
+机器测试<br>
+最全测速脚本<br>
+curl -fsL https://ilemonra.in/LemonBenchIntl | bash -s fast<br>
+superbench<br>
+wget -qO- git.io/superbench.sh | bash<br>
+Bench.sh<br>
+wget -qO- bench.sh | bash<br>
+速度测试<br>
+直接显示回程线路<br>
+curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bash<br>
+wget -q route.f2k.pub -O route &amp;&amp; bash route</p>
+<h1 id="第一个">第一个</h1>
+<p>wget https://raw.githubusercontent.com/nanqinlang-script/testrace/master/testrace.sh<br>
+bash testrace.sh</p>
+<h1 id="第二个">第二个</h1>
+<p>wget -qO- git.io/besttrace | bash<br>
+四网测速<br>
+wget -O jcnf.sh https://raw.githubusercontent.com/Netflixxp/jcnfbesttrace/main/jcnf.sh</p>
+<p>bash jcnf.sh<br>
+三网测速<br>
+bash &lt;(curl -Lso- http://yun.789888.xyz/speedtest.sh)<br>
+测试25端口是否开放<br>
+telnet smtp.aol.com 25<br>
+测试IPv4优先还是IPv6优先<br>
+curl ip.p3terx.com<br>
+流媒体测试<br>
+全媒体测试<br>
+bash &lt;(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)<br>
+奈飞测试<br>
+wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.5/nf_2.5_linux_amd64 &amp;&amp; chmod +x nf &amp;&amp; clear &amp;&amp; ./nf<br>
+#第一个<br>
+bash &lt;(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)</p>
+<h1 id="第二个-2">第二个</h1>
+<p>bash &lt;(curl -sSL &quot;https://github.com/CoiaPrant/MediaUnlock_Test/raw/main/check.sh&quot;)<br>
+WARP<br>
+wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh &amp;&amp; chmod +x multi.sh &amp;&amp; ./multi.sh<br>
+之后进入脚本快捷方式为 bash multi.sh</p>
+<p>服务器时间<br>
+CentOS 同步时间<br>
+yum -y install ntpdate<br>
+timedatectl set-timezone Asia/Shanghai<br>
+ntpdate ntp1.aliyun.com<br>
+BBR<br>
+CentOS 7 BBR<br>
+wget -N --no-check-certificate &quot;https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh<br>
+一键开启BBR<br>
+注意：需要Linux Kernel 内核升级到 4.9 及以上版本可以实现 BBR 加速</p>
+<p>uname -srm<br>
+输出结果：</p>
+<p>Linux 3.10.0-957.12.2.el7.x86_64 x86_64<br>
+3 - 内核版本.<br>
+10 - 主修订版本.<br>
+0-957 - 次要修订版本.<br>
+12 - 补丁版本.<br>
+一般来说，Ubuntu18.04以上就可以(默认的内核4.15)</p>
+<p>echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf<br>
+echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf</p>
+<p>sysctl -p</p>
+<p>sysctl net.ipv4.tcp_available_congestion_control</p>
+<p>lsmod | grep bbr<br>
+Docker相关<br>
+更新、安装必备软件<br>
+apt-get update &amp;&amp; apt-get install -y wget vim<br>
+海外服务器<br>
+非大陆Docker安装<br>
+wget -qO- get.docker.com | bash<br>
+卸载Docker<br>
+sudo apt-get purge docker-ce docker-ce-cli containerd.io<br>
+sudo rm -rf /var/lib/docker<br>
+sudo rm -rf /var/lib/containerd<br>
+非大陆Docker-compose安装<br>
+sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>u</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi><mo>−</mo><mi>s</mi><mo>)</mo><mo>−</mo></mrow><annotation encoding="application/x-tex">(uname -s)-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mclose">)</span><span class="mord">−</span></span></span></span>(uname -m)&quot; -o /usr/local/bin/docker-compose<br>
+sudo chmod +x /usr/local/bin/docker-compose<br>
+查看版本</p>
+<p>docker-compose --version<br>
+大陆服务器<br>
+国内机安装docker<br>
+curl -sSL https://get.daocloud.io/docker | sh<br>
+国内机安装docker-compose<br>
+curl -L https://get.daocloud.io/docker/compose/releases/download/v2.1.1/docker-compose-<code>uname -s</code>-<code>uname -m</code> &gt; /usr/local/bin/docker-compose<br>
+chmod +x /usr/local/bin/docker-compose<br>
+卸载docker<br>
+sudo apt-get remove docker docker-engine<br>
+rm -fr /var/lib/docker/<br>
+防火墙<br>
+CentOS 关闭防火墙<br>
+systemctl start supervisord<br>
+systemctl disable firewalld<br>
+systemctl stop firewalld<br>
+宝塔相关<br>
+宝塔去除登陆 (已经失效，解决方法见：https://blog.laoda.de/archives/bt-to-aapanel)<br>
+sed -i &quot;s|if (bind_user == 'True') {|if (bind_user == 'REMOVED') {|g&quot; /www/server/panel/BTPanel/static/js/index.js<br>
+rm -rf /www/server/panel/data/bind.pl<br>
+宝塔&amp;aapanel破解</p>
+<h1 id="宝塔aapanel破解">宝塔&amp;aapanel破解</h1>
+<p>编辑 /www/server/panel/class/panelplugin.py<br>
+找到 softList['list'] = tmpList 这行代码<br>
+在下面添加以下代码，注意缩进</p>
+<p>softList['pro'] = 1<br>
+for soft in softList['list']:<br>
+soft['endtime'] = 0</p>
+<p>编辑完毕后保存重启面板即可<br>
+呆梨相关<br>
+XUI<br>
+bash &lt;(curl -Ls https://raw.githubusercontent.com/sprov065/x-ui/master/install.sh) 0.2.0<br>
+make-a<br>
+wget -P /root -N --no-check-certificate &quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&quot; &amp;&amp; chmod 700 /root/install.sh &amp;&amp; /root/install.sh<br>
+持续更新中</p>
+<p>最后<br>
+大家有好用的脚本欢迎推荐，有需求也欢迎留言提出来！</p>
 
             </div>
             
