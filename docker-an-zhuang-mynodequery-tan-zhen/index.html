@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641815436490">
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1641815541734">
 <link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
 
 
@@ -25,13 +25,10 @@
 
 
     <meta name="description" content="
-MyNodeQuery
-简介
-MyNodeQuery可以说是代替NodeQuery的个人版，一款简洁好用的探针，没有多余的元素，延续NodeQuery的生命。
-演示站点：https://status.idcoffer.com
-使用
-依赖
-..." />
+# MyNodeQuery
+https://hub.docker.com/r/jaydenlee2019/mynodequery
+## 简介
+MyNodeQuery可以说是代替NodeQuery的个人版，一款简洁好用的探针，没有多余的元素..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -41,7 +38,7 @@ MyNodeQuery可以说是代替NodeQuery的个人版，一款简洁好用的探针
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://blog.52naiba.cn">
-        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641815436490" class="site-logo">
+        <img src="https://blog.52naiba.cn/images/avatar.png?v=1641815541734" class="site-logo">
         <h1 class="site-title">Gridea</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -108,81 +105,73 @@ MyNodeQuery可以说是代替NodeQuery的个人版，一款简洁好用的探针
             
             <div class="post-content" v-pre>
               <figure data-type="image" tabindex="1"><img src="https://www.idcoffer.com/wp-content/uploads/2022/01/20220106-001.png" alt="img" loading="lazy"></figure>
-<h1 id="mynodequery">MyNodeQuery</h1>
-<h2 id="简介">简介</h2>
+<p># <strong>MyNodeQuery</strong></p>
+<p>https://hub.docker.com/r/jaydenlee2019/mynodequery</p>
+<p>## <strong>简介</strong></p>
 <p>MyNodeQuery可以说是代替NodeQuery的个人版，一款简洁好用的探针，没有多余的元素，延续NodeQuery的生命。</p>
 <p>演示站点：<a href="https://status.idcoffer.com/">https://status.idcoffer.com</a></p>
-<h2 id="使用">使用</h2>
-<h3 id="依赖">依赖</h3>
-<ul>
-<li>MySql 5.7 或更高版本；</li>
-<li>Redis （可选）</li>
-<li>Docker</li>
-</ul>
-<h3 id="安装">安装</h3>
+<p>## <strong>使用</strong></p>
+<p>### <strong>依赖</strong></p>
+<p>- MySql 5.7 或更高版本；</p>
+<p>- Redis （可选）</p>
+<p>- Docker</p>
+<p>### <strong>安装</strong></p>
 <p>目前仅提供docker版本</p>
-<pre><code class="language-console">docker run -d --name=mynodequery -p 5000:5000 jaydenlee2019/mynodequery:latest
-</code></pre>
-<h4 id="如何解决每次更新都要从新install的问题">如何解决每次更新都要从新Install的问题？</h4>
-<ol>
-<li>
-<p>创建一个文本</p>
-<pre><code>/etc/mynodequery/appsettings.json
-</code></pre>
+<p>```console</p>
+<p>docker run -d --name=mynodequery -p 5000:5000 jaydenlee2019/mynodequery:latest</p>
+<p>```</p>
+<p>#### <strong>如何解决每次更新都要从新Install的问题？</strong></p>
+<p>\1. 创建一个文本</p>
+<p>​</p>
+<p>```</p>
+<p>/etc/mynodequery/appsettings.json</p>
+<p>```</p>
 <p>，内容为：</p>
-<pre><code class="language-json">{
- &quot;Logging&quot;: {
-     &quot;LogLevel&quot;: {
-         &quot;Default&quot;: &quot;Information&quot;,
-         &quot;Microsoft&quot;: &quot;Warning&quot;,
-         &quot;Microsoft.Hosting.Lifetime&quot;: &quot;Information&quot;
-     }
- },
- &quot;Redis&quot;: {
-     &quot;Configuration&quot;: &quot;&quot;
- },
- &quot;MySql&quot;: {
-     &quot;ConnectionString&quot;: &quot;&quot;
- },
- &quot;AllowedHosts&quot;: &quot;*&quot;,
- &quot;Installed&quot;: &quot;false&quot;,
- &quot;ReadNodeIpHeaderKey&quot;: &quot;X-Real-IP&quot;
-}
-</code></pre>
-</li>
-<li>
-<p>在docker run 语句中加入 <code>-v /etc/mynodequery/appsettings.json:/app/appsettings.json</code> 即可解决。</p>
-</li>
-</ol>
-<h2 id="更新">更新</h2>
-<h3 id="1003">1.0.0.3</h3>
-<ol>
-<li>修复已知bugs</li>
-<li>开放Telegram通知功能</li>
-<li>增加自定义获取节点IP请求头设置（在设置中可以找到，并添加 /Setting/MyHeaders 页辅助设置）</li>
-<li>仪表盘自动刷新修改为5秒</li>
-</ol>
-<h3 id="1002">1.0.0.2</h3>
-<ol>
-<li>增加基础SEO支持;</li>
-<li><s>增加Telegram通知;</s>（目前内测中）</li>
-<li>修复已知bugs</li>
-</ol>
-<h3 id="1001">1.0.0.1</h3>
-<ol>
-<li>修复上行下行显示错误问题；</li>
-<li>修复站点设置缓存导致无法添加节点问题。</li>
-</ol>
-<h2 id="其他">其他</h2>
-<h3 id="更新注意事项">更新注意事项</h3>
+<p>```json</p>
+<p>{</p>
+<p>​    &quot;Logging&quot;: {</p>
+<p>​        &quot;LogLevel&quot;: {</p>
+<p>​            &quot;Default&quot;: &quot;Information&quot;,</p>
+<p>​            &quot;Microsoft&quot;: &quot;Warning&quot;,</p>
+<p>​            &quot;Microsoft.Hosting.Lifetime&quot;: &quot;Information&quot;</p>
+<p>​        }</p>
+<p>​    },</p>
+<p>​    &quot;Redis&quot;: {</p>
+<p>​        &quot;Configuration&quot;: &quot;&quot;</p>
+<p>​    },</p>
+<p>​    &quot;MySql&quot;: {</p>
+<p>​        &quot;ConnectionString&quot;: &quot;&quot;</p>
+<p>​    },</p>
+<p>​    &quot;AllowedHosts&quot;: &quot;*&quot;,</p>
+<p>​    &quot;Installed&quot;: &quot;false&quot;,</p>
+<p>​    &quot;ReadNodeIpHeaderKey&quot;: &quot;X-Real-IP&quot;</p>
+<p>}</p>
+<p>```</p>
+<p>\2. 在docker run 语句中加入 <code>-v /etc/mynodequery/appsettings.json:/app/appsettings.json</code> 即可解决。</p>
+<p>## <strong>更新</strong></p>
+<p>### <strong>1.0.0.3</strong></p>
+<p>\1. 修复已知bugs</p>
+<p>\2. 开放Telegram通知功能</p>
+<p>\3. 增加自定义获取节点IP请求头设置（在设置中可以找到，并添加 /Setting/MyHeaders 页辅助设置）</p>
+<p>\4. 仪表盘自动刷新修改为5秒</p>
+<p>### <strong>1.0.0.2</strong></p>
+<p>\1. 增加基础SEO支持;</p>
+<p>\2. <s>增加Telegram通知;</s>（目前内测中）</p>
+<p>\3. 修复已知bugs</p>
+<p>### <strong>1.0.0.1</strong></p>
+<p>\1. 修复上行下行显示错误问题；</p>
+<p>\2. 修复站点设置缓存导致无法添加节点问题。</p>
+<p>## <strong>其他</strong></p>
+<p>### <strong>更新注意事项</strong></p>
 <p>如果是从1.0.0.1或更早版本升级，请在MySql客户端执行以下SQL语句：</p>
-<pre><code class="language-sql">alter table md_nodes modify  column DeleteTime datetime;
-alter table md_nodes modify  column LastUptime datetime;
-alter table md_nodes modify  column AgentUptime datetime;
-alter table md_nodes add NodeStatus varchar(10) default 'Unknown';
-update md_nodes set NodeStatus='Online' where AgentUptime is not null and date_add(AgentUptime, interval 70 second) &gt;= Now();
-</code></pre>
-<h3 id="资源消耗">资源消耗</h3>
+<p>```sql</p>
+<p>alter table md_nodes modify  column DeleteTime datetime;</p>
+<p>alter table md_nodes modify  column LastUptime datetime;</p>
+<p>alter table md_nodes modify  column AgentUptime datetime;</p>
+<p>alter table md_nodes add NodeStatus varchar(10) default 'Unknown';</p>
+<p>update md_nodes set NodeStatus='Online' where AgentUptime is not null and date_add(AgentUptime, interval 70 second) &gt;= Now();</p>
+<p>```</p>
+<p>### <strong>资源消耗</strong></p>
 <p>CPU是AMD EPYC 7402P</p>
 <figure data-type="image" tabindex="2"><img src="https://www.idcoffer.com/wp-content/uploads/2022/01/20210106-002.jpg" alt="img" loading="lazy"></figure>
 

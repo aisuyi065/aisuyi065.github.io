@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | Gridea</title>
+<title>LibreSpeed 魔改 Docker 版  | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,13 +12,24 @@
 <link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
 
 
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="温故而知新">
+    <meta name="description" content="LibreSpeed 魔改 Docker 版
+https://hub.docker.com/r/jaydenlee2019/speedtest
+简单说明：
+1、基于 php:fpm-alpine3.12 镜像；
+2、开启 php opcac..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,12 +99,57 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">LibreSpeed 魔改 Docker 版 </h2>
+            <div class="post-date">2022-01-10</div>
             
-              <a class="tag" href="https://blog.52naiba.cn/STa5dmtNQ/">Gridea</a>
+            <div class="post-content" v-pre>
+              <p>LibreSpeed 魔改 Docker 版</p>
+<p>https://hub.docker.com/r/jaydenlee2019/speedtest</p>
+<p>简单说明：</p>
+<p>1、基于 php:fpm-alpine3.12 镜像；</p>
+<p>2、开启 php opcache，设置 cgi.fix_pathinfo=0， date.timezone=Asia/Shanghai；</p>
+<p>3、集成 nginx 1.8.0；</p>
+<p>4、美化 UI，黑色主题；</p>
+<p>5、IP定位使用B站API。</p>
+<p>运行示例：</p>
+<p>docker run --name=speedtest -p 8081:80 -d jaydenlee2019/speedtest</p>
+<p>自定义Title：</p>
+<p>docker run --name=speedtest -p 8081:80 -e TITLE=&quot;iON Cloud 圣何塞测速站点（非官方）&quot; -d jaydenlee2019/speedtest</p>
+<p>更新说明：</p>
+<p>1.1.0版本</p>
+<p>1、减少镜像的层数；</p>
+<p>2、增加自定义Title</p>
+<p>1.0.1版本</p>
+<p>1、基于 php:fpm-alpine 镜像；</p>
+<p>2、IP地址增加ISP显示；</p>
+<p>3、title增加版本显示；</p>
+<p>4、librespeed 更新至5.2.3。</p>
+<p>演示站点：http://s8.vpsaff.net:8081/</p>
+
+            </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://blog.52naiba.cn/docker-an-zhuang-mynodequery-tan-zhen/">
+                  <h3 class="post-title">
+                    Docker安装MyNodeQuery探针
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
           </div>
+
         </div>
       </div>
     </div>
@@ -113,6 +169,26 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'disqus_VB5MsU1LjI',
+      apikey: 'dMP3jABp5m3Xm3lr2VvyrqTP1WliooGhnGwIsjChrhYOsxvevWjh89U1SDXCQyzW',
+    }
+    if ('rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz') {
+      options.api = 'rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz'
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
 
 
 
