@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Go语言开发的端口转发工具：port-forward | Gridea</title>
+<title>Acme.sh 域名证书一键申请脚本 | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,12 +24,11 @@
 
 
 
-    <meta name="description" content="预览图：
-
-部署方法：
-下载地址：http://git.oschina.net/tavenli/port-forward/releases
-下载编译好的程序包，并解压程序包，
-执行 start.sh （Linux）或 start.bat （..." />
+    <meta name="description" content="Acme.sh 域名证书一键申请脚本
+此脚本可以帮助你使用acme.sh脚本申请域名的ssl证书，并且可以保存到你想要的位置
+https://github.com/Misaka-blog/acme-1key
+提示
+本脚本请在关闭warp之后..." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -101,46 +100,30 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">Go语言开发的端口转发工具：port-forward</h2>
-            <div class="post-date">2022-01-01</div>
+            <h2 class="post-title">Acme.sh 域名证书一键申请脚本</h2>
+            <div class="post-date">2022-01-18</div>
             
             <div class="post-content" v-pre>
-              <p>预览图：</p>
-<figure data-type="image" tabindex="1"><img src="https://cikeblog.com/wp-content/uploads/2020/02/port-forward1.jpg" alt="img" loading="lazy"></figure>
-<p><strong>部署方法：</strong></p>
-<p>下载地址：<a href="https://cikeblog.com/goto/6inh">http://git.oschina.net/tavenli/port-forward/releases</a></p>
-<pre><code>下载编译好的程序包，并解压程序包，
-执行 start.sh （Linux）或 start.bat （Win）命令
-打开浏览器，进入控制台，打开 http://127.0.0.1:8080/login
-输入用户 admin 密码 123456 进入控制台。
+              <h1 id="acmesh-域名证书一键申请脚本">Acme.sh 域名证书一键申请脚本</h1>
+<p>此脚本可以帮助你使用acme.sh脚本申请域名的ssl证书，并且可以保存到你想要的位置<br>
+https://github.com/Misaka-blog/acme-1key</p>
+<h2 id="提示">提示</h2>
+<p>本脚本请在关闭warp之后使用，否则无法申请证书</p>
+<p>对于双栈VPS，默认检测IPV4地址优先</p>
+<p>对于国内VPS，可能遇到脚本不可用的问题</p>
+<h2 id="使用方法">使用方法</h2>
+<pre><code>wget -N https://cdn.jsdelivr.net/gh/Misaka-blog/acme-1key@master/acme1key.sh &amp;&amp; chmod -R 777 acme1key.sh &amp;&amp; bash acme1key.sh
 </code></pre>
-<p>注意：由于需要登录后才能下载，所以博客做了一个Linux版本的分流地址:<br>
-https://cikeblog.com/s/forward.zip</p>
-<p><strong>附上shell代码：</strong></p>
-<pre><code>yum install unzip -y
-wget https://cikeblog.com/s/forward.zip
-unzip forward.zip
-cd forward-server
-chmod +x *
-./start.sh
-</code></pre>
-<p>然后打开浏览器，进入控制台，打开 http://127.0.0.1:8080<br>
-输入用户 admin 密码 123456 即可进入控制台。</p>
-<p>注意：部分nat机器未分配8080端口，所以我们需要进行端口转发，可以使用博客推荐的socat进行转发，也可以直接使用iptables，简单方便。</p>
-<p>例如：将本地8080端口转发到10000端口：</p>
-<pre><code>iptables -t nat -A PREROUTING -p tcp --dport 10000 -j REDIRECT --to-ports 8080
-iptables-save
-</code></pre>
-<p>这样就可以使用 http://127.0.0.1:10000进入控制台。</p>
+<p>快捷方式 <code>bash acme1key.sh</code></p>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://blog.52naiba.cn/hysteria-yi-kuan-wei-e-lie-wang-luo-jin-xing-you-hua-de-gong-ju-jiao-cheng/">
+                <a href="https://blog.52naiba.cn/librespeed-mo-gai-docker-ban/">
                   <h3 class="post-title">
-                    hysteria一款为恶劣网络进行优化的工具教程
+                    LibreSpeed 魔改 Docker 版 
                   </h3>
                 </a>
               </div>
