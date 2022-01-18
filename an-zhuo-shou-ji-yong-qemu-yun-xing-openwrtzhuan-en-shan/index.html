@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>安卓手机用qemu运行openwrt【转恩山】 | Gridea</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://blog.52naiba.cn/favicon.ico?v=1642506232948">
+<link rel="stylesheet" href="https://blog.52naiba.cn/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="原帖地址：收藏
+https://www.right.com.cn/forum/thread-6918948-1-1.html
+网上关于qemu运行openwrt的教程很多，但是在安卓手机上qemu运行openwrt一直找不到，为此我进行了长..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://blog.52naiba.cn">
+        <img src="https://blog.52naiba.cn/images/avatar.png?v=1642506232948" class="site-logo">
+        <h1 class="site-title">Gridea</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://blog.52naiba.cn/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">安卓手机用qemu运行openwrt【转恩山】</h2>
+            <div class="post-date">2022-01-18</div>
+            
+            <div class="post-content" v-pre>
+              <p>原帖地址：收藏<br>
+https://www.right.com.cn/forum/thread-6918948-1-1.html<br>
+网上关于qemu运行openwrt的教程很多，但是在安卓手机上qemu运行openwrt一直找不到，为此我进行了长时间的探索学习，终于有了一些成果。</p>
+<p>拿出我的吃灰手机 红米note4x 3+32  安卓11</p>
+<p>查询得知<br>
+高通骁龙625 8x ARM Cortex A53, Octa-core CPU，单核频率最高可达2.0GHz，14nm FinFET制程，GPU Adreno 506  支持Cat.7 LTE网络 arm64位 也就是aarch64架构</p>
+<p>授人与鱼，不如授人与渔，所以下面命令我都会有解释。很多时候大家可以玩出不一样的玩法<br>
+我弄懂这些都花了好几周，零零碎碎资料整合起来了</p>
+<h4 id="本帖隐藏的内容">本帖隐藏的内容</h4>
+<p>准备<br>
+本次用到的工具是termux 安卓7 (API 24) 及以上版本，旧版本系统使用本镜像可能导致程序错误。<br>
+替换国内清华源参考 https://mirrors.tuna.tsinghua.edu.cn/help/termux/</p>
+<p>全程在手机上复制粘贴也可以的，全程只有手机复制粘贴的可以跳过看下面的正戏开始。<br>
+但是为了方便，我们可以给手机安装ssh然后在电脑上操作</p>
+<p>更改密码（或者说设定初始密码）termux输入<br>
+passwd</p>
+<p>会显示这样（设置密码的时候，输入不显示）：<br>
+New password:<br>
+Retype new password:<br>
+New password was successfully set.</p>
+<p>安装openssh</p>
+<ol>
+<li>pkg upgrade</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>当然，喜欢在手机上慢慢敲命令的可以不装</p>
+<ol>
+<li>pkg install openssh</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>开启ssh并连接执行这一句：</p>
+<ol>
+<li>sshd</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>可以再输入一条echo &quot;sshd&quot; &gt;&gt; ~/.bashrc 这样不用每次打开终端都要运行一次sshd<br>
+需要注意的是，我们平常开启的ssh服务端口是22，但是Termux开启的ssh服务端口是在8022<br>
+接着我们输入 ifconfig 查看自己的ip地址（若是需要连接电脑和手机需要在同一个的WiFi下）</p>
+<ol>
+<li>ifconfig</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>这个每个人可能不同的，需要自己看上面显示换ip，把192.168.42.129换成手机ip</p>
+<p>而我是为了方便，usb共享，也可以热点，然后电脑连上也行。最好是手机连路由器wifi，然后电脑连路由器，在同局域网就行，搞好以后甚至可以做给电脑做旁路由<br>
+这个时候换到电脑输入了我的win10，自带ssh。在cmd上执行</p>
+<ol>
+<li>ssh root@192.168.42.129 -p 8022</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>手动输入yes回车，输入密码回车连上了</p>
+<p>正戏开始<br>
+更新源</p>
+<ol>
+<li>apt-get update</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>你可以查看qemu有什么包，可以根据自己的需求安装模拟其他架构</p>
+<ol>
+<li>apt search qemu</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>安装qemu工具包</p>
+<ol>
+<li>apt install qemu-utils</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>当然，我的是arm64位架构的，模拟arm的性能损耗会更低</p>
+<p>安装模拟aarch64架构的</p>
+<ol>
+<li>apt install qemu-system-aarch64-headless</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>安装x86_64架构的</p>
+<ol>
+<li>apt install qemu-system-x86-64-headless</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>首先进行arm架构的教程</p>
+<p>这里先采用官方releases版固件，你们成功后可以换其他充满插件的固件、或者手动构建armvirt镜像，替换执行命令里固件名字就行了<br>
+下载arm固件</p>
+<ol>
+<li><span style="font-size: small;">wget </span><font size="2">https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.8/targets/armvirt/64/openwrt-19.07.8-armvirt-64-root.ext4.gz</font></li>
+</ol>
+<p><em>复制代码</em></p>
+<p>(额，可能提示The program wget is not installed.那就执行pkg install wget安装wget后，再下载)<br>
+解压</p>
+<ol>
+<li>gzip -d openwrt-19.07.8-armvirt-64-root.ext4.gz</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>与X86会有combined不同的是，还有指定kernel，所以还要内核镜像。你们使用自己编译的固件时，记得也把内核文件复制到手机</p>
+<ol>
+<li>wget https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.8/targets/armvirt/64/openwrt-19.07.8-armvirt-64-Image</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>这个时候输入查看命令ls执行可以看到文件openwrt-19.07.8-armvirt-64-root.ext4 和 openwrt-19.07.8-armvirt-64-Image<br>
+开始运行openwrt</p>
+<ol>
+<li>qemu-system-aarch64 -M virt -m 1024m -kernel openwrt-19.07.8-armvirt-64-Image -append &quot;root=fe00&quot; -hda openwrt-19.07.8-armvirt-64-root.ext4 -no-reboot -nographic -cpu cortex-a53 -smp 4 -net nic -net user,id=wan,hostfwd=tcp::7080-:80,hostfwd=tcp::7022-:22</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>命令说明：-M 是模拟的机器，可以执行qemu-system-aarch64 -M help查看列表，可以看到有树莓派的，所以也可以直接用树莓派的固件<br>
+-m 是分配内存大小 我这里分配1024mb<br>
+-kernel是指定内核<br>
+-append cmdline     设置Linux内核命令行和启动参数<br>
+我这里”root=fe00“指定根的块设备是fe00，如果你没有指定这个，内核将列出可用的块设备并重新启动，之后你们自己的固件可以取消这个”root=fe00“看可用块设备列表，再修改填上。我之前在这徘徊了很久啊。<br>
+-hda是指定硬盘镜像<br>
+--no-reboot 就是字面意思，里面客户系统如果重启就会直接退出qemu，重启相当于关机退出qemu。可以不要这条，这样客户系统可以进行重启的操作<br>
+-nographic 关闭qemu的图形化界面输出。也可以去掉，然后加上--vnc :1  以vnc为图像模式输出到”显示器”，并占用vnc 1端口，vnc访问手机ip:5901显示进入图像界面。-nographic与--vnc不同的是执行运行后不会立即有回显。<br>
+-cpu cortex-a53 模拟cortex-a53类型的处理器，因为前面查询我的骁龙625是cortex-a53类型处理器，模拟这个性能损失较小。可以输入qemu-system-aarch64 -cpu help查看可模拟列表<br>
+-smp 核数，给cpu分配核数<br>
+-net nic 就是快速配置网卡。后面net user,id=wan,hostfwd=tcp::7080-:80,hostfwd=tcp::7022-:22配置网卡网络模式为用户模式（nat模式，使用主机网络nat联网），分配id标识为wan，hostfwd是端口重定向参数，可以加逗号多个使用，很清晰可以自己根据需要增加和删改，这里我把主机7080端口重定向到客户系统的80端口，把主机7022端口重定向到客户系统的22端口。这两个端口分别是web网页管理地址端口、ssh端口。还有具体设置网卡可以百度搜索qemu网络模式。</p>
+<p>执行后耐心等待跑码，看下面图<br>
+出现第一个框就可以按回车输命令了，但是不急，等第二个<br>
+出现br-lan: port 1(eth0) entered forwarding state就是启动好了（改过下面以后，第二次运行是出现8021q: adding VLAN 0 to HW filter on device eth0）</p>
+<figure data-type="image" tabindex="1"><img src="https://www.right.com.cn/forum/forum.php?mod=attachment&amp;aid=NTE3NTEzfDFiNjc4NDYzfDE2NDI1MDU5Mzd8NTU0Nzg5fDY5MTg5NDg%3D&amp;noupdate=yes" alt="img" loading="lazy"></figure>
+<p>因为第一个网卡默认是分配给lan的，所以我们要改一下，分给wan（这个镜像改过一次，下次再启动就不用改了）<br>
+输入</p>
+<ol>
+<li>vi /etc/config/network</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>按键盘i就可以编辑进行增删了，把config interface 'wan' 那整部分改成以下这样</p>
+<ol>
+<li>
+<div>config interface 'wan'</div><div>
+</li>
+<li>
+</div><div>     option ifname 'eth0'</div><div>     option proto 'dhcp'</div>
+</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>编辑好了，按键盘ESC，然后按住shift再按一下键盘上的；就可以输入wq回车后保存退出（就是按esc退出后，按出冒号，wq命令保存退出）<br>
+重启网络服务</p>
+<ol>
+<li>/etc/init.d/network restart</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>输入ifconfig看看<br>
+eth0    Link encap:Ethernet HWaddr 52:54:00:12:34:56<br>
+inet addr:10.0.2.15</p>
+<p>获得了一个nat地址<br>
+现在ping一下外网</p>
+<ol>
+<li>ping www.baidu.com</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>只要手机能联网，它就能联网！</p>
+<figure data-type="image" tabindex="2"><img src="https://www.right.com.cn/forum/forum.php?mod=attachment&amp;aid=NTE3NTExfDVmNThkNzZmfDE2NDI1MDU5Mzd8NTU0Nzg5fDY5MTg5NDg%3D&amp;noupdate=yes" alt="img" loading="lazy"></figure>
+<p>因为我手机用的是4g数据，地方信号不好，延迟有点大哈别介意</p>
+<p>开放wan的80端口</p>
+<ol>
+<li>iptables -I INPUT -p tcp --dport 80 -j ACCEPT</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>前面执行命令的时候，我们已经弄好手机7080端口重定向客户机的80端口了，所以我们在浏览器访问手机ip加7080端口，就可以进入openwrt的管理页面啦！</p>
+<figure data-type="image" tabindex="3"><img src="https://www.right.com.cn/forum/forum.php?mod=attachment&amp;aid=NTE3NTEyfDY2YTRiMDk2fDE2NDI1MDU5Mzd8NTU0Nzg5fDY5MTg5NDg%3D&amp;noupdate=yes" alt="img" loading="lazy"></figure>
+<p>连上openwrt的ssh，前面执行命令的时候，我们已经弄好手机7022端口重定向客户机的22端口了，只要在openwrt开放22端口，就可以手机ip加7022连上了</p>
+<ol>
+<li>iptables -I INPUT -p tcp --dport 80 -j ACCEPT</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>你可以根据需要设置好重定向端口和开放端口，例子很明白了</p>
+<p>现在，进行模拟x86架构的教程<br>
+X86方便一些，不需要指定内核，使用带combined字样的镜像就行了</p>
+<ol>
+<li>wget https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.8/targets/x86/64/openwrt-19.07.8-x86-64-combined-ext4.img.gz</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>解压</p>
+<ol>
+<li>gzip -d openwrt-19.07.8-x86-64-combined-ext4.img.gz</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>运行</p>
+<ol>
+<li>qemu-system-x86_64 -m 1024m -hda openwrt-19.07.8-x86-64-combined-ext4.img -no-reboot -nographic -smp 2 -net nic -net user,id=wan,hostfwd=tcp::7080-:80,hostfwd=tcp::7022-:22</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>同样，改一下eth0，分给wan<br>
+输入</p>
+<ol>
+<li>vi /etc/config/network</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>按键盘i就可以编辑进行增删了，把config interface 'wan' 那整部分改成以下这样</p>
+<ol>
+<li>
+<div>config interface 'wan'</div><div>
+</li>
+<li>
+</div><div>     option ifname 'eth0'</div><div>     option proto 'dhcp'</div>
+</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>编辑好了，按键盘ESC，然后按住shift再按一下键盘上的；就可以输入wq回车后保存退出（就是按esc退出后，按出冒号，wq命令保存退出）<br>
+重启网络服务</p>
+<ol>
+<li>/etc/init.d/network restart</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>就可以联网了。然后开放端口</p>
+<ol>
+<li>
+<div>iptables -I INPUT -p tcp --dport 80 -j ACCEPT</div><div>iptables -I INPUT -p tcp --dport 22-j ACCEPT</div>
+</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>浏览器访问手机ip:7080进行设置</p>
+<p>跑分<br>
+两个都修改成2核1G内存<br>
+替换软件源为清华源，更快下载</p>
+<ol>
+<li>sed -i 's_downloads.openwrt.org_mirrors.tuna.tsinghua.edu.cn/openwrt_' /etc/opkg/distfeeds.conf</li>
+</ol>
+<p><em>复制代码</em></p>
+<ol>
+<li>opkg update</li>
+<li><font color="#000000">opkg install openssl-util</font></li>
+</ol>
+<p><em>复制代码</em></p>
+<p>开始测试</p>
+<ol>
+<li>openssl speed md5 sha1 sha256 sha512 des des-ede3 aes-128-cbc aes-192-cbc aes-256-cbc rsa2048 dsa2048 | tee /tmp/sslspeed | awk -v ORS=&quot;&quot; '$1 ~ /OpenSSL/ {print &quot;| &quot; $2 &quot; |&quot;} $1 ~ /(md5|sha)/ {print &quot; &quot; $5 &quot; |&quot;} $1 ~ /(des|aes)/ {b = b &quot; &quot; $6 &quot; |&quot;} $1 ~ /(rsa|dsa)/ {print b &quot; &quot; $6 &quot; | &quot; $7 &quot; |&quot;;b=&quot;&quot;} END { print &quot;\n&quot; }' | sed 's/.(..)k/\10/g'</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>测试完成，测试结果保存在/tmp下的sslspeed文件。</p>
+<ol>
+<li>cat /tmp/sslspeed</li>
+</ol>
+<p><em>复制代码</em></p>
+<p>跑分可以看到，模拟arm a53性能损耗要低<br>
+aarch64 2核1G内存<br>
+type        16 bytes   64 bytes  256 bytes  1024 bytes  8192 bytes 16384 bytes<br>
+md5          2345.78k   9028.32k  27361.33k  55603.54k  78219.86k  74679.15k<br>
+sha1         2060.79k   5820.54k  12326.49k  17208.03k  19619.29k  19633.22k<br>
+des cbc       2966.17k   3461.81k   3582.62k   3658.22k   3629.86k   3525.88k<br>
+des ede3      1004.05k   1076.56k   1099.76k   1110.49k   1095.02k   1086.75k<br>
+aes-128 cbc    3859.83k   4408.20k   4571.63k   4650.21k   4572.02k   4306.34k<br>
+aes-192 cbc    3527.58k   3952.12k   4089.88k   3808.79k   4068.42k   3863.52k<br>
+aes-256 cbc    3223.38k   3582.85k   3681.47k   3719.15k   3647.91k   3525.88k<br>
+sha256        1916.95k   5264.55k  10780.11k  14924.20k  16907.07k  17001.85k<br>
+sha512        1348.55k   5433.92k  11909.28k  22806.93k  30542.09k  29950.62k<br>
+sign  verify  sign/s verify/s<br>
+rsa 2048 bits 0.040826s 0.001071s   24.5  933.6<br>
+sign  verify  sign/s verify/s<br>
+dsa 2048 bits 0.018837s 0.014805s   53.1   67.5</p>
+<p>X86 2核1G内存<br>
+type        16 bytes   64 bytes  256 bytes  1024 bytes  8192 bytes 16384 bytes<br>
+md5          3372.23k  10675.43k  26252.46k  41720.10k  49754.76k  50417.79k<br>
+sha1         1462.10k   3723.77k   7062.45k   9937.98k  10458.17k  10160.28k<br>
+des cbc       2281.98k   2569.14k   2646.28k   2641.44k   2672.74k   2655.53k<br>
+des ede3       734.11k    767.46k    654.58k    765.43k    772.78k    772.93k<br>
+aes-128 cbc    3142.41k   3478.23k   3584.09k   3599.02k   3609.94k   3593.56k<br>
+aes-192 cbc    2349.68k   3090.44k   3192.58k   3145.78k   3120.63k   3089.87k<br>
+aes-256 cbc    2418.03k   2628.49k   2678.10k   2711.37k   2766.57k   2692.44k<br>
+sha256        1540.33k   3855.26k   7400.12k   9692.61k  10619.26k  10727.09k<br>
+sha512        1418.24k   4975.96k   6822.40k  15752.47k  14248.53k  15937.16k<br>
+sign  verify  sign/s verify/s<br>
+rsa 2048 bits 0.045972s 0.001250s   21.8  800.3<br>
+sign  verify  sign/s verify/s<br>
+dsa 2048 bits 0.020689s 0.017391s   48.3   57.5</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://blog.52naiba.cn/acmesh-yu-ming-zheng-shu-yi-jian-shen-qing-jiao-ben/">
+                  <h3 class="post-title">
+                    Acme.sh 域名证书一键申请脚本
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+
+              
+                <div id="disqus_thread" data-aos="fade-in"></div>
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'disqus_VB5MsU1LjI',
+      apikey: 'dMP3jABp5m3Xm3lr2VvyrqTP1WliooGhnGwIsjChrhYOsxvevWjh89U1SDXCQyzW',
+    }
+    if ('rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz') {
+      options.api = 'rWABiEvBGEzrn8Sy5gS4tYNYWxEVz4X6AjTtMMtRbMkAxuZTb32hHSOf3orQFzDz'
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>
