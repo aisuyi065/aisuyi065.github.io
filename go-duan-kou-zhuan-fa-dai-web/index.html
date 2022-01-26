@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title># Linux下，一键检测VPS回程国内三网路由 | Gridea</title>
+<title>go端口转发带web | Gridea</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -24,9 +24,10 @@
 
 
 
-    <meta name="description" content="Linux下，一键检测VPS回程国内三网路由
-检测VPS回程国内三网路由，用法：
-curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|ba..." />
+    <meta name="description" content="port-forward
+Go语言开发的端口转发工具 for port data forward
+官网地址： https://gitee.com/tavenli/port-forward
+下载地址：Linux：https://github...." />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -98,44 +99,69 @@ curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|ba.
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title"># Linux下，一键检测VPS回程国内三网路由</h2>
-            <div class="post-date">2022-01-05</div>
+            <h2 class="post-title">go端口转发带web</h2>
+            <div class="post-date">2022-01-26</div>
             
             <div class="post-content" v-pre>
-              <h1 id="linux下一键检测vps回程国内三网路由">Linux下，一键检测VPS回程国内三网路由</h1>
-<p>检测VPS回程国内三网路由，用法：</p>
-<p>curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bash</p>
-<p>支持的线路为：电信CN2 GT，电信CN2 GIA，联通169，电信163，联通9929，联通4837，移动CMI</p>
-<p>电信目标IP：</p>
-<p>#深圳电信： ./besttrace 58.60.188.222</p>
-<p>mtr -c 100 --report 58.60.188.222</p>
-<p>#上海电信： ./besttrace 202.96.209.133</p>
-<p>mtr -c 100 --report 202.96.209.133</p>
-<p>#北京电信： ./besttrace 219.141.136.12</p>
-<p>mtr -c 100 --report 219.141.136.12</p>
-<p>联通目标IP：</p>
-<p>#深圳联通： ./besttrace 210.21.196.6</p>
-<p>mtr -c 100 --report 210.21.196.6</p>
-<p>#上海联通： ./besttrace 210.22.97.1</p>
-<p>mtr -c 100 --report 210.22.97.1</p>
-<p>#北京联通： ./besttrace 202.106.50.1</p>
-<p>mtr -c 100 --report 202.106.50.1</p>
-<p>移动目标IP：</p>
-<p>#深圳移动： ./besttrace 120.196.165.24</p>
-<p>mtr -c 100 --report 120.196.165.24</p>
-<p>#上海移动： ./besttrace 211.136.112.200</p>
-<p>mtr -c 100 --report 211.136.112.200</p>
-<p>#北京移动： ./besttrace 221.179.155.161</p>
-<p>mtr -c 100 --report 221.179.155.161</p>
+              <h1 id="port-forward">port-forward</h1>
+<p>Go语言开发的端口转发工具 for port data forward</p>
+<p>官网地址： https://gitee.com/tavenli/port-forward<br>
+下载地址：Linux：https://github.com/aisuyi065/myhome/raw/main/forward-server.linux64.v1.3.5_2.zip<br>
+下载地址：Windows：https://github.com/aisuyi065/myhome/raw/main/forward-server.win64.v1.3.5.zip</p>
+<pre><code>开发语言：GO
+控制台框架：beego
+数据库：sqlite3
+</code></pre>
+<h1 id="最近更新">最近更新</h1>
+<pre><code>v1.3.5 发布，增加批量导入、批量添加规则
+v1.3.3 发布，增加 一键开启所有转发 和 一键关闭所有转发
+v1.3.2 发布，服务稳定性已经过长时间的验证
+v1.3.1 发布，增加程序启动自动开启转发
+v1.2.9_beta 发布，完善点对点转发的稳定性，支持TCP和UDP协议转发
+</code></pre>
+<h1 id="最新编译好的版本下载">最新编译好的版本下载：</h1>
+<p>https://gitee.com/tavenli/port-forward/releases</p>
+<h1 id="功能介绍">功能介绍</h1>
+<blockquote>
+<p>支持Web控制台添加端口映射</p>
+</blockquote>
+<blockquote>
+<p>支持对每条端口映射进行开启和关闭控制</p>
+</blockquote>
+<blockquote>
+<p>支持 RestfulAPI 接口，方便被其它系统集成</p>
+</blockquote>
+<blockquote>
+<p>支持每条端口转发的同时，再分发给多个端口，满足某些测试场景</p>
+</blockquote>
+<blockquote>
+<p>类似企业交换机的功能，即软交换机，主要是方便企业网络维护人员或开发人员</p>
+</blockquote>
+<h1 id="使用交流群">使用交流群</h1>
+<blockquote>
+<p>使用问题或个性化需求可加QQ号：17020415 （申请时请备注：端口转发）</p>
+</blockquote>
+<h1 id="快速安装说明">快速安装说明</h1>
+<ol>
+<li>下载编译好的程序包，并解压程序包</li>
+<li>执行 start.sh （Linux）或 start.bat （Win）命令</li>
+<li>打开浏览器，进入控制台，打开 <a href="https://gitee.com/link?target=http%3A%2F%2F127.0.0.1%3A8080%2Flogin">http://127.0.0.1:8080/login</a></li>
+<li>输入用户 admin 密码 123456 进入控制台</li>
+</ol>
+<h1 id="控制台ui">控制台UI</h1>
+<figure data-type="image" tabindex="1"><img src="https://gitee.com/tavenli/port-forward/raw/master/screenshot/Login.png" alt="登录" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://gitee.com/tavenli/port-forward/raw/master/screenshot/List.png" alt="转发列表" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://gitee.com/tavenli/port-forward/raw/master/screenshot/edit.png" alt="端口转发配置" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://gitee.com/tavenli/port-forward/raw/master/screenshot/ApiDoc.png" alt="方便与其它平台集成接口" loading="lazy"></figure>
 
             </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://blog.52naiba.cn/warp-jie-suo-nai-fei-hou-tai-jian-kong-zi-dong-shua-xin-ip-jiao-ben/">
+                <a href="https://blog.52naiba.cn/chun-ipv6-tian-jia-dns-fang-wen-ipv4/">
                   <h3 class="post-title">
-                    warp解锁奈飞，后台监控自动刷新ip 脚本
+                    纯ipv6添加DNS访问IPV4
                   </h3>
                 </a>
               </div>
