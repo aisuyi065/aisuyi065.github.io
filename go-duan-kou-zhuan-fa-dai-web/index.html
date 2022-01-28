@@ -5,18 +5,18 @@
   <meta charset="UTF-8" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="keywords" content="">
+<meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="搜集各种教程源码插件备用">
-<meta name="theme-color" content="">
+<meta name="theme-color" content="#000">
 <title>go端口转发带web | 52naiba</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1643371279358">
-<link rel="stylesheet" href="/media/css/pisces.css">
+<link rel="shortcut icon" href="/favicon.ico?v=1643371345321">
+<link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
   href="//fonts.loli.net/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
   rel="stylesheet" type="text/css">
 
-<link href="/media/hljs/styles/github.css"
+<link href="/media/hljs/styles/default.css"
   rel="stylesheet">
 
 <link rel="stylesheet" href="/styles/main.css">
@@ -49,7 +49,7 @@
   <div class="head-top-line"></div>
   <div class="header-box">
     
-<div class="pisces">
+<div class="gemini">
   <header class="header  ">
     <div class="blog-header box-shadow-wrapper bg-color " id="header">
       <div class="nav-toggle" id="nav_toggle">
@@ -68,11 +68,15 @@
           
         </div>
         
+          <p class="subtitle">精于心，简于形</p>
+        
       </div>
       <nav class="site-nav" id="site_nav">
         <ul id="nav_ul">
           
             
+            
+              
             
             <li class="nav-item ">
               
@@ -85,6 +89,8 @@
           
             
             
+              
+            
             <li class="nav-item ">
               
               
@@ -95,6 +101,8 @@
             </li>
           
             
+            
+              
             
             <li class="nav-item ">
               
@@ -107,6 +115,8 @@
           
             
             
+              
+            
             <li class="nav-item ">
               
               
@@ -117,6 +127,22 @@
             </li>
           
           
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_self">
+                  
+                    <i class="fa fa-address-book"></i> 友链
+                  
+                </a>
+              </li>
+            
+          
+          
+            <li id="fa_search" class="nav-item">
+              <a href="javascript:void(0);">
+                <i class="fa fa-search"></i> <span class="language" data-lan="search">搜索</span>
+              </a>
+            </li>
           
         </ul>
       </nav>
@@ -149,7 +175,7 @@
   <div class="main-continer">
     
     <div
-      class="section-layout pisces ">
+      class="section-layout gemini ">
       <div class="section-layout-wrapper">
         
 
@@ -157,7 +183,239 @@
   
     <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
       
-      <div class="sidebar-body pisces" id="sidebar_body">
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active language" data-lan="index">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item language" data-lan="preview">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="/images/avatar.png"/>
+    <p class="site-author-name">我是谁</p>
+    
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">22</span>
+        <span class="site-item-stat-name language" data-lan="article">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">1</span>
+        <span class="site-item-stat-name language" data-lan="tag">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+  
+  
+
+
+
+</div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper  auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#port-forward">port-forward</a></li>
+<li><a href="#%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0">最近更新</a></li>
+<li><a href="#%E6%9C%80%E6%96%B0%E7%BC%96%E8%AF%91%E5%A5%BD%E7%9A%84%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD">最新编译好的版本下载：</a></li>
+<li><a href="#%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D">功能介绍</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E4%BA%A4%E6%B5%81%E7%BE%A4">使用交流群</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E">快速安装说明</a></li>
+<li><a href="#%E6%8E%A7%E5%88%B6%E5%8F%B0ui">控制台UI</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
+          
         
       </div>
     </div>
@@ -330,12 +588,16 @@ v1.2.9_beta 发布，完善点对点转发的稳定性，支持TCP和UDP协议�
 
             </div>
             
+              <div class="reward-btn">
+                <div class="reward-btn-text">赞赏</div>
+              </div>
+            
             
               <div class="post-footer">
   <ul class="post-copyright">
     <li class="post-copyright-author">
       <strong class="language" data-lan="author">本文作者：</strong>
-      
+      我是谁
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
@@ -428,21 +690,15 @@ v1.2.9_beta 发布，完善点对点转发的稳定性，支持TCP和UDP协议�
   </footer>
   
     
-        <div class="pisces back-to-top" id="back_to_top">
+        <div class="gemini back-to-top" id="back_to_top">
           <i class="fa fa-arrow-up"></i>
           
             <span class="scrollpercent"> <span id="back_to_top_text">0</span>% </span>
             
         </div>
         
-          
-            
-                
                   
                         
-                          
-
-                            
 </div>
 <script>
   let sideBarOpen = "sidebar-open";
@@ -588,7 +844,7 @@ v1.2.9_beta 发布，完善点对点转发的稳定性，支持TCP和UDP协议�
   }
 
   // 链接跳转
-  let newWindow = "";
+  let newWindow = "false";
   if (newWindow === "true") {
     let links = document.querySelectorAll(".post-body a");
     links.forEach((item) => {
@@ -652,8 +908,8 @@ v1.2.9_beta 发布，完善点对点转发的稳定性，支持TCP和UDP协议�
           
         </div>
       </div>
-      <p class="reward-word"></p>
-      <p class="reward-tip"></p>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip"> </p>
     </div>
     <div class="bottom">
       
@@ -859,6 +1115,1798 @@ v1.2.9_beta 发布，完善点对点转发的稳定性，支持TCP和UDP协议�
 
   </div>
 </body>
+
+  <div class="search-mask" id="search_mask" style="display: none;">
+  <div class="search-box">
+    <div class="search-title">
+      <i class="fa fa-search"></i>
+      <div class="input-box">
+        <input id="search" type="text" class="language" data-lan="search" placeholder="搜索">
+      </div>
+      <i id="close" class="fa fa-times-circle"></i>
+    </div>
+    <div class="stat-box">
+      <span id="stat_count">0</span><span class="language" data-lan="stat">条相关条目，使用了</span><span id="stat_times">0</span><span class="language" data-lan="stat-time">毫秒</span>
+      <hr>
+    </div>
+    <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/netflix-proxy-dns-jie-suo-netflix-xiang-mu/"" data-c="
+          &lt;p&gt;搬运github上的netflix-proxy项目&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;假设有两个vps：&lt;/p&gt;
+&lt;p&gt;A机和B机；&lt;/p&gt;
+&lt;p&gt;A的ip是能看netflix的;&lt;/p&gt;
+&lt;p&gt;B的ip看不了netflix；&lt;/p&gt;
+&lt;p&gt;这个项目的目的是使B也能看netflix.&lt;/p&gt;
+&lt;p&gt;该项目地址:&lt;/p&gt;
+&lt;p&gt;https://github.com/ab77/netflix-proxy&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;1.在A机上运行下面的代码：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;find a Debian or Ubuntu box with root on a clean public IP and run:&lt;/p&gt;
+&lt;p&gt;（使用debian 或者ubuntu在一个干净系统上运行下面的代码，下面的代码全部复制，然后在ssh中运行即可）&lt;/p&gt;
+&lt;p&gt;注意这个A机的ip必须能看netflix&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt-get update\
+  &amp;amp;&amp;amp; apt-get -y install vim dnsutils curl sudo\
+  &amp;amp;&amp;amp; curl -fsSL https://get.docker.com/ | sh || apt-get -y install docker.io\
+  &amp;amp;&amp;amp; mkdir -p ~/netflix-proxy\
+  &amp;amp;&amp;amp; cd ~/netflix-proxy\
+  &amp;amp;&amp;amp; curl -fsSL https://github.com/ab77/netflix-proxy/archive/latest.tar.gz | gunzip - | tar x --strip-components=1\
+  &amp;amp;&amp;amp; ./build.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;正常跑完，会有提示：&lt;/p&gt;
+&lt;p&gt;如，netflix-proxy-admin site=http://IP地址:8080/ credentials=admin:密码&lt;/p&gt;
+&lt;p&gt;通过访问http://IP地址:8080/，输入admin和密码&lt;/p&gt;
+&lt;p&gt;添加B机的IP地址&lt;/p&gt;
+&lt;h2 id=&#34;通过数据库修改密码&#34;&gt;通过数据库修改密码&lt;/h2&gt;
+&lt;p&gt;参考来源：https://ybfl.xyz/106.html&lt;/p&gt;
+&lt;p&gt;进入文件目录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /root/netflix-proxy/auth
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;指定数据库&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sqlite3 ./db/auth.db
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更新密码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;update users set password=&#39;你的新密码&#39; where id=1;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;2.在B机上操作&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;（永久修改，持续生效）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;修改下面文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vi /etc/network/interfaces
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在文件最后加入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dns-nameservers 8.8.8.8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;使修改的-dns-生效&#34;&gt;使修改的 DNS 生效&lt;/h1&gt;
+&lt;p&gt;修改完保存了并不是立即生效的。输入下面命令使配置生效：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 使网卡配置生效
+/etc/init.d/networking restart
+# 使 DNS 生效
+/etc/init.d/resolvconf restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看是否已经生效：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cat /etc/resolv.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果已经变成了你设置的DNS，那就设置成功了。&lt;/p&gt;
+">netflix-proxy DNS解锁Netflix项目</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/go-duan-kou-zhuan-fa-dai-web/"" data-c="
+          &lt;h1 id=&#34;port-forward&#34;&gt;port-forward&lt;/h1&gt;
+&lt;p&gt;Go语言开发的端口转发工具 for port data forward&lt;/p&gt;
+&lt;p&gt;官网地址： https://gitee.com/tavenli/port-forward&lt;br&gt;
+下载地址：Linux：https://github.com/aisuyi065/myhome/raw/main/forward-server.linux64.v1.3.5_2.zip&lt;br&gt;
+下载地址：Windows：https://github.com/aisuyi065/myhome/raw/main/forward-server.win64.v1.3.5.zip&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;开发语言：GO
+控制台框架：beego
+数据库：sqlite3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;最近更新&#34;&gt;最近更新&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;v1.3.5 发布，增加批量导入、批量添加规则
+v1.3.3 发布，增加 一键开启所有转发 和 一键关闭所有转发
+v1.3.2 发布，服务稳定性已经过长时间的验证
+v1.3.1 发布，增加程序启动自动开启转发
+v1.2.9_beta 发布，完善点对点转发的稳定性，支持TCP和UDP协议转发
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;最新编译好的版本下载&#34;&gt;最新编译好的版本下载：&lt;/h1&gt;
+&lt;p&gt;https://gitee.com/tavenli/port-forward/releases&lt;/p&gt;
+&lt;h1 id=&#34;功能介绍&#34;&gt;功能介绍&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;支持Web控制台添加端口映射&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;支持对每条端口映射进行开启和关闭控制&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;支持 RestfulAPI 接口，方便被其它系统集成&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;支持每条端口转发的同时，再分发给多个端口，满足某些测试场景&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;类似企业交换机的功能，即软交换机，主要是方便企业网络维护人员或开发人员&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;使用交流群&#34;&gt;使用交流群&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用问题或个性化需求可加QQ号：17020415 （申请时请备注：端口转发）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;快速安装说明&#34;&gt;快速安装说明&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;下载编译好的程序包，并解压程序包&lt;/li&gt;
+&lt;li&gt;执行 start.sh （Linux）或 start.bat （Win）命令&lt;/li&gt;
+&lt;li&gt;打开浏览器，进入控制台，打开 &lt;a href=&#34;https://gitee.com/link?target=http%3A%2F%2F127.0.0.1%3A8080%2Flogin&#34;&gt;http://127.0.0.1:8080/login&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;输入用户 admin 密码 123456 进入控制台&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;控制台ui&#34;&gt;控制台UI&lt;/h1&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://gitee.com/tavenli/port-forward/raw/master/screenshot/Login.png&#34; alt=&#34;登录&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://gitee.com/tavenli/port-forward/raw/master/screenshot/List.png&#34; alt=&#34;转发列表&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://gitee.com/tavenli/port-forward/raw/master/screenshot/edit.png&#34; alt=&#34;端口转发配置&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://gitee.com/tavenli/port-forward/raw/master/screenshot/ApiDoc.png&#34; alt=&#34;方便与其它平台集成接口&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+">go端口转发带web</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/chun-ipv6-tian-jia-dns-fang-wen-ipv4/"" data-c="
+          &lt;p&gt;添加 trex.fi 和 go6lab.si 的 DNS&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo -e &amp;quot;nameserver 2001:67c:2b0::4\nnameserver 2001:67c:27e4:15::6411\nnameserver 2001:67c:27e4::64\nnameserver 2001:67c:2b0::6&amp;quot; &amp;gt; /etc/resolv.conf
+&lt;/code&gt;&lt;/pre&gt;
+">纯ipv6添加DNS访问IPV4</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/an-zhuo-shou-ji-yong-qemu-yun-xing-openwrtzhuan-en-shan/"" data-c="
+          &lt;p&gt;原帖地址：收藏&lt;br&gt;
+https://www.right.com.cn/forum/thread-6918948-1-1.html&lt;br&gt;
+网上关于qemu运行openwrt的教程很多，但是在安卓手机上qemu运行openwrt一直找不到，为此我进行了长时间的探索学习，终于有了一些成果。&lt;/p&gt;
+&lt;p&gt;拿出我的吃灰手机 红米note4x 3+32  安卓11&lt;/p&gt;
+&lt;p&gt;查询得知&lt;br&gt;
+高通骁龙625 8x ARM Cortex A53, Octa-core CPU，单核频率最高可达2.0GHz，14nm FinFET制程，GPU Adreno 506  支持Cat.7 LTE网络 arm64位 也就是aarch64架构&lt;/p&gt;
+&lt;p&gt;授人与鱼，不如授人与渔，所以下面命令我都会有解释。很多时候大家可以玩出不一样的玩法&lt;br&gt;
+我弄懂这些都花了好几周，零零碎碎资料整合起来了&lt;/p&gt;
+&lt;h4 id=&#34;本帖隐藏的内容&#34;&gt;本帖隐藏的内容&lt;/h4&gt;
+&lt;p&gt;准备&lt;br&gt;
+本次用到的工具是termux 安卓7 (API 24) 及以上版本，旧版本系统使用本镜像可能导致程序错误。&lt;br&gt;
+替换国内清华源参考 https://mirrors.tuna.tsinghua.edu.cn/help/termux/&lt;/p&gt;
+&lt;p&gt;全程在手机上复制粘贴也可以的，全程只有手机复制粘贴的可以跳过看下面的正戏开始。&lt;br&gt;
+但是为了方便，我们可以给手机安装ssh然后在电脑上操作&lt;/p&gt;
+&lt;p&gt;更改密码（或者说设定初始密码）termux输入&lt;br&gt;
+passwd&lt;/p&gt;
+&lt;p&gt;会显示这样（设置密码的时候，输入不显示）：&lt;br&gt;
+New password:&lt;br&gt;
+Retype new password:&lt;br&gt;
+New password was successfully set.&lt;/p&gt;
+&lt;p&gt;安装openssh&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;pkg upgrade&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;当然，喜欢在手机上慢慢敲命令的可以不装&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;pkg install openssh&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;开启ssh并连接执行这一句：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;sshd&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;可以再输入一条echo &amp;quot;sshd&amp;quot; &amp;gt;&amp;gt; ~/.bashrc 这样不用每次打开终端都要运行一次sshd&lt;br&gt;
+需要注意的是，我们平常开启的ssh服务端口是22，但是Termux开启的ssh服务端口是在8022&lt;br&gt;
+接着我们输入 ifconfig 查看自己的ip地址（若是需要连接电脑和手机需要在同一个的WiFi下）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ifconfig&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;这个每个人可能不同的，需要自己看上面显示换ip，把192.168.42.129换成手机ip&lt;/p&gt;
+&lt;p&gt;而我是为了方便，usb共享，也可以热点，然后电脑连上也行。最好是手机连路由器wifi，然后电脑连路由器，在同局域网就行，搞好以后甚至可以做给电脑做旁路由&lt;br&gt;
+这个时候换到电脑输入了我的win10，自带ssh。在cmd上执行&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ssh root@192.168.42.129 -p 8022&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;手动输入yes回车，输入密码回车连上了&lt;/p&gt;
+&lt;p&gt;正戏开始&lt;br&gt;
+更新源&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;apt-get update&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;你可以查看qemu有什么包，可以根据自己的需求安装模拟其他架构&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;apt search qemu&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;安装qemu工具包&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;apt install qemu-utils&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;当然，我的是arm64位架构的，模拟arm的性能损耗会更低&lt;/p&gt;
+&lt;p&gt;安装模拟aarch64架构的&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;apt install qemu-system-aarch64-headless&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;安装x86_64架构的&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;apt install qemu-system-x86-64-headless&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;首先进行arm架构的教程&lt;/p&gt;
+&lt;p&gt;这里先采用官方releases版固件，你们成功后可以换其他充满插件的固件、或者手动构建armvirt镜像，替换执行命令里固件名字就行了&lt;br&gt;
+下载arm固件&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;span style=&#34;font-size: small;&#34;&gt;wget &lt;/span&gt;&lt;font size=&#34;2&#34;&gt;https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.8/targets/armvirt/64/openwrt-19.07.8-armvirt-64-root.ext4.gz&lt;/font&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;(额，可能提示The program wget is not installed.那就执行pkg install wget安装wget后，再下载)&lt;br&gt;
+解压&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;gzip -d openwrt-19.07.8-armvirt-64-root.ext4.gz&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;与X86会有combined不同的是，还有指定kernel，所以还要内核镜像。你们使用自己编译的固件时，记得也把内核文件复制到手机&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;wget https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.8/targets/armvirt/64/openwrt-19.07.8-armvirt-64-Image&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;这个时候输入查看命令ls执行可以看到文件openwrt-19.07.8-armvirt-64-root.ext4 和 openwrt-19.07.8-armvirt-64-Image&lt;br&gt;
+开始运行openwrt&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;qemu-system-aarch64 -M virt -m 1024m -kernel openwrt-19.07.8-armvirt-64-Image -append &amp;quot;root=fe00&amp;quot; -hda openwrt-19.07.8-armvirt-64-root.ext4 -no-reboot -nographic -cpu cortex-a53 -smp 4 -net nic -net user,id=wan,hostfwd=tcp::7080-:80,hostfwd=tcp::7022-:22&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;命令说明：-M 是模拟的机器，可以执行qemu-system-aarch64 -M help查看列表，可以看到有树莓派的，所以也可以直接用树莓派的固件&lt;br&gt;
+-m 是分配内存大小 我这里分配1024mb&lt;br&gt;
+-kernel是指定内核&lt;br&gt;
+-append cmdline     设置Linux内核命令行和启动参数&lt;br&gt;
+我这里”root=fe00“指定根的块设备是fe00，如果你没有指定这个，内核将列出可用的块设备并重新启动，之后你们自己的固件可以取消这个”root=fe00“看可用块设备列表，再修改填上。我之前在这徘徊了很久啊。&lt;br&gt;
+-hda是指定硬盘镜像&lt;br&gt;
+--no-reboot 就是字面意思，里面客户系统如果重启就会直接退出qemu，重启相当于关机退出qemu。可以不要这条，这样客户系统可以进行重启的操作&lt;br&gt;
+-nographic 关闭qemu的图形化界面输出。也可以去掉，然后加上--vnc :1  以vnc为图像模式输出到”显示器”，并占用vnc 1端口，vnc访问手机ip:5901显示进入图像界面。-nographic与--vnc不同的是执行运行后不会立即有回显。&lt;br&gt;
+-cpu cortex-a53 模拟cortex-a53类型的处理器，因为前面查询我的骁龙625是cortex-a53类型处理器，模拟这个性能损失较小。可以输入qemu-system-aarch64 -cpu help查看可模拟列表&lt;br&gt;
+-smp 核数，给cpu分配核数&lt;br&gt;
+-net nic 就是快速配置网卡。后面net user,id=wan,hostfwd=tcp::7080-:80,hostfwd=tcp::7022-:22配置网卡网络模式为用户模式（nat模式，使用主机网络nat联网），分配id标识为wan，hostfwd是端口重定向参数，可以加逗号多个使用，很清晰可以自己根据需要增加和删改，这里我把主机7080端口重定向到客户系统的80端口，把主机7022端口重定向到客户系统的22端口。这两个端口分别是web网页管理地址端口、ssh端口。还有具体设置网卡可以百度搜索qemu网络模式。&lt;/p&gt;
+&lt;p&gt;执行后耐心等待跑码，看下面图&lt;br&gt;
+出现第一个框就可以按回车输命令了，但是不急，等第二个&lt;br&gt;
+出现br-lan: port 1(eth0) entered forwarding state就是启动好了（改过下面以后，第二次运行是出现8021q: adding VLAN 0 to HW filter on device eth0）&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://www.right.com.cn/forum/forum.php?mod=attachment&amp;amp;aid=NTE3NTEzfDFiNjc4NDYzfDE2NDI1MDU5Mzd8NTU0Nzg5fDY5MTg5NDg%3D&amp;amp;noupdate=yes&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;因为第一个网卡默认是分配给lan的，所以我们要改一下，分给wan（这个镜像改过一次，下次再启动就不用改了）&lt;br&gt;
+输入&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;vi /etc/config/network&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;按键盘i就可以编辑进行增删了，把config interface &#39;wan&#39; 那整部分改成以下这样&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;div&gt;config interface &#39;wan&#39;&lt;/div&gt;&lt;div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;/div&gt;&lt;div&gt;     option ifname &#39;eth0&#39;&lt;/div&gt;&lt;div&gt;     option proto &#39;dhcp&#39;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;编辑好了，按键盘ESC，然后按住shift再按一下键盘上的；就可以输入wq回车后保存退出（就是按esc退出后，按出冒号，wq命令保存退出）&lt;br&gt;
+重启网络服务&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;/etc/init.d/network restart&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;输入ifconfig看看&lt;br&gt;
+eth0    Link encap:Ethernet HWaddr 52:54:00:12:34:56&lt;br&gt;
+inet addr:10.0.2.15&lt;/p&gt;
+&lt;p&gt;获得了一个nat地址&lt;br&gt;
+现在ping一下外网&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ping www.baidu.com&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;只要手机能联网，它就能联网！&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://www.right.com.cn/forum/forum.php?mod=attachment&amp;amp;aid=NTE3NTExfDVmNThkNzZmfDE2NDI1MDU5Mzd8NTU0Nzg5fDY5MTg5NDg%3D&amp;amp;noupdate=yes&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;因为我手机用的是4g数据，地方信号不好，延迟有点大哈别介意&lt;/p&gt;
+&lt;p&gt;开放wan的80端口&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;iptables -I INPUT -p tcp --dport 80 -j ACCEPT&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;前面执行命令的时候，我们已经弄好手机7080端口重定向客户机的80端口了，所以我们在浏览器访问手机ip加7080端口，就可以进入openwrt的管理页面啦！&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://www.right.com.cn/forum/forum.php?mod=attachment&amp;amp;aid=NTE3NTEyfDY2YTRiMDk2fDE2NDI1MDU5Mzd8NTU0Nzg5fDY5MTg5NDg%3D&amp;amp;noupdate=yes&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;连上openwrt的ssh，前面执行命令的时候，我们已经弄好手机7022端口重定向客户机的22端口了，只要在openwrt开放22端口，就可以手机ip加7022连上了&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;iptables -I INPUT -p tcp --dport 80 -j ACCEPT&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;你可以根据需要设置好重定向端口和开放端口，例子很明白了&lt;/p&gt;
+&lt;p&gt;现在，进行模拟x86架构的教程&lt;br&gt;
+X86方便一些，不需要指定内核，使用带combined字样的镜像就行了&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;wget https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.8/targets/x86/64/openwrt-19.07.8-x86-64-combined-ext4.img.gz&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;解压&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;gzip -d openwrt-19.07.8-x86-64-combined-ext4.img.gz&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;运行&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;qemu-system-x86_64 -m 1024m -hda openwrt-19.07.8-x86-64-combined-ext4.img -no-reboot -nographic -smp 2 -net nic -net user,id=wan,hostfwd=tcp::7080-:80,hostfwd=tcp::7022-:22&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;同样，改一下eth0，分给wan&lt;br&gt;
+输入&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;vi /etc/config/network&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;按键盘i就可以编辑进行增删了，把config interface &#39;wan&#39; 那整部分改成以下这样&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;div&gt;config interface &#39;wan&#39;&lt;/div&gt;&lt;div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;/div&gt;&lt;div&gt;     option ifname &#39;eth0&#39;&lt;/div&gt;&lt;div&gt;     option proto &#39;dhcp&#39;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;编辑好了，按键盘ESC，然后按住shift再按一下键盘上的；就可以输入wq回车后保存退出（就是按esc退出后，按出冒号，wq命令保存退出）&lt;br&gt;
+重启网络服务&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;/etc/init.d/network restart&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;就可以联网了。然后开放端口&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;div&gt;iptables -I INPUT -p tcp --dport 80 -j ACCEPT&lt;/div&gt;&lt;div&gt;iptables -I INPUT -p tcp --dport 22-j ACCEPT&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;浏览器访问手机ip:7080进行设置&lt;/p&gt;
+&lt;p&gt;跑分&lt;br&gt;
+两个都修改成2核1G内存&lt;br&gt;
+替换软件源为清华源，更快下载&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;sed -i &#39;s_downloads.openwrt.org_mirrors.tuna.tsinghua.edu.cn/openwrt_&#39; /etc/opkg/distfeeds.conf&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;opkg update&lt;/li&gt;
+&lt;li&gt;&lt;font color=&#34;#000000&#34;&gt;opkg install openssl-util&lt;/font&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;开始测试&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;openssl speed md5 sha1 sha256 sha512 des des-ede3 aes-128-cbc aes-192-cbc aes-256-cbc rsa2048 dsa2048 | tee /tmp/sslspeed | awk -v ORS=&amp;quot;&amp;quot; &#39;$1 ~ /OpenSSL/ {print &amp;quot;| &amp;quot; $2 &amp;quot; |&amp;quot;} $1 ~ /(md5|sha)/ {print &amp;quot; &amp;quot; $5 &amp;quot; |&amp;quot;} $1 ~ /(des|aes)/ {b = b &amp;quot; &amp;quot; $6 &amp;quot; |&amp;quot;} $1 ~ /(rsa|dsa)/ {print b &amp;quot; &amp;quot; $6 &amp;quot; | &amp;quot; $7 &amp;quot; |&amp;quot;;b=&amp;quot;&amp;quot;} END { print &amp;quot;\n&amp;quot; }&#39; | sed &#39;s/.(..)k/\10/g&#39;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;测试完成，测试结果保存在/tmp下的sslspeed文件。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;cat /tmp/sslspeed&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;复制代码&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;跑分可以看到，模拟arm a53性能损耗要低&lt;br&gt;
+aarch64 2核1G内存&lt;br&gt;
+type        16 bytes   64 bytes  256 bytes  1024 bytes  8192 bytes 16384 bytes&lt;br&gt;
+md5          2345.78k   9028.32k  27361.33k  55603.54k  78219.86k  74679.15k&lt;br&gt;
+sha1         2060.79k   5820.54k  12326.49k  17208.03k  19619.29k  19633.22k&lt;br&gt;
+des cbc       2966.17k   3461.81k   3582.62k   3658.22k   3629.86k   3525.88k&lt;br&gt;
+des ede3      1004.05k   1076.56k   1099.76k   1110.49k   1095.02k   1086.75k&lt;br&gt;
+aes-128 cbc    3859.83k   4408.20k   4571.63k   4650.21k   4572.02k   4306.34k&lt;br&gt;
+aes-192 cbc    3527.58k   3952.12k   4089.88k   3808.79k   4068.42k   3863.52k&lt;br&gt;
+aes-256 cbc    3223.38k   3582.85k   3681.47k   3719.15k   3647.91k   3525.88k&lt;br&gt;
+sha256        1916.95k   5264.55k  10780.11k  14924.20k  16907.07k  17001.85k&lt;br&gt;
+sha512        1348.55k   5433.92k  11909.28k  22806.93k  30542.09k  29950.62k&lt;br&gt;
+sign  verify  sign/s verify/s&lt;br&gt;
+rsa 2048 bits 0.040826s 0.001071s   24.5  933.6&lt;br&gt;
+sign  verify  sign/s verify/s&lt;br&gt;
+dsa 2048 bits 0.018837s 0.014805s   53.1   67.5&lt;/p&gt;
+&lt;p&gt;X86 2核1G内存&lt;br&gt;
+type        16 bytes   64 bytes  256 bytes  1024 bytes  8192 bytes 16384 bytes&lt;br&gt;
+md5          3372.23k  10675.43k  26252.46k  41720.10k  49754.76k  50417.79k&lt;br&gt;
+sha1         1462.10k   3723.77k   7062.45k   9937.98k  10458.17k  10160.28k&lt;br&gt;
+des cbc       2281.98k   2569.14k   2646.28k   2641.44k   2672.74k   2655.53k&lt;br&gt;
+des ede3       734.11k    767.46k    654.58k    765.43k    772.78k    772.93k&lt;br&gt;
+aes-128 cbc    3142.41k   3478.23k   3584.09k   3599.02k   3609.94k   3593.56k&lt;br&gt;
+aes-192 cbc    2349.68k   3090.44k   3192.58k   3145.78k   3120.63k   3089.87k&lt;br&gt;
+aes-256 cbc    2418.03k   2628.49k   2678.10k   2711.37k   2766.57k   2692.44k&lt;br&gt;
+sha256        1540.33k   3855.26k   7400.12k   9692.61k  10619.26k  10727.09k&lt;br&gt;
+sha512        1418.24k   4975.96k   6822.40k  15752.47k  14248.53k  15937.16k&lt;br&gt;
+sign  verify  sign/s verify/s&lt;br&gt;
+rsa 2048 bits 0.045972s 0.001250s   21.8  800.3&lt;br&gt;
+sign  verify  sign/s verify/s&lt;br&gt;
+dsa 2048 bits 0.020689s 0.017391s   48.3   57.5&lt;/p&gt;
+">安卓手机用qemu运行openwrt【转恩山】</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/acmesh-yu-ming-zheng-shu-yi-jian-shen-qing-jiao-ben/"" data-c="
+          &lt;h1 id=&#34;acmesh-域名证书一键申请脚本&#34;&gt;Acme.sh 域名证书一键申请脚本&lt;/h1&gt;
+&lt;p&gt;此脚本可以帮助你使用acme.sh脚本申请域名的ssl证书，并且可以保存到你想要的位置&lt;br&gt;
+https://github.com/Misaka-blog/acme-1key&lt;/p&gt;
+&lt;h2 id=&#34;提示&#34;&gt;提示&lt;/h2&gt;
+&lt;p&gt;本脚本请在关闭warp之后使用，否则无法申请证书&lt;/p&gt;
+&lt;p&gt;对于双栈VPS，默认检测IPV4地址优先&lt;/p&gt;
+&lt;p&gt;对于国内VPS，可能遇到脚本不可用的问题&lt;/p&gt;
+&lt;h2 id=&#34;使用方法&#34;&gt;使用方法&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;wget -N https://cdn.jsdelivr.net/gh/Misaka-blog/acme-1key@master/acme1key.sh &amp;amp;&amp;amp; chmod -R 777 acme1key.sh &amp;amp;&amp;amp; bash acme1key.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;快捷方式 &lt;code&gt;bash acme1key.sh&lt;/code&gt;&lt;/p&gt;
+">Acme.sh 域名证书一键申请脚本</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/librespeed-mo-gai-docker-ban/"" data-c="
+          &lt;p&gt;LibreSpeed 魔改 Docker 版&lt;/p&gt;
+&lt;p&gt;https://hub.docker.com/r/jaydenlee2019/speedtest&lt;/p&gt;
+&lt;p&gt;简单说明：&lt;/p&gt;
+&lt;p&gt;1、基于 php:fpm-alpine3.12 镜像；&lt;/p&gt;
+&lt;p&gt;2、开启 php opcache，设置 cgi.fix_pathinfo=0， date.timezone=Asia/Shanghai；&lt;/p&gt;
+&lt;p&gt;3、集成 nginx 1.8.0；&lt;/p&gt;
+&lt;p&gt;4、美化 UI，黑色主题；&lt;/p&gt;
+&lt;p&gt;5、IP定位使用B站API。&lt;/p&gt;
+&lt;p&gt;运行示例：&lt;/p&gt;
+&lt;p&gt;docker run --name=speedtest -p 8081:80 -d jaydenlee2019/speedtest&lt;/p&gt;
+&lt;p&gt;自定义Title：&lt;/p&gt;
+&lt;p&gt;docker run --name=speedtest -p 8081:80 -e TITLE=&amp;quot;iON Cloud 圣何塞测速站点（非官方）&amp;quot; -d jaydenlee2019/speedtest&lt;/p&gt;
+&lt;p&gt;更新说明：&lt;/p&gt;
+&lt;p&gt;1.1.0版本&lt;/p&gt;
+&lt;p&gt;1、减少镜像的层数；&lt;/p&gt;
+&lt;p&gt;2、增加自定义Title&lt;/p&gt;
+&lt;p&gt;1.0.1版本&lt;/p&gt;
+&lt;p&gt;1、基于 php:fpm-alpine 镜像；&lt;/p&gt;
+&lt;p&gt;2、IP地址增加ISP显示；&lt;/p&gt;
+&lt;p&gt;3、title增加版本显示；&lt;/p&gt;
+&lt;p&gt;4、librespeed 更新至5.2.3。&lt;/p&gt;
+&lt;p&gt;演示站点：http://s8.vpsaff.net:8081/&lt;/p&gt;
+">LibreSpeed 魔改 Docker 版 </a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/docker-an-zhuang-mynodequery-tan-zhen/"" data-c="
+          &lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://www.idcoffer.com/wp-content/uploads/2022/01/20220106-001.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;# &lt;strong&gt;MyNodeQuery&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;https://hub.docker.com/r/jaydenlee2019/mynodequery&lt;/p&gt;
+&lt;p&gt;## &lt;strong&gt;简介&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;MyNodeQuery可以说是代替NodeQuery的个人版，一款简洁好用的探针，没有多余的元素，延续NodeQuery的生命。&lt;/p&gt;
+&lt;p&gt;演示站点：&lt;a href=&#34;https://status.idcoffer.com/&#34;&gt;https://status.idcoffer.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;## &lt;strong&gt;使用&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;### &lt;strong&gt;依赖&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;- MySql 5.7 或更高版本；&lt;/p&gt;
+&lt;p&gt;- Redis （可选）&lt;/p&gt;
+&lt;p&gt;- Docker&lt;/p&gt;
+&lt;p&gt;### &lt;strong&gt;安装&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;目前仅提供docker版本&lt;/p&gt;
+&lt;p&gt;```console&lt;/p&gt;
+&lt;p&gt;docker run -d --name=mynodequery -p 5000:5000 jaydenlee2019/mynodequery:latest&lt;/p&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;p&gt;#### &lt;strong&gt;如何解决每次更新都要从新Install的问题？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;\1. 创建一个文本&lt;/p&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;p&gt;/etc/mynodequery/appsettings.json&lt;/p&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;p&gt;，内容为：&lt;/p&gt;
+&lt;p&gt;```json&lt;/p&gt;
+&lt;p&gt;{&lt;/p&gt;
+&lt;p&gt;​    &amp;quot;Logging&amp;quot;: {&lt;/p&gt;
+&lt;p&gt;​        &amp;quot;LogLevel&amp;quot;: {&lt;/p&gt;
+&lt;p&gt;​            &amp;quot;Default&amp;quot;: &amp;quot;Information&amp;quot;,&lt;/p&gt;
+&lt;p&gt;​            &amp;quot;Microsoft&amp;quot;: &amp;quot;Warning&amp;quot;,&lt;/p&gt;
+&lt;p&gt;​            &amp;quot;Microsoft.Hosting.Lifetime&amp;quot;: &amp;quot;Information&amp;quot;&lt;/p&gt;
+&lt;p&gt;​        }&lt;/p&gt;
+&lt;p&gt;​    },&lt;/p&gt;
+&lt;p&gt;​    &amp;quot;Redis&amp;quot;: {&lt;/p&gt;
+&lt;p&gt;​        &amp;quot;Configuration&amp;quot;: &amp;quot;&amp;quot;&lt;/p&gt;
+&lt;p&gt;​    },&lt;/p&gt;
+&lt;p&gt;​    &amp;quot;MySql&amp;quot;: {&lt;/p&gt;
+&lt;p&gt;​        &amp;quot;ConnectionString&amp;quot;: &amp;quot;&amp;quot;&lt;/p&gt;
+&lt;p&gt;​    },&lt;/p&gt;
+&lt;p&gt;​    &amp;quot;AllowedHosts&amp;quot;: &amp;quot;*&amp;quot;,&lt;/p&gt;
+&lt;p&gt;​    &amp;quot;Installed&amp;quot;: &amp;quot;false&amp;quot;,&lt;/p&gt;
+&lt;p&gt;​    &amp;quot;ReadNodeIpHeaderKey&amp;quot;: &amp;quot;X-Real-IP&amp;quot;&lt;/p&gt;
+&lt;p&gt;}&lt;/p&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;p&gt;\2. 在docker run 语句中加入 &lt;code&gt;-v /etc/mynodequery/appsettings.json:/app/appsettings.json&lt;/code&gt; 即可解决。&lt;/p&gt;
+&lt;p&gt;## &lt;strong&gt;更新&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;### &lt;strong&gt;1.0.0.3&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;\1. 修复已知bugs&lt;/p&gt;
+&lt;p&gt;\2. 开放Telegram通知功能&lt;/p&gt;
+&lt;p&gt;\3. 增加自定义获取节点IP请求头设置（在设置中可以找到，并添加 /Setting/MyHeaders 页辅助设置）&lt;/p&gt;
+&lt;p&gt;\4. 仪表盘自动刷新修改为5秒&lt;/p&gt;
+&lt;p&gt;### &lt;strong&gt;1.0.0.2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;\1. 增加基础SEO支持;&lt;/p&gt;
+&lt;p&gt;\2. &lt;s&gt;增加Telegram通知;&lt;/s&gt;（目前内测中）&lt;/p&gt;
+&lt;p&gt;\3. 修复已知bugs&lt;/p&gt;
+&lt;p&gt;### &lt;strong&gt;1.0.0.1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;\1. 修复上行下行显示错误问题；&lt;/p&gt;
+&lt;p&gt;\2. 修复站点设置缓存导致无法添加节点问题。&lt;/p&gt;
+&lt;p&gt;## &lt;strong&gt;其他&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;### &lt;strong&gt;更新注意事项&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果是从1.0.0.1或更早版本升级，请在MySql客户端执行以下SQL语句：&lt;/p&gt;
+&lt;p&gt;```sql&lt;/p&gt;
+&lt;p&gt;alter table md_nodes modify  column DeleteTime datetime;&lt;/p&gt;
+&lt;p&gt;alter table md_nodes modify  column LastUptime datetime;&lt;/p&gt;
+&lt;p&gt;alter table md_nodes modify  column AgentUptime datetime;&lt;/p&gt;
+&lt;p&gt;alter table md_nodes add NodeStatus varchar(10) default &#39;Unknown&#39;;&lt;/p&gt;
+&lt;p&gt;update md_nodes set NodeStatus=&#39;Online&#39; where AgentUptime is not null and date_add(AgentUptime, interval 70 second) &amp;gt;= Now();&lt;/p&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;p&gt;### &lt;strong&gt;资源消耗&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;CPU是AMD EPYC 7402P&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://www.idcoffer.com/wp-content/uploads/2022/01/20210106-002.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+">Docker安装MyNodeQuery探针</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/docker-an-zhuang-v2ray-linux-ke-hu-duan-dai-web-kong-zhi-duan/"" data-c="
+          &lt;p&gt;v2ray用户安装文档&lt;/p&gt;
+&lt;p&gt;https://v2raya.org/docs/prologue/installation/docker/&lt;/p&gt;
+&lt;p&gt;V2rayA项目地址&lt;/p&gt;
+&lt;p&gt;https://github.com/v2rayA/v2rayA&lt;/p&gt;
+&lt;h1 id=&#34;docker安装&#34;&gt;Docker安装&lt;/h1&gt;
+&lt;h2 id=&#34;使用官方安装脚本自动安装&#34;&gt;使用官方安装脚本自动安装&lt;/h2&gt;
+&lt;p&gt;安装命令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;也可以使用国内 daocloud 一键安装命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -sSL https://get.daocloud.io/docker | sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Docker 镜像内集成了 V2Ray 内核，因此内核无需额外被安装。&lt;/p&gt;
+&lt;h3 id=&#34;docker-部署&#34;&gt;Docker 部署&lt;/h3&gt;
+&lt;p&gt;使用 docker 命令部署。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# run v2raya
+docker run -d \
+  --restart=always \
+  --privileged \
+  --network=host \
+  --name v2raya \
+  -e V2RAYA_ADDRESS=0.0.0.0:2017 \
+      -v /lib/modules:/lib/modules \
+  -v /etc/resolv.conf:/etc/resolv.conf \
+  -v /etc/v2raya:/etc/v2raya \
+  mzz2017/v2raya
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;如果你使用 MacOSX 或其他不支持 host 模式的环境，在该情况下&lt;strong&gt;无法使用全局透明代理&lt;/strong&gt;，或者你不希望使用全局透明代理，docker 命令会略有不同：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# run v2raya
+docker run -d \
+  -p 2017:2017 \
+  -p 20170-20172:20170-20172 \
+  --restart=always \
+  --name v2raya \
+  -v /etc/v2raya:/etc/v2raya \
+  mzz2017/v2raya
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果你通过 2017 端口 如 &lt;a href=&#34;http://localhost:2017/&#34;&gt;http://localhost:2017&lt;/a&gt; 无法访问 UI 界面，请检查你的服务是否已经启动。&lt;a href=&#34;https://github.com/v2rayA/v2rayA/issues/237&#34;&gt;相关问题&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;接下来进入 UI，本节将介绍 v2rayA 的基本操作流程。&lt;/p&gt;
+">Docker安装V2ray linux客户端带web控制端</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/wan-quan-kai-yuan-ke-zai-webui-cha-kan-jin-du-de-yi-jian-dd-jiao-ben/"" data-c="
+          &lt;p&gt;&lt;strong&gt;[完全开源] 可在WebUI查看进度的一键DD脚本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;脚本介绍&lt;/p&gt;
+&lt;p&gt;该脚本可在DD系统时为您提供一个WebUI以帮助您了解到目前的DD状态.&lt;/p&gt;
+&lt;p&gt;基于现有非常成熟的一键重装脚本修改, 只修改脚本内DD相关逻辑, 无任何学习成本.&lt;/p&gt;
+&lt;p&gt;脚本执行环境暂只支持linux amd64, 可DD Windows等系统(跟原来脚本一样).&lt;/p&gt;
+&lt;p&gt;WebUI是在网上找的一个跳转页面模板魔改的&lt;/p&gt;
+&lt;p&gt;特别感谢&lt;/p&gt;
+&lt;p&gt;Shell原作者: MoeClub&lt;/p&gt;
+&lt;p&gt;Shell二次修改: cxthhhhh&lt;/p&gt;
+&lt;p&gt;使用方法&lt;/p&gt;
+&lt;p&gt;基础用法同原始脚本, 高级用法可自行查看shell文件(部分功能可能未经过全面测试, 需要您自行承担后果).&lt;/p&gt;
+&lt;p&gt;脚本最后会显示您的WebUI地址, 此地址不会再次显示在任何地方, DD结束后WebUI也将会自动消失.&lt;/p&gt;
+&lt;p&gt;Shell地址: https://github.com/flyqie/dd-shell&lt;/p&gt;
+&lt;p&gt;Go程序地址: https://github.com/flyqie/dd-web&lt;/p&gt;
+&lt;p&gt;脚本直链地址: https://raw.githubusercontent.com/flyqie/dd-shell/master/Core_Install.sh&lt;/p&gt;
+&lt;p&gt;演示图&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://i.loli.net/2021/11/21/AxLoMDgaOXJEbm6.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://i.loli.net/2021/11/21/XPCsS9D4q3ATmrn.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;风险说明&lt;/p&gt;
+&lt;p&gt;由于该脚本使用环境复杂, 故无法完全测试, 可能会导致您的服务器无**常运行,数据丢失.&lt;/p&gt;
+&lt;p&gt;部分VPS商家明令禁止DD系统, 可能会导致您的服务器被终止.&lt;/p&gt;
+&lt;p&gt;DD时会占用较高资源(不是说脚本占资源哈, 是指DD系统这个行为本身), 可能导致您的服务器被暂停或终止.&lt;/p&gt;
+&lt;p&gt;作者无法知晓及监控用户行为, 也不承担对该脚本的任何责任(包括但不限于法律责任、数据损失责任)&lt;/p&gt;
+&lt;p&gt;技术相关说明&lt;/p&gt;
+&lt;p&gt;该脚本主要修改了原始的wget + gzip + dd步骤, 将其全部使用go实现, 同时加入了WebUI, WebUI与服务器之间通过ws进行沟通.&lt;/p&gt;
+&lt;p&gt;已测试环境&lt;/p&gt;
+&lt;p&gt;Proxmoxve 6 KVM&lt;/p&gt;
+&lt;p&gt;Vultr KVM&lt;/p&gt;
+&lt;p&gt;(其他没测试, 欢迎各位大佬提交测试结果, 目前好像没发现因为该脚本导致的DD失败的情况)&lt;/p&gt;
+&lt;p&gt;注意事项&lt;/p&gt;
+&lt;p&gt;脚本自动重启后能Ping通但无法访问WebUI是正常的, 会先配置临时运行环境(这部分没改动), 等临时运行环境配置完开始DD后WebUI才可访问.&lt;/p&gt;
+&lt;p&gt;默认情况下, 如果DD出现错误WebUI会一直可用并展示错误详情, 如果DD成功了会自动重启, 此配置可通过脚本参数修改.&lt;/p&gt;
+&lt;p&gt;脚本意义&lt;/p&gt;
+&lt;p&gt;个人认为这个脚本没什么特别大的意义, 无非也就是让DD过程变得更加的清晰, 能够比较准确的判断是哪个地方出了问题, 并没有考虑到在重启后DD没开始之前出现的问题该如何排查.&lt;/p&gt;
+&lt;p&gt;顺便说下之前被封的某人, 他确实有技术, 他的脚本也不只是让DD脚本有了进度条, 但是这人情商好像不太行, 做事欠考虑.&lt;/p&gt;
+&lt;p&gt;另外, 之前5刀带IPMI的杜甫真的香, 可惜俺没有, 有IKVM真的省了很多事啊&lt;img src=&#34;https://hostloc.com/static/image/smiley/yct/016.gif&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt; .&lt;/p&gt;
+">[完全开源] 可在WebUI查看进度的一键DD脚本*</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/linux-xia-yi-jian-jian-ce-vps-hui-cheng-guo-nei-san-wang-lu-you/"" data-c="
+          &lt;h1 id=&#34;linux下一键检测vps回程国内三网路由&#34;&gt;Linux下，一键检测VPS回程国内三网路由&lt;/h1&gt;
+&lt;p&gt;检测VPS回程国内三网路由，用法：&lt;/p&gt;
+&lt;p&gt;curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bash&lt;/p&gt;
+&lt;p&gt;支持的线路为：电信CN2 GT，电信CN2 GIA，联通169，电信163，联通9929，联通4837，移动CMI&lt;/p&gt;
+&lt;p&gt;电信目标IP：&lt;/p&gt;
+&lt;p&gt;#深圳电信： ./besttrace 58.60.188.222&lt;/p&gt;
+&lt;p&gt;mtr -c 100 --report 58.60.188.222&lt;/p&gt;
+&lt;p&gt;#上海电信： ./besttrace 202.96.209.133&lt;/p&gt;
+&lt;p&gt;mtr -c 100 --report 202.96.209.133&lt;/p&gt;
+&lt;p&gt;#北京电信： ./besttrace 219.141.136.12&lt;/p&gt;
+&lt;p&gt;mtr -c 100 --report 219.141.136.12&lt;/p&gt;
+&lt;p&gt;联通目标IP：&lt;/p&gt;
+&lt;p&gt;#深圳联通： ./besttrace 210.21.196.6&lt;/p&gt;
+&lt;p&gt;mtr -c 100 --report 210.21.196.6&lt;/p&gt;
+&lt;p&gt;#上海联通： ./besttrace 210.22.97.1&lt;/p&gt;
+&lt;p&gt;mtr -c 100 --report 210.22.97.1&lt;/p&gt;
+&lt;p&gt;#北京联通： ./besttrace 202.106.50.1&lt;/p&gt;
+&lt;p&gt;mtr -c 100 --report 202.106.50.1&lt;/p&gt;
+&lt;p&gt;移动目标IP：&lt;/p&gt;
+&lt;p&gt;#深圳移动： ./besttrace 120.196.165.24&lt;/p&gt;
+&lt;p&gt;mtr -c 100 --report 120.196.165.24&lt;/p&gt;
+&lt;p&gt;#上海移动： ./besttrace 211.136.112.200&lt;/p&gt;
+&lt;p&gt;mtr -c 100 --report 211.136.112.200&lt;/p&gt;
+&lt;p&gt;#北京移动： ./besttrace 221.179.155.161&lt;/p&gt;
+&lt;p&gt;mtr -c 100 --report 221.179.155.161&lt;/p&gt;
+"># Linux下，一键检测VPS回程国内三网路由</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/warp-jie-suo-nai-fei-hou-tai-jian-kong-zi-dong-shua-xin-ip-jiao-ben/"" data-c="
+          &lt;p&gt;分享 某位大佬的github脚本&lt;br&gt;
+https://github.com/luoxue-bot/warp_auto_change_ip&lt;/p&gt;
+&lt;p&gt;目前的warp ipv4可以解锁奈飞，但用一段时间会失效（大概1天-1周不等）&lt;br&gt;
+而每次执行重启命令restart wg-quick@wgcf  就会刷新它的ip&lt;br&gt;
+这个脚本就是每隔一段时间（可设置），检测一下解锁nf是否有效，如果失效了，不断重启warp直到刷出了可以解锁奈飞的ip&lt;/p&gt;
+&lt;p&gt;（此脚本使用warp的ipv4，但不影响ssh的正常登录）&lt;/p&gt;
+&lt;p&gt;注意：脚本需要挂在后台，可以使用screen&lt;br&gt;
+进入screen后运行脚本&lt;/p&gt;
+&lt;p&gt;设置：每隔多长时间检测一下ip的解锁是否有效&lt;br&gt;
+脚本36行        echo -e &amp;quot;Region: ${region} Done, monitoring...&amp;quot;&lt;br&gt;
+脚本37行        sleep 6&lt;br&gt;
+第37行的sleep 6可以改成任意时间，单位是秒，一般来说，1分钟即sleep 60就行，ip基本都可以存活一整天以上，不需要那么频繁的检测&lt;/p&gt;
+&lt;p&gt;（先进入screen）&lt;br&gt;
+wget https://github.com/luoxue-bot/warp_auto_change_ip/raw/main/warp_change_ip.sh &amp;amp;&amp;amp; chmod +x warp_change_ip.sh &amp;amp;&amp;amp; ./warp_change_ip.sh&lt;/p&gt;
+&lt;p&gt;如果之前没用安装过warp，首次运行脚本，根据提示&amp;quot;Is warp installed? [y/n] &amp;quot; 选择n，它会安装warp&lt;br&gt;
+然后再次运行脚本，选y&lt;/p&gt;
+&lt;p&gt;接下来，&amp;quot;Input the region you want(e.g. HK,SG):&amp;quot;&lt;br&gt;
+这个地方输入vps所在的国家名字，例如HK US SG UK&lt;br&gt;
+注意：一定要大写字母，小写不行&lt;br&gt;
+美国的小鸡不可能刷出新加坡的ip，所以填小鸡的真实位置即可&lt;/p&gt;
+&lt;p&gt;当显示“Region: XX Done, monitoring...&amp;quot;的时候，就说明ok了&lt;br&gt;
+从screen退出，运行流媒体检测脚本&lt;br&gt;
+bash &amp;lt;(curl -L -s check.unlock.media)&lt;br&gt;
+会看到“您的网络为: Cloudflare Warp”，ipv4可以解锁奈飞&lt;/p&gt;
+&lt;p&gt;和 &amp;quot;题字&amp;quot;(v2，trojan)  的使用相关：&lt;br&gt;
+先搭好 题字，确认是通的能上网。再运行这个，不需要额外的设置，直接就可以上网看奈飞了&lt;/p&gt;
+&lt;p&gt;开启warp后，ipv4的流量会被接管，这时无法申请域名的证书。停止，申请证书，再打开 即可&lt;/p&gt;
+&lt;p&gt;停止warp&lt;br&gt;
+systemctl stop wg-quick@wgcf&lt;br&gt;
+启动&lt;br&gt;
+systemctl start wg-quick@wgcf&lt;br&gt;
+重启&lt;br&gt;
+systemctl restart wg-quick@wgcf&lt;/p&gt;
+&lt;p&gt;--&lt;br&gt;
+解锁的效果图，新加坡，美国&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://i.w3tt.com/2021/11/28/BnyvU.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.w3tt.com/2021/11/28/BngcY.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/master-of-forums/master-of-forums/public/images/patch.gif&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+">warp解锁奈飞，后台监控自动刷新ip 脚本</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/openwrt-bian-yi-jiao-cheng-ji-cai-keng-ji-lu-chi-xu-geng-xin/"" data-c="
+          &lt;p&gt;编译openwrt建议在非大陆的云服务器上进行（竞价实例真香，比去网吧打游戏还便宜），可以有效提高下载依赖等文件的成功率，如果持续需要编译，可以编译一次全插件全驱动的，然后吧dl文件夹打个包下载到本地完成之后的编译，避免持续缴费&lt;/p&gt;
+&lt;p&gt;建议使用Ubuntu系统，教程多，出了问题搜起来也简单一些，可以用WSL但是不建议在ntfs以及refs文件系统中编译，不建议使用powershell进行编译&lt;/p&gt;
+&lt;p&gt;然后安利一下Microsoft Terminal &lt;a href=&#34;https://link.zhihu.com/?target=https%3A//github.com/microsoft/terminal&#34;&gt;https://github.com/microsoft/terminal&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;也可以在Windows应用商店下载&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://pic4.zhimg.com/80/v2-95b0bc29e566098b3e5cc664f956d7eb_720w.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;One Half Dark这个默认配色深得我心&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;正文&#34;&gt;正文：&lt;/h2&gt;
+&lt;p&gt;不要使用root用户，Ubuntu默认用户是ubuntu可以直接使用，其他系统或登录就是root的情况，考虑新建一个用户再来进行编译&lt;/p&gt;
+&lt;p&gt;以下内容可以直接复制到终端中运行，#开头的行会被终端忽略，一起复制也没有问题&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;#编译前的准备
+
+####更新软件（可选）####
+sudo sh -c &amp;quot;apt update &amp;amp;&amp;amp; apt upgrade -y&amp;quot;
+########################
+
+#安装依赖
+sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
+
+#克隆源码
+git clone https://github.com/coolsnowwolf/lede.git
+
+#进入源码文件夹
+cd lede
+
+######添加自定义源（可选）##########
+cat &amp;gt;&amp;gt; feeds.conf.default &amp;lt;&amp;lt;EOF
+src-git kenzo https://github.com/kenzok8/openwrt-packages
+src-git passwall https://github.com/xiaorouji/openwrt-passwall
+src-git nas https://github.com/linkease/nas-packages.git
+EOF
+####################################
+
+#更新并安装feeds.conf.default中配置的源
+./scripts/feeds update -a &amp;amp;&amp;amp; ./scripts/feeds install -a
+
+######添加 OpenAppFilter 应用过滤插件（可选）####
+git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+#################################################
+
+######更改默认主题（可选）###########
+# 删除自定义源默认的 argon 主题
+rm -rf package/lean/luci-theme-argon
+# 拉取 argon 原作者的源码
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
+# 替换默认主题为 luci-theme-argon
+sed -i &#39;s/luci-theme-bootstrap/luci-theme-argon/&#39; feeds/luci/collections/luci/Makefile
+#make menuconfig时记得勾选LuCI ---&amp;gt; Applications ---&amp;gt; luci-app-argon-config
+#####################################
+
+####设置路由器默认的管理地址为.5.1（可选）###
+sed -i &#39;s/192.168.1.1/192.168.5.1/g&#39; package/base-files/files/bin/config_generate
+#############################################
+
+#根据需要选插件
+make menuconfig
+#记得在Target Images适当扩大系统分区和镜像大小
+#系统分区，驱动或插件多的话需要适当扩大这个分区
+#(128) Kernel partition size (in MB)
+#文件系统分区，基本可以理解为安装后默认的/overlay分区大小
+#(512) Root filesystem partition size (in MB)
+
+#下载编译所需的软件包
+make download -j8 V=s
+
+#看看有没有没下完整的包，这是查看dl目录下有没有1k以下的文件，有的话建议删除重新下，很可能没下完整
+find dl -size -1024c -exec ls -l {} \;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在区分首次编译和二次编译&lt;/p&gt;
+&lt;h3 id=&#34;首次编译&#34;&gt;首次编译&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;# -j1：单线程编译
+make -j1 V=s
+#这时候如果报错bash: po2lmo: command not found，八成是base没有先编译出来
+#可以运行以下命令先编译base，然后重新执行make -j1 V=s
+make package/feeds/luci/luci-base/compile V=s
+#剩下的可能就是插件冲突之类的，没有很好的办法，慢慢排查吧
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;二次编译&#34;&gt;二次编译&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;#首先肯定是要进入lede目录: cd lede
+
+#拉取最新代码
+git pull
+#更新下载安装订阅源包含的软件包
+./scripts/feeds update -a &amp;amp;&amp;amp; ./scripts/feeds install -af
+
+#清理旧文件
+#如果只是调整检查和驱动等
+make clean
+#如果需要调整架构，或者之前编译出错
+make dirclean
+#删除旧的配置文件
+rm -rf ./tmp &amp;amp;&amp;amp; rm -rf .config
+#选择插件
+make menuconfig
+#下载包
+make download -j8 V=s
+#优先使用多线程编译，出错则使用单线程并输出详细信息
+make -j$(nproc) ||  make -j1 V=s
+&lt;/code&gt;&lt;/pre&gt;
+">openwrt编译教程及踩坑记录（持续更新）</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/yong-dd-ming-ling-fang-shi-shua-ji-an-zhuang-ruan-lu-you-gu-jian-ru-guo-shi-yong-dd-ming-ling-fang-shi-sheng-ji-ruan-lu-you/"" data-c="
+          &lt;p&gt;准备&lt;br&gt;
+首先把下载 openwrt 固件改名称为 op.img（提前把固件改个名字）&lt;br&gt;
+刷机&lt;br&gt;
+登陆 OPENWRT 网页后台进到系统里面点文件传输再点选择文件找到你改过名的固件&lt;br&gt;
+再点上传【其实就是将 img 文件上传到&#39;/tmp/upload/&#39;文件夹，你也可以用其他方式上传】&lt;br&gt;
+这里等他上传完了就好了&lt;br&gt;
+SSH 登陆路由，我用的是putty 软件&lt;/p&gt;
+&lt;p&gt;输入你登陆路由器用户名和密码&lt;br&gt;
+Openwrt 用户名 root 密码就是你登陆路由器密码【注意密码这里输入是看不到的】然后回&lt;br&gt;
+车&lt;br&gt;
+输入命令 ls /tmp/upload 回车查看你刚刚上传的固件我这里看到的就是 op.img 就表示上传&lt;br&gt;
+成功了&lt;br&gt;
+开始写盘&lt;br&gt;
+输入命令 dd if=/tmp/upload/op.img of=/dev/sda 回车（op.img 为固件的名称）【注意：此命令将会清除原盘所有数据和分区，请注意备份。】&lt;br&gt;
+然后是等待刷写，然后出现下面这两排字母表示刷机成功了&lt;br&gt;
+1087522+0 records in&lt;br&gt;
+1087522+0 records out&lt;br&gt;
+最后输入 reboot 重启路由器就是你全新的固件了和全新写盘一样效果&lt;/p&gt;
+">用dd命令方式刷机安装软路由固件，如果使用dd命令方式升级软路由</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/go-yu-yan-kai-fa-de-duan-kou-zhuan-fa-gong-ju-port-forward/"" data-c="
+          &lt;p&gt;预览图：&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://cikeblog.com/wp-content/uploads/2020/02/port-forward1.jpg&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;部署方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载地址：&lt;a href=&#34;https://cikeblog.com/goto/6inh&#34;&gt;http://git.oschina.net/tavenli/port-forward/releases&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;下载编译好的程序包，并解压程序包，
+执行 start.sh （Linux）或 start.bat （Win）命令
+打开浏览器，进入控制台，打开 http://127.0.0.1:8080/login
+输入用户 admin 密码 123456 进入控制台。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意：由于需要登录后才能下载，所以博客做了一个Linux版本的分流地址:&lt;br&gt;
+https://cikeblog.com/s/forward.zip&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;附上shell代码：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum install unzip -y
+wget https://cikeblog.com/s/forward.zip
+unzip forward.zip
+cd forward-server
+chmod +x *
+./start.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后打开浏览器，进入控制台，打开 http://127.0.0.1:8080&lt;br&gt;
+输入用户 admin 密码 123456 即可进入控制台。&lt;/p&gt;
+&lt;p&gt;注意：部分nat机器未分配8080端口，所以我们需要进行端口转发，可以使用博客推荐的socat进行转发，也可以直接使用iptables，简单方便。&lt;/p&gt;
+&lt;p&gt;例如：将本地8080端口转发到10000端口：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;iptables -t nat -A PREROUTING -p tcp --dport 10000 -j REDIRECT --to-ports 8080
+iptables-save
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样就可以使用 http://127.0.0.1:10000进入控制台。&lt;/p&gt;
+">Go语言开发的端口转发工具：port-forward</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/hysteria-yi-kuan-wei-e-lie-wang-luo-jin-xing-you-hua-de-gong-ju-jiao-cheng/"" data-c="
+          &lt;h1 id=&#34;hysteria一款为恶劣网络进行优化的工具教程&#34;&gt;hysteria一款为恶劣网络进行优化的工具教程&lt;/h1&gt;
+&lt;h1 id=&#34;hi-hysteria&#34;&gt;Hi Hysteria&lt;/h1&gt;
+&lt;p&gt;github: https://github.com/emptysuns/Hi_Hysteria&lt;/p&gt;
+&lt;h2 id=&#34;一简介&#34;&gt;一·简介&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hysteria 是一个功能丰富的，专为恶劣网络环境进行优化的网络工具（双边加速），比如卫星网络、拥挤的公共 Wi-Fi、在&lt;strong&gt;中国连接国外服务器&lt;/strong&gt;等。 基于修改版的 QUIC 协议。&lt;br&gt;
+by:&lt;a href=&#34;https://github.com/HyNetwork&#34;&gt;Hynetwork&lt;/a&gt;（Thank you!）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Hysteria这是一款由go编写的非常优秀的“轻量”代理程序，它很好的解决了在搭建富强魔法服务器时最大的痛点——&lt;strong&gt;线路拉跨&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;在魔法咏唱时最难的不是搭建维护，而是在晚高峰时期的交付质量。&lt;s&gt;当三大运营商晚高变成了：奠信、连不通、移不动时，你我都有感触。&lt;/s&gt; 虽然是走的udp但是因为加了混淆使暂时不会被运营商针对性的QoS。&lt;/p&gt;
+&lt;p&gt;1、原项目提供的bench:&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/HyNetwork/hysteria/master/docs/bench/bench.png&#34; alt=&#34;image&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;2、50mbps北方电信,北京出口 直连落地vir San Jose机房163线路，22-23点测试YT 1080p60直播流:&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://cloud.imoeq.com/0:/normal/img/hihysteria/speed.png&#34; alt=&#34;image&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;190 dropped of 131329
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3、无对钟国大陆线路优化，洛杉矶shockhosting机房，1c128m ovznat 4k@p60：&lt;br&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/yt.jpg&#34; alt=&#34;image&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;139783 Kbps
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;该项目仅作学习用途，请查看的访客在5s之内立即删除并停止使用。&lt;/p&gt;
+&lt;p&gt;由它所引起的任何问题，作者并不承担风险和任何法律责任。&lt;/p&gt;
+&lt;p&gt;因为脚本现处于0.x的测试版本，可能会有一些bug，如果遇到请发issue，欢迎star，您的⭐是我维护的动力。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(2021/12/19 21:16) v0.2.4: 
+1、hysteria版本升级成了0.9.1，请重新下载&amp;quot;cmd客户端&amp;quot;,version:0.2c
+2、增加faketcp模式配置，详情请查看：“使用前注意”条目
+3、outbound被鸽了
+4、客户端增加socks5（端口:8889）代理方式,user：pekora;password:pekopeko。可自行修改用户密码
+5、增加自定义dns如8.8.8.8等，防止运营商dns劫持攻击
+ 
+(2021/12/10 18:59) v0.2.3a: 
+1、hysteria版本升级成了0.9.0,请重新下载&amp;quot;cmd客户端&amp;quot;，version:0.2b（注: 因为0.9.0新的特征ipv6_only开启后无法解析ipv4，可以等下个版本所支持的outbound特征，这里就不特意添加了
+2、刷新了acl。
+ 
+(2021/11/26 10:30) v0.2.3: 
+1、alpn改成了h3(虽然没什么必要)
+2、hysteria版本升级成了0.8.6请重新下载&amp;quot;cmd客户端?!&amp;quot;，version:0.2a
+ 
+(2021/11/08 19:50) v0.2.2: 
+1、整合自签/ACME
+2、更改buffer计算方式提升速度
+3、修复自签ipv6时多符号bug
+4、增加随机端口功能
+5、增加每一天自动重启服务端功能防止内存占用过大
+ 
+(2021/11/06 21:16) v0.2.1: 
+1、提供自签证书安装，为了有些ACME死活无法验证用户
+ 
+(2021/10/05 18:36) v0.2: 
+1、优化客户端(！？)结构
+2、增加后台运行功能
+ 
+(2021/10/04 16:19) v0.1: 
+1、修复因dns污染无法代理的bug并增加去广告规则
+2、增加arm和mipsle架构适配
+3、增加客户端防呆
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;二使用&#34;&gt;二·使用&lt;/h2&gt;
+&lt;h3 id=&#34;使用前须知&#34;&gt;使用前须知&lt;/h3&gt;
+&lt;h4 id=&#34;防火墙问题&#34;&gt;防火墙问题：&lt;/h4&gt;
+&lt;p&gt;请提前放行防火墙，保证该udp端口可达！&lt;/p&gt;
+&lt;p&gt;对于faketcp模式，则为放行server的tcp端口。&lt;/p&gt;
+&lt;p&gt;如果使用不使用自签方式，则应该放行TCP 80/443供hysteria内置的ACME验证。&lt;/p&gt;
+&lt;h4 id=&#34;hysteria-faketcp模式介绍默认不开启可跳过不查看&#34;&gt;hysteria faketcp模式介绍：(默认不开启，可跳过不查看)&lt;/h4&gt;
+&lt;p&gt;v0.9.1 支持faketcp，将hysteria的UDP传输过程伪装成TCP，可以躲过运营商和“比较专业”的IDC服务商的QoS设备的对UDP的限速、阻断。&lt;/p&gt;
+&lt;p&gt;目前faketcp模式客户端只支持在linux类设备使用，&lt;strong&gt;windows无法使用&lt;/strong&gt;（但是可配合udp2raw伪装tcp）。&lt;/p&gt;
+&lt;p&gt;而且在操作系统中server和client这二者必须都是root用户运行才能开启faketcp。这其中当然也包括安卓，&lt;strong&gt;必须root后才能使用&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;由于本身就具有&lt;code&gt;obfs&lt;/code&gt;选项，能将hysteria/QUIC混淆成不知名的UDP流量可绕过针对性的QoS/DPI检测，一般情况下运营商不会限制hysteria传输，所以我的建议是：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;追求代理性能时不要开启它&lt;/strong&gt;。当下行速度一直被限制在例如128kB/s这种非常非常低的速率情况时，你确认被限制UDP后再重新安装后开启，它并不能&amp;quot;增速&amp;quot;，反而会增加cpu的开销，给hysteria“减速”，默认传输方式即可。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;追求稳定性且满足root使用环境时，能开faketcp就开faketcp&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;安装依赖&#34;&gt;安装依赖&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;# centos
+sudo su root  #Change to the user root!
+yum install -y wget curl
+# debian/ubuntu
+sudo su root  #Change to the user root!
+apt-get install -y wget curl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;拉取安装&#34;&gt;拉取安装&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL https://git.io/hysteria.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;配置过程&#34;&gt;配置过程&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;******************************************************************
+ ██      ██                    ██                  ██          
+░██     ░██  ██   ██          ░██                 ░░           
+░██     ░██ ░░██ ██   ██████ ██████  █████  ██████ ██  ██████  
+░██████████  ░░███   ██░░░░ ░░░██░  ██░░░██░░██░░█░██ ░░░░░░██ 
+░██░░░░░░██   ░██   ░░█████   ░██  ░███████ ░██ ░ ░██  ███████ 
+░██     ░██   ██     ░░░░░██  ░██  ░██░░░░  ░██   ░██ ██░░░░██ 
+░██     ░██  ██      ██████   ░░██ ░░██████░███   ░██░░████████
+░░      ░░  ░░      ░░░░░░     ░░   ░░░░░░ ░░░    ░░  ░░░░░░░░ 
+Version: 0.2.4
+Github: https://github.com/emptysuns/Hi_Hysteria
+******************************************************************
+Ready to install.
+ 
+The hysteria latest version: v0.9.1. Download...
+ 
+Download completed.
+ 
+开始配置: 
+请输入您的域名(不输入回车，则默认自签pan.baidu.com证书，不推荐):
+a.com
+是否启用faketcp,输入1启用,默认不启用(回车)：
+ 
+传输协议:udp
+ 
+请输入你想要开启的端口（此端口是server端口，请提前放行防火墙，建议10000-65535，回车随机）：
+ 
+随机端口：29714
+ 
+请输入您到此服务器的平均延迟,关系到转发速度（回车默认200ms）:
+100
+ 
+期望速度，请如实填写，这是客户端的峰值速度，服务端默认不受限。期望过低或者过高会影响转发速度！
+请输入客户端期望的下行速度:(默认50mbps):
+200
+请输入客户端期望的上行速度(默认10mbps):
+40
+请输入混淆口令（相当于连接密钥）:
+mikomiko
+ 
+配置录入完成！
+ 
+执行配置...
+net.core.rmem_max=4000000
+Created symlink /etc/systemd/system/multi-user.target.wants/hysteria.service → /etc/systemd/system/hysteria.service.
+所有安装已经完成，配置文件输出如下且已经在本目录生成（可自行复制粘贴到本地）！
+ 
+ 
+Tips:客户端默认只开启http(8888)、socks5代理(8889, user:pekora;password:pekopeko)!其他方式请参照文档自行修改客户端config.json
+↓***********************************↓↓↓copy↓↓↓*******************************↓
+{
+&amp;quot;server&amp;quot;: &amp;quot;a.com:29714&amp;quot;,
+&amp;quot;protocol&amp;quot;: &amp;quot;udp&amp;quot;,
+&amp;quot;up_mbps&amp;quot;: 40,
+&amp;quot;down_mbps&amp;quot;: 200,
+&amp;quot;http&amp;quot;: {
+&amp;quot;listen&amp;quot;: &amp;quot;127.0.0.1:8888&amp;quot;,
+&amp;quot;timeout&amp;quot; : 300,
+&amp;quot;disable_udp&amp;quot;: false
+},
+&amp;quot;socks5&amp;quot;: {
+&amp;quot;listen&amp;quot;: &amp;quot;127.0.0.1:8889&amp;quot;,
+&amp;quot;timeout&amp;quot;: 300,
+&amp;quot;disable_udp&amp;quot;: false,
+&amp;quot;user&amp;quot;: &amp;quot;pekora&amp;quot;,
+&amp;quot;password&amp;quot;: &amp;quot;pekopeko&amp;quot;
+},
+&amp;quot;alpn&amp;quot;: &amp;quot;h3&amp;quot;,
+&amp;quot;acl&amp;quot;: &amp;quot;acl/routes.acl&amp;quot;,
+&amp;quot;obfs&amp;quot;: &amp;quot;mikomiko&amp;quot;,
+&amp;quot;auth_str&amp;quot;: &amp;quot;pekopeko&amp;quot;,
+&amp;quot;server_name&amp;quot;: &amp;quot;a.com&amp;quot;,
+&amp;quot;insecure&amp;quot;: false,
+&amp;quot;recv_window_conn&amp;quot;: 10485760,
+&amp;quot;recv_window&amp;quot;: 41943040,
+&amp;quot;resolver&amp;quot;: &amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;cmd客户端介绍&#34;&gt;cmd客户端介绍&lt;/h3&gt;
+&lt;p&gt;本项目只介绍如何在windows环境下使用，其他环境请参考&lt;a href=&#34;https://github.com/HyNetwork/hysteria&#34;&gt;官方原文&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;因为暂时没有hysteria的图形界面，所以我用批处理写了一个简单的“客户端?!&amp;quot;，支持自动改代理和清除代理，实际使用没问题。&lt;br&gt;
+可自行到&lt;a href=&#34;https://github.com/emptysuns/Hi_Hysteria/releases&#34;&gt;release&lt;/a&gt;中下载最新版本。&lt;/p&gt;
+&lt;p&gt;欢迎其他开发者贡献新的UI或者插件。&lt;/p&gt;
+&lt;p&gt;当出现&lt;strong&gt;安装完毕&lt;/strong&gt;字样后，&lt;strong&gt;会自动打印生成的配置信息&lt;/strong&gt;，同时&lt;strong&gt;当前目录&lt;/strong&gt;下会生成一个config.json文件。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/result.png&#34; alt=&#34;image&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;可以本地新建一个config.json（&lt;strong&gt;一定要是这个名称！&lt;/strong&gt;）文件，复制粘贴到本地&lt;strong&gt;conf&lt;/strong&gt;文件夹下，也可以直接下载生成的文件到本地&lt;strong&gt;conf&lt;/strong&gt;文件夹下。&lt;/p&gt;
+&lt;p&gt;将config.json加入&lt;a href=&#34;https://github.com/emptysuns/Hi_Hysteria/releases&#34;&gt;&lt;strong&gt;release&lt;/strong&gt;&lt;/a&gt;中提供的简单的windows cmd客户端的解压目录中.&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/s1.png&#34; alt=&#34;image&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;5&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/s2.png&#34; alt=&#34;image&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;如果本地配置丢失?使用cat打印config.json后复制:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cat config.json
+ 
+# cat config.json 
+{
+&amp;quot;server&amp;quot;: &amp;quot;a.com:29714&amp;quot;,
+&amp;quot;protocol&amp;quot;: &amp;quot;udp&amp;quot;,
+&amp;quot;up_mbps&amp;quot;: 40,
+&amp;quot;down_mbps&amp;quot;: 200,
+&amp;quot;http&amp;quot;: {
+&amp;quot;listen&amp;quot;: &amp;quot;127.0.0.1:8888&amp;quot;,
+&amp;quot;timeout&amp;quot; : 300,
+&amp;quot;disable_udp&amp;quot;: false
+},
+&amp;quot;socks5&amp;quot;: {
+&amp;quot;listen&amp;quot;: &amp;quot;127.0.0.1:8889&amp;quot;,
+&amp;quot;timeout&amp;quot;: 300,
+&amp;quot;disable_udp&amp;quot;: false,
+&amp;quot;user&amp;quot;: &amp;quot;pekora&amp;quot;,
+&amp;quot;password&amp;quot;: &amp;quot;pekopeko&amp;quot;
+},
+&amp;quot;alpn&amp;quot;: &amp;quot;h3&amp;quot;,
+&amp;quot;acl&amp;quot;: &amp;quot;acl/routes.acl&amp;quot;,
+&amp;quot;obfs&amp;quot;: &amp;quot;mikomiko&amp;quot;,
+&amp;quot;auth_str&amp;quot;: &amp;quot;pekopeko&amp;quot;,
+&amp;quot;server_name&amp;quot;: &amp;quot;a.com&amp;quot;,
+&amp;quot;insecure&amp;quot;: false,
+&amp;quot;recv_window_conn&amp;quot;: 10485760,
+&amp;quot;recv_window&amp;quot;: 41943040,
+&amp;quot;resolver&amp;quot;: &amp;quot;119.29.29.29:53&amp;quot;,
+&amp;quot;disable_mtu_discovery&amp;quot;: false
+}
+ 
+ 
+ctrl+c and +v.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;客户端使用&#34;&gt;客户端使用&lt;/h3&gt;
+&lt;p&gt;提供两种运行方法：后台运行（无cmd窗口无感） 和 前台运行（必须得有cmd窗口，但是可查看当前日志）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;启动之前&lt;/strong&gt;请把config.json放到conf文件夹！&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;方法一：后台运行（推荐）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;运行:双击back_start.bat&lt;/p&gt;
+&lt;p&gt;停止:双击back_stop.bat&lt;/p&gt;
+&lt;p&gt;运行back_start.bat后，可以回车关闭此窗口，不需保留。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;6&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/tips.png&#34; alt=&#34;image&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;停止后台运行：&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;7&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/back_stop.png&#34; alt=&#34;image&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;批处理能力有限，请谅解.&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;方法二：前台运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;运行:双击run.bat&lt;/p&gt;
+&lt;p&gt;停止:回车，或者键入其他非&#39;n&#39;的字符&lt;/p&gt;
+&lt;p&gt;打开run.bat运行，运行时按回车键停止，防呆键入n继续运行&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;直接键入Enter关闭客户端！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;直接键入Enter关闭客户端！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;直接键入Enter关闭客户端！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;切记不要直接关闭cmd窗口！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;切记不要直接关闭cmd窗口！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;切记不要直接关闭cmd窗口！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;批处理能力有限，请谅解.&lt;/p&gt;
+&lt;p&gt;启动&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;8&#34;&gt;&lt;img src=&#34;https://cloud.iacg.cf/0:/normal/img/hihysteria/mark.png&#34; alt=&#34;image&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;防呆/关闭&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;9&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/stop.png&#34; alt=&#34;image&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;Tips:前台运行模式下，不小心关掉窗口导致无法上网时，运行back_stop.bat可以清除代理和关闭hysteria。&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;客户端配置未生效&#34;&gt;客户端配置未生效？&lt;/h3&gt;
+&lt;p&gt;如上图启动成功，但代理并未启用，请手动打开设置-&amp;gt;网络-&amp;gt;代理,查看配置是否生效&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;10&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/proxy.png&#34; alt=&#34;image&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;配置开机自启&#34;&gt;配置开机自启&lt;/h3&gt;
+&lt;p&gt;&lt;s&gt;不会有人不知道吧:)&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;对back_start.bat(&lt;strong&gt;后台模式&lt;/strong&gt;) 或者 run.bat(&lt;strong&gt;前台模式&lt;/strong&gt;)文件创建一个&lt;strong&gt;快捷方式&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;win+r 键入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;shell:startup
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开自启目录将快捷方式&lt;strong&gt;复制&lt;/strong&gt;进去，下次开机就会自启动。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;11&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/emptysuns/Hi_Hysteria/main/imgs/startup.png&#34; alt=&#34;image&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;这里用后台做演示，前台同理&lt;/p&gt;
+&lt;h2 id=&#34;三服务端管理&#34;&gt;三·服务端管理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;重启&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;systemctl restart hysteria
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;停止&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;systemctl stop hysteria
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;systemctl status hysteria -l
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;卸载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL https://git.io/rmhysteria.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;重新安装/升级&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL https://git.io/rehysteria.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;四结语&#34;&gt;四·结语&lt;/h2&gt;
+&lt;p&gt;魔改UDP的QUIC协议，加了tls和混淆，个人跑了一段时间大流量，未被运营商QoS，落地ip并没有被墙，也不知道什么时候被针对，大家且用且珍惜吧。&lt;/p&gt;
+">hysteria一款为恶劣网络进行优化的工具教程</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/ge-ren-chang-shi-yong-de-yi-xie-jiao-ben-ji-he/"" data-c="
+          &lt;h1 id=&#34;个人常使用的一些脚本集合&#34;&gt;&lt;strong&gt;个人常使用的一些脚本集合&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;CentOS下利用speedtest进行速度测试&lt;br&gt;
+官方安装方法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://bintray.com/ookla/rhel/rpm -O bintray-ookla-rhel.repo
+sudo mv bintray-ookla-rhel.repo /etc/yum.repos.d/
+yum install speedtest
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;博客提取rpm安装办法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rpm -ivh https://cikeblog.com/s/speedtest.rpm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使用办法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[root@VM-8286 ~]# speedtest
+
+Speedtest by Ookla
+
+Server: China Telecom AnHui 5G - Hefei (id = 17145)
+ISP: China Unicom Liaoning
+Latency: 14.88 ms (0.26 ms jitter)
+Download: 188.30 Mbps (data used: 178.1 MB)
+Upload: 184.98 Mbps (data used: 284.5 MB)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一键回程路由查看脚本（兼容ARM架构）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/main/autoBestTrace.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;WorstTrace一键查看回程路由（BestTrace替代品）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/main/WorstTrace.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;京东服务器时间同步脚本【For Linux】：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/main/timesync.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;京东服务器时间同步脚本【For Synology】：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -L -s https://raw.githubusercontent.com/07031218/normal-shell/main/timesync-for-synology.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一键测速脚本（兼容ARM架构）：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -Lso- https://raw.githubusercontent.com/07031218/normal-shell/main/superspeed.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一键调优脚本（提升网络链接速度）[Powered by Neko Neko Cloud &amp;amp;&amp;amp; Modify by 翔翎]&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -sL https://raw.githubusercontent.com/07031218/normal-shell/net/tools.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;甲骨文一键DD到Debian 11 脚本（兼容甲骨文AMD和ARM架构,DD完默认密码password，经测试同样适用腾讯云、Do、Azure）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(wget --no-check-certificate -qO- &#39;https://raw.githubusercontent.com/07031218/normal-shell/main/InstallNET.sh&#39;) -d 11 -v 64 -p password
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;【调用国内镜像源版】甲骨文一键DD到Debian 11 脚本（兼容甲骨文AMD和ARM架构,DD完默认密码password，经测试同样适用腾讯云、Do、Azure）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(wget --no-check-certificate -qO- &#39;https://cdn.jsdelivr.net/gh/07031218/normal-shell@main/InstallNET.sh&#39;) -d 11 -v 64 -p password --mirror &#39;https://mirrors.huaweicloud.com/debian/&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;x-ui一键安装脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;流媒体解锁一键检测脚本（lmc999版本）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -L -s https://git.io/JRw8R)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;流媒体解锁一键检测脚本（sjlleo版本,仅支持检测NF，脚本兼容linux ARM和AMD，以及MacOS 非M1版）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -sL https://raw.githubusercontent.com/07031218/normal-shell/main/netflix-verify.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Argo Tunnel一键部署脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -sL https://raw.githubusercontent.com/07031218/normal-shell/net/onekey-argo-tunnel.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;plex一键部署脚本 for amd64&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://github.com/07031218/normal-shell/raw/main/plex/plex -O plex &amp;amp;&amp;amp; chmod 777 plex &amp;amp;&amp;amp; cp plex /usr/bin &amp;amp;&amp;amp; plex
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;plex一键部署脚本 for arm64&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://github.com/07031218/normal-shell/raw/main/plex/plex-arm64 -O plex &amp;amp;&amp;amp; chmod 777 plex &amp;amp;&amp;amp; cp plex /usr/bin &amp;amp;&amp;amp; plex
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一键安装nginx并部署签发SSL&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -s https://raw.githubusercontent.com/07031218/one-key-for-let-s-Encrypt/main/run.sh) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;利用docker快速搭建speedtest html5在线测速&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -sSL https://get.docker.com/ | sh
+systemctl start docker
+systemctl enable docker
+docker run -d --restart=always -p 6688:80 ilemonrain/html5-speedtest:alpine
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;综合工具箱（强烈推荐，集成了很多脚本）&lt;br&gt;
+wget -O box.sh https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh &amp;amp;&amp;amp; chmod +x box.sh &amp;amp;&amp;amp; clear &amp;amp;&amp;amp; ./box.sh&lt;br&gt;
+DD相关&lt;br&gt;
+1、MoeClub脚本&lt;br&gt;
+重点推荐：&lt;/p&gt;
+&lt;p&gt;时间：22/11/2021 15:21 萌咖更新脚本：&lt;/p&gt;
+&lt;p&gt;1.新增对 Oracle AMD，Oracle ARM全面支持. 可支持从 Ubuntu, Oracle Linux 等系统网络重装.&lt;br&gt;
+2.更新 dd 镜像的基础系统版本.&lt;br&gt;
+3.移除对外部 wget 的依赖.&lt;br&gt;
+4.新增 -port 参数, 可更改默认SSH端口.&lt;br&gt;
+5.更新 内置的网络参数计算 逻辑.&lt;br&gt;
+6.更新 grub 配置文件定位逻辑, 可支持任意引导grub的系统.&lt;/p&gt;
+&lt;p&gt;以下系统已通过测试(其他自测):&lt;br&gt;
+Debian: 9, 10, 11;&lt;br&gt;
+Ubuntu: 18.04, 20.04;&lt;br&gt;
+CentOS: 6.10;&lt;br&gt;
+以下平台已通过测试(其他自测):&lt;br&gt;
+Oracle、Do、Azure&lt;/p&gt;
+&lt;p&gt;bash &amp;lt;(wget --no-check-certificate -qO- &#39;https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh&#39;) -d 10 -v 64 -p &amp;quot;自定义root密码&amp;quot; -port &amp;quot;自定义ssh端口&amp;quot;&lt;br&gt;
+-d 10 -v 64&lt;br&gt;
+-d 9 -v 64&lt;br&gt;
+-u 20.04 -v 64&lt;br&gt;
+-u 18.04 -v 64&lt;/p&gt;
+&lt;p&gt;开机改密码脚本：&lt;/p&gt;
+&lt;p&gt;开机改密：&lt;/p&gt;
+&lt;p&gt;#!/bin/bash&lt;br&gt;
+echo root:Vicer |sudo chpasswd root&lt;br&gt;
+sudo sed -i &#39;s/^#?PermitRootLogin.&lt;em&gt;/PermitRootLogin yes/g&#39; /etc/ssh/sshd_config;&lt;br&gt;
+sudo sed -i &#39;s/^#?PasswordAuthentication.&lt;/em&gt;/PasswordAuthentication yes/g&#39; /etc/ssh/sshd_config;&lt;br&gt;
+sudo reboot&lt;br&gt;
+2、另一位大佬的脚本&lt;br&gt;
+wget --no-check-certificate -O AutoReinstall.sh https://git.io/AutoReinstall.sh &amp;amp;&amp;amp; bash AutoReinstall.sh&lt;br&gt;
+CentOS默认密码Pwd@CentOS 其它系统Pwd@Linux&lt;/p&gt;
+&lt;p&gt;OpenVZ / LXC 架构系统不适用&lt;/p&gt;
+&lt;p&gt;来源：https://blog.hicasper.com/post/135.html 参考：https://www.ydyno.com/archives/1245.html 感谢大佬的付出！&lt;/p&gt;
+&lt;p&gt;bash &amp;lt;(wget --no-check-certificate -qO- &#39;https://file.geekn.net/CNODnjau/InstallNET.sh&#39;) -d 11 -v 64 -a -firmware&lt;br&gt;
+-firmware 额外的驱动支持&lt;br&gt;
+-d 后面是系统版本号&lt;br&gt;
+-v 后面写64位 32位&lt;br&gt;
+-a （不清楚这个干啥的但是每个脚本都带）&lt;br&gt;
+--mirror 后面是镜像源地址&lt;/p&gt;
+&lt;p&gt;-p 后面写自定义密码&lt;/p&gt;
+&lt;p&gt;镜像站地址&lt;br&gt;
+官方给出的地址列表：https://www.debian.org/mirror/list&lt;/p&gt;
+&lt;p&gt;一些国内的&lt;br&gt;
+ftp.cn.debian.org&lt;br&gt;
+mirror.bjtu.edu.cn&lt;br&gt;
+mirror.lzu.edu.cn&lt;br&gt;
+mirror.nju.edu.cn&lt;br&gt;
+mirrors.163.com&lt;br&gt;
+mirrors.bfsu.edu.cn&lt;br&gt;
+mirrors.hit.edu.cn&lt;br&gt;
+mirrors.huaweicloud.com&lt;br&gt;
+mirror.sjtu.edu.cn&lt;br&gt;
+mirrors.tuna.tsinghua.edu.cn&lt;br&gt;
+mirrors.ustc.edu.cn&lt;/p&gt;
+&lt;p&gt;使用方法：（大致都是一样的）&lt;/p&gt;
+&lt;p&gt;清华源&lt;br&gt;
+--mirror &#39;https://mirrors.ustc.edu.cn/debian/&#39;&lt;/p&gt;
+&lt;p&gt;腾讯源&lt;br&gt;
+--mirror &#39;https://mirrors.aliyun.com/debian/&#39;&lt;/p&gt;
+&lt;p&gt;阿里源&lt;br&gt;
+--mirror &#39;https://mirrors.aliyun.com/debian/&#39;&lt;/p&gt;
+&lt;p&gt;华为源&lt;br&gt;
+--mirror &#39;https://mirrors.huaweicloud.com/debian/&#39;&lt;br&gt;
+测试相关&lt;br&gt;
+机器测试&lt;br&gt;
+最全测速脚本&lt;br&gt;
+curl -fsL https://ilemonra.in/LemonBenchIntl | bash -s fast&lt;br&gt;
+superbench&lt;br&gt;
+wget -qO- git.io/superbench.sh | bash&lt;br&gt;
+Bench.sh&lt;br&gt;
+wget -qO- bench.sh | bash&lt;br&gt;
+速度测试&lt;br&gt;
+直接显示回程线路&lt;br&gt;
+curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bash&lt;br&gt;
+wget -q route.f2k.pub -O route &amp;amp;&amp;amp; bash route&lt;/p&gt;
+&lt;h1 id=&#34;第一个&#34;&gt;第一个&lt;/h1&gt;
+&lt;p&gt;wget https://raw.githubusercontent.com/nanqinlang-script/testrace/master/testrace.sh&lt;br&gt;
+bash testrace.sh&lt;/p&gt;
+&lt;h1 id=&#34;第二个&#34;&gt;第二个&lt;/h1&gt;
+&lt;p&gt;wget -qO- git.io/besttrace | bash&lt;br&gt;
+四网测速&lt;br&gt;
+wget -O jcnf.sh https://raw.githubusercontent.com/Netflixxp/jcnfbesttrace/main/jcnf.sh&lt;/p&gt;
+&lt;p&gt;bash jcnf.sh&lt;br&gt;
+三网测速&lt;br&gt;
+bash &amp;lt;(curl -Lso- http://yun.789888.xyz/speedtest.sh)&lt;br&gt;
+测试25端口是否开放&lt;br&gt;
+telnet smtp.aol.com 25&lt;br&gt;
+测试IPv4优先还是IPv6优先&lt;br&gt;
+curl ip.p3terx.com&lt;br&gt;
+流媒体测试&lt;br&gt;
+全媒体测试&lt;br&gt;
+bash &amp;lt;(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)&lt;br&gt;
+奈飞测试&lt;br&gt;
+wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.5/nf_2.5_linux_amd64 &amp;amp;&amp;amp; chmod +x nf &amp;amp;&amp;amp; clear &amp;amp;&amp;amp; ./nf&lt;br&gt;
+#第一个&lt;br&gt;
+bash &amp;lt;(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)&lt;/p&gt;
+&lt;h1 id=&#34;第二个-2&#34;&gt;第二个&lt;/h1&gt;
+&lt;p&gt;bash &amp;lt;(curl -sSL &amp;quot;https://github.com/CoiaPrant/MediaUnlock_Test/raw/main/check.sh&amp;quot;)&lt;br&gt;
+WARP&lt;br&gt;
+wget -N --no-check-certificate https://cdn.jsdelivr.net/gh/YG-tsj/CFWarp-Pro/multi.sh &amp;amp;&amp;amp; chmod +x multi.sh &amp;amp;&amp;amp; ./multi.sh&lt;br&gt;
+之后进入脚本快捷方式为 bash multi.sh&lt;/p&gt;
+&lt;p&gt;服务器时间&lt;br&gt;
+CentOS 同步时间&lt;br&gt;
+yum -y install ntpdate&lt;br&gt;
+timedatectl set-timezone Asia/Shanghai&lt;br&gt;
+ntpdate ntp1.aliyun.com&lt;br&gt;
+BBR&lt;br&gt;
+CentOS 7 BBR&lt;br&gt;
+wget -N --no-check-certificate &amp;quot;https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh&amp;quot; &amp;amp;&amp;amp; chmod +x tcp.sh &amp;amp;&amp;amp; ./tcp.sh&lt;br&gt;
+一键开启BBR&lt;br&gt;
+注意：需要Linux Kernel 内核升级到 4.9 及以上版本可以实现 BBR 加速&lt;/p&gt;
+&lt;p&gt;uname -srm&lt;br&gt;
+输出结果：&lt;/p&gt;
+&lt;p&gt;Linux 3.10.0-957.12.2.el7.x86_64 x86_64&lt;br&gt;
+3 - 内核版本.&lt;br&gt;
+10 - 主修订版本.&lt;br&gt;
+0-957 - 次要修订版本.&lt;br&gt;
+12 - 补丁版本.&lt;br&gt;
+一般来说，Ubuntu18.04以上就可以(默认的内核4.15)&lt;/p&gt;
+&lt;p&gt;echo &amp;quot;net.core.default_qdisc=fq&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.conf&lt;br&gt;
+echo &amp;quot;net.ipv4.tcp_congestion_control=bbr&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.conf&lt;/p&gt;
+&lt;p&gt;sysctl -p&lt;/p&gt;
+&lt;p&gt;sysctl net.ipv4.tcp_available_congestion_control&lt;/p&gt;
+&lt;p&gt;lsmod | grep bbr&lt;br&gt;
+Docker相关&lt;br&gt;
+更新、安装必备软件&lt;br&gt;
+apt-get update &amp;amp;&amp;amp; apt-get install -y wget vim&lt;br&gt;
+海外服务器&lt;br&gt;
+非大陆Docker安装&lt;br&gt;
+wget -qO- get.docker.com | bash&lt;br&gt;
+卸载Docker&lt;br&gt;
+sudo apt-get purge docker-ce docker-ce-cli containerd.io&lt;br&gt;
+sudo rm -rf /var/lib/docker&lt;br&gt;
+sudo rm -rf /var/lib/containerd&lt;br&gt;
+非大陆Docker-compose安装&lt;br&gt;
+sudo curl -L &amp;quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(uname -s)-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;−&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;(uname -m)&amp;quot; -o /usr/local/bin/docker-compose&lt;br&gt;
+sudo chmod +x /usr/local/bin/docker-compose&lt;br&gt;
+查看版本&lt;/p&gt;
+&lt;p&gt;docker-compose --version&lt;br&gt;
+大陆服务器&lt;br&gt;
+国内机安装docker&lt;br&gt;
+curl -sSL https://get.daocloud.io/docker | sh&lt;br&gt;
+国内机安装docker-compose&lt;br&gt;
+curl -L https://get.daocloud.io/docker/compose/releases/download/v2.1.1/docker-compose-&lt;code&gt;uname -s&lt;/code&gt;-&lt;code&gt;uname -m&lt;/code&gt; &amp;gt; /usr/local/bin/docker-compose&lt;br&gt;
+chmod +x /usr/local/bin/docker-compose&lt;br&gt;
+卸载docker&lt;br&gt;
+sudo apt-get remove docker docker-engine&lt;br&gt;
+rm -fr /var/lib/docker/&lt;br&gt;
+防火墙&lt;br&gt;
+CentOS 关闭防火墙&lt;br&gt;
+systemctl start supervisord&lt;br&gt;
+systemctl disable firewalld&lt;br&gt;
+systemctl stop firewalld&lt;br&gt;
+宝塔相关&lt;br&gt;
+宝塔去除登陆 (已经失效，解决方法见：https://blog.laoda.de/archives/bt-to-aapanel)&lt;br&gt;
+sed -i &amp;quot;s|if (bind_user == &#39;True&#39;) {|if (bind_user == &#39;REMOVED&#39;) {|g&amp;quot; /www/server/panel/BTPanel/static/js/index.js&lt;br&gt;
+rm -rf /www/server/panel/data/bind.pl&lt;br&gt;
+宝塔&amp;amp;aapanel破解&lt;/p&gt;
+&lt;h1 id=&#34;宝塔aapanel破解&#34;&gt;宝塔&amp;amp;aapanel破解&lt;/h1&gt;
+&lt;p&gt;编辑 /www/server/panel/class/panelplugin.py&lt;br&gt;
+找到 softList[&#39;list&#39;] = tmpList 这行代码&lt;br&gt;
+在下面添加以下代码，注意缩进&lt;/p&gt;
+&lt;p&gt;softList[&#39;pro&#39;] = 1&lt;br&gt;
+for soft in softList[&#39;list&#39;]:&lt;br&gt;
+soft[&#39;endtime&#39;] = 0&lt;/p&gt;
+&lt;p&gt;编辑完毕后保存重启面板即可&lt;br&gt;
+呆梨相关&lt;br&gt;
+XUI&lt;br&gt;
+bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/sprov065/x-ui/master/install.sh) 0.2.0&lt;br&gt;
+make-a&lt;br&gt;
+wget -P /root -N --no-check-certificate &amp;quot;https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh&amp;quot; &amp;amp;&amp;amp; chmod 700 /root/install.sh &amp;amp;&amp;amp; /root/install.sh&lt;br&gt;
+持续更新中&lt;/p&gt;
+&lt;p&gt;最后&lt;br&gt;
+大家有好用的脚本欢迎推荐，有需求也欢迎留言提出来！&lt;/p&gt;
+">个人常使用的一些脚本集合</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/fen-xiang-ji-yu-docker-rong-qi-hua-shen-qing-lets-encrypt-fan-yu-ming-zheng-shu-de-yi-jian-jiao-ben/"" data-c="
+          &lt;p&gt;最近一直在慢慢的学习&lt;code&gt;shell&lt;/code&gt;,于是打算用实战来强化学到的知识点,所以花了半天时间写了一个交互式的脚本,用于自动申请&lt;code&gt;Let&#39;s Encrypt&lt;/code&gt;泛域名证书使用.欢迎大家使用.&lt;/p&gt;
+&lt;p&gt;本文为&lt;a href=&#34;https://www.ioiox.com/stille.html&#34;&gt; Stille &lt;/a&gt;原创文章.经实践,测试,整理发布.如需转载请联系作者获得授权,并注明转载地址.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;获取域名服务商-api&#34;&gt;获取域名服务商 API&lt;/h3&gt;
+&lt;p&gt;申请域名最重要和最麻烦的地方就是验证域名所有权,常规情况下使用域名服务商的 API 来自动创建 txt 验证记录最为方便.&lt;/p&gt;
+&lt;p&gt;参考以下链接获取国内用户常用的&lt;code&gt;腾讯云&lt;/code&gt;/&lt;code&gt;阿里云&lt;/code&gt;/&lt;code&gt;Cloudflare&lt;/code&gt;的 API :&lt;/p&gt;
+&lt;p&gt;https://www.ioiox.com/archives/87.html&lt;/p&gt;
+&lt;p&gt;参考官方文档可以获取多达&lt;code&gt;100&lt;/code&gt;多个全球各种域名服务商的 API :&lt;/p&gt;
+&lt;p&gt;https://github.com/acmesh-official/acme.sh/wiki/dnsapi&lt;/p&gt;
+&lt;h3 id=&#34;交互式脚本&#34;&gt;交互式脚本&lt;/h3&gt;
+&lt;p&gt;交互式脚本仅支持 &lt;strong&gt;腾讯云 / 阿里云 / Cloudflare&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;执行以下命令直接使用,根据提示输入相关 API 信息即可申请.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -O https://gist.githubusercontent.com/stilleshan/02d8652ce320941e497d378a04ecf016/raw/ffb5c536735a2d90390c98d7bbbe0ff63a74ba52/acme_docker.sh &amp;amp;&amp;amp; chmod +x acme_docker.sh &amp;amp;&amp;amp; ./acme_docker.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;非交互式固定域名证书申请&#34;&gt;非交互式固定域名证书申请&lt;/h3&gt;
+&lt;p&gt;通过简单修改脚本,可以让本脚本作为固定证书申请使用.无交互式选项直接根据设置的域名和 API 信息进行申请.建议可以设置&lt;code&gt;crontab&lt;/code&gt;定时每月执行.&lt;/p&gt;
+&lt;p&gt;非交互式脚本可以支持 &lt;strong&gt;acme.sh&lt;/strong&gt; 官方支持的 &lt;strong&gt;100&lt;/strong&gt; 多个全球各种域名服务商的 API&lt;/p&gt;
+&lt;p&gt;编辑脚本修改 16 - 20 行.以下为示例:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 交互式脚本请保持以下 DOMAIN= 为空不要修改.如无需交互式,固定申请单一证书,请参考文档自行修改以下变量.
+DOMAIN=ioiox.com
+DNSAPI=&#39;dns_cf&#39;
+API_ID=&#39;export CF_Token=&amp;quot;xxxxxxxxxxxxx&amp;quot;&#39;
+API_KEY=&#39;export CF_Account_ID=&amp;quot;xxxxxxxxxxxxx&amp;quot;&#39;
+# API_ZONE=&#39;export CF_Zone_ID=&amp;quot;xxxxxxxxxxxxx&amp;quot;&#39;
+# 交互式脚本请保持以下 DOMAIN= 为空不要修改.如无需交互式,固定申请单一证书,请参考文档自行修改以上变量.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;本脚本长期维护,后续会慢慢更新以支持更多服务商.可以访问以下&lt;code&gt;gist&lt;/code&gt;地址&lt;code&gt;star&lt;/code&gt;收藏:&lt;br&gt;
+https://gist.github.com/stilleshan/02d8652ce320941e497d378a04ecf016&lt;/p&gt;
+">分享基于 docker 容器化申请 Let's Encrypt 泛域名证书的一键脚本</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/cloudflare-warp-yi-jian-pei-zhi-jiao-ben-shi-yong-jiao-cheng/"" data-c="
+          &lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC93YXJwLnNo&#34;&gt;Cloudflare WARP 一键配置脚本&lt;/a&gt;是一个简化在 Linux VPS 上安装和配置 Cloud­flare WARP 的脚本，它支持 WARP 官方客户端和 Wire­Guard 两种主流 WARP 使用方式，适用于 IPv4/IPv6 单双栈各类的网络环境，操作系统、 CPU 架构和虚拟化平台支持全面。本篇是介绍说明及简单使用教程。&lt;/p&gt;
+&lt;p&gt;Cloud­flare WARP 是什么？能干什么？好不好用？以及这个脚本的实现原理知识和其它周边配套设置参见《&lt;a href=&#34;https://p3terx.com/archives/use-cloudflare-warp-to-add-extra-ipv4-or-ipv6-network-support-to-vps-servers-for-free.html&#34;&gt;Cloudflare WARP 给 VPS 服务器额外添加 IPv4 或 IPv6 网络获得 “原生” IP&lt;/a&gt;》。&lt;/p&gt;
+&lt;h2 id=&#34;项目地址&#34;&gt;项目地址&lt;/h2&gt;
+&lt;p&gt;一键安装&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jinwyp/one_click_script#installation-%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95&#34;&gt;Trojan 和 V2ray xray 一键安装脚本&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jinwyp/one_click_script#installation-linux-kernel-wireguard&#34;&gt;安装 最新版和LTS Linux 内核, BBR 和 BBR Plus 内核&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jinwyp/one_click_script#installation-linux-kernel-wireguard&#34;&gt;安装 wireguard 和 Cloudflare WARP, 解锁 Netflix 区域限制 和 避免弹出Google人机验证&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jinwyp/one_click_script#installation-xrayr&#34;&gt;V2board 服务器端 V2Ray-Poseidon, Soga, XrayR, Air-Universe 一键安装脚本&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jinwyp/one_click_script/blob/master/dsm/readme.md&#34;&gt;PVE Proxmox VE虚拟机 群晖NAS 安装工具脚本&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jinwyp/one_click_script/blob/master/dsm/readme.md&#34;&gt;FRP 内网穿透工具 一键安装脚本&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jinwyp/one_click_script/blob/master/acuteangle/readme.md&#34;&gt;锐角云 自动安装PVE 工具脚本&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;https://github.com/jinwyp/one_click_script&lt;/p&gt;
+&lt;p&gt;GitHub&lt;/p&gt;
+&lt;p&gt;https://github.com/sjlleo/netflix-verify     检查是否解锁Netflix&lt;br&gt;
+Github主站下载链接（适用于IPv4网络的机器）：&lt;/p&gt;
+&lt;p&gt;X86_64：&lt;/p&gt;
+&lt;p&gt;wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.61/nf_2.61_linux_amd64 &amp;amp;&amp;amp; chmod +x nf &amp;amp;&amp;amp; clear &amp;amp;&amp;amp; ./nf&lt;br&gt;
+CDN 镜像（适用于 IPv6）：&lt;br&gt;
+wget -O nf https://cdn.jsdelivr.net/gh/sjlleo/netflix-verify/CDNRelease/nf_2.61_linux_amd64 &amp;amp;&amp;amp; chmod +x nf &amp;amp;&amp;amp; clear &amp;amp;&amp;amp; ./nf&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/P3TERX/warp.sh&#34;&gt;https://github.com/P3TERX/warp.sh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;支持本项目欢迎随手点个 &lt;code&gt;star&lt;/code&gt;，可以让更多的人发现、使用并受益。你的支持是持续开发维护的动力。&lt;/p&gt;
+&lt;h2 id=&#34;脚本特点&#34;&gt;脚本特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU 架构支持：x86(i386)、x86_64(amd64)、ARMv8(aarch64)、ARMv7 等&lt;/li&gt;
+&lt;li&gt;虚拟化平台支持：KVM、Xen、OpenVZ、LXC 等&lt;/li&gt;
+&lt;li&gt;操作系统支持：Debian、Ubuntu、CentOS、Arch Linux 以及其它 DEB 系与 RHEL 系下游的最新版本&lt;/li&gt;
+&lt;li&gt;智能识别网络方案并自动匹配最佳配置方案进行部署&lt;/li&gt;
+&lt;li&gt;独家优化配置方案，获得更好的 WARP 网络体验&lt;/li&gt;
+&lt;li&gt;无需更换 Linux 内核，更稳定、更安全、更自由&lt;/li&gt;
+&lt;li&gt;直观的进程状态、网络状态和 WARP 状态显示&lt;/li&gt;
+&lt;li&gt;Cloudflare WARP 官方 Linux 客户端支持&lt;/li&gt;
+&lt;li&gt;“一把梭”式极致体验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;a href=&#34;https://imgcdn.p3terx.com/post/20201113013636.jpg#vwid=600&amp;amp;vhei=395&#34;&gt;&lt;img src=&#34;https://imgcdn.p3terx.com/post/20201113013636.jpg#vwid=600&amp;amp;vhei=395&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;使用方法&#34;&gt;使用方法&lt;/h2&gt;
+&lt;p&gt;SSH 连上 VPS 。&lt;s&gt;&lt;a href=&#34;https://p3terx.com/archives/cheap-and-costeffective-vps-recommended.html&#34;&gt;AD: 还没有 VPS ？赶紧点这里去选一个吧！&lt;/a&gt;&lt;/s&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;无论 VPS 是 IPv4 还是 IPv6 又或都有，添加 WARP Wire­Guard 双栈全局网络，直接使用以下命令一把梭：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 自动配置 WARP WireGuard 双栈全局网络
+bash &amp;lt;(curl -fsSL git.io/warp.sh) d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;添加或置换 IPv4/IPv6 网络中的一个为 WARP Wire­Guard 网络，使用以下命令一把梭：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 自动配置 WARP WireGuard IPv4 网络
+bash &amp;lt;(curl -fsSL git.io/warp.sh) 4
+# 自动配置 WARP WireGuard IPv6 网络
+bash &amp;lt;(curl -fsSL git.io/warp.sh) 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cloud­flare 官方于近期发布了 WARP Linux 客户端，同时也带来了全新的 Proxy Mode 功能，它使得我们可以让应用通过本地的 SOCKS5 代理端口去直接使用 WARP 网络。对于想尝鲜官方客户端的小伙伴，可以使用以下命令一把梭自动安装 WARP 官方客户端并开启 SOCKS5 本机代理端口 (&lt;code&gt;127.0.0.1:40000&lt;/code&gt;)：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 自动配置 WARP 官方客户端 SOCKS5 代理
+bash &amp;lt;(curl -fsSL git.io/warp.sh) s5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;给喜欢功能菜单的小伙伴特别准备的功能，执行以下命令显示功能菜单和贴心的状态显示：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Cloudflare WARP 一键配置脚本 功能菜单
+bash &amp;lt;(curl -fsSL git.io/warp.sh) menu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;a href=&#34;https://imgcdn.p3terx.com/post/20210718032620.png#vwid=523&amp;amp;vhei=460&#34;&gt;&lt;img src=&#34;https://imgcdn.p3terx.com/post/20210718032620.png#vwid=523&amp;amp;vhei=460&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;注意事项和其它说明&#34;&gt;注意事项和其它说明&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;脚本目前处于公测阶段，可能还存在少量未知的 bug ，虽然不会导致毁灭性的问题，但不建议在生产环境中使用。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;自动配置 WARP WireGuard 双栈全局网络&lt;/code&gt;已做到适配目前大多数主流的系统和 IDC 网络方案，但不排除极个别的差异没考虑到，因此可能会因为路由规则不适用而导致 SSH 失联。若失联可以使用网页 VNC 登录到 VPS 然后执行&lt;code&gt;systemctl disable wg-quick@wgcf --now&lt;/code&gt;命令完全禁用 WARP WireGuard 服务即可恢复。&lt;/li&gt;
+&lt;li&gt;因 WireGuard 的 bug 与 WARP 网络偶发性连接故障，可能会出现网络状态显示均为未连接且网络访问异常的情况，使用&lt;code&gt;systemctl restart wg-quick@wgcf&lt;/code&gt;命令重启 WARP WireGuard 进程即可。若一直有问题则一直重启，直到能使用为止。&lt;/li&gt;
+&lt;li&gt;功能菜单中的&lt;code&gt;选择其它 WARP WireGuard 配置方案&lt;/code&gt;最初设计为自动配置时因本地源 IP 识别错误导致失联后的半自动备用方案，目前已经几乎用不到了。如果需要使用可根据实际情况与需求选择，遵循“无则添加、有则置换”原则。注意确认 IP 地址是否需要修改，如需修改可以手动输入 IP。随着脚本的完善，逐步走向智能自动化，后续这个功能菜单可能会移除。&lt;/li&gt;
+&lt;li&gt;脚本使用 &lt;a href=&#34;https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1ZpUmIzL3dnY2Y&#34;&gt;wgcf&lt;/a&gt; 生成通用 WireGuard 配置文件，配置完成后会原样备份至&lt;code&gt;~/.wgcf&lt;/code&gt;目录，以便下次脚本自动调用，避免重复申请 WARP 账号导致 IP 被 Cloudflare 拉黑。&lt;/li&gt;
+&lt;li&gt;若之前自行生成过 WireGuard 配置文件，在文件名为&lt;code&gt;wgcf-profile.conf&lt;/code&gt;的情况下在此配置文件所在目录执行脚本会优先调用此配置文件并截取关键信息生成符合所选网络方案的新配置文件。若之前有生成过带有 WARP+ 流量的配置文件，则可以使用这个彩蛋功能。&lt;/li&gt;
+&lt;li&gt;WARP WireGuard 双栈全局网络可能会导致 Docker 应用在 Bridge 网络模式下无法通过 IP 直接访问。可以使用 Host 网络模式，或者用 nginx 反代的方式去使用。暂时还没有找到完美的解决方案，如果有大佬知道怎么解决，欢迎分享。&lt;/li&gt;
+&lt;li&gt;WARP 官方 Linux 客户端才上线不久，实测稳定性不佳，且系统支持不全。目前只支持在 x86_64(amd64) 架构的 Debian 10/11、Ubuntu 20.04、CentOS 8 系统中尝鲜使用。其它系统也许能正常安装，但可能存在无法正常启动的问题。&lt;/li&gt;
+&lt;li&gt;WARP 官方客户端与 WARP WireGuard 网络可以同时使用，但 WARP 客户端的网络数据可能会走在 WARP WireGuard 隧道中，这属于套娃行为，减速效果非常明显。&lt;/li&gt;
+&lt;li&gt;WARP 官方客户端可能无法在部分 IPv6 Only VPS 上使用，可以先添加 WARP WireGuard IPv4 网络，但正如前面所说套娃减速。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;遇到问题如何处理&#34;&gt;遇到问题如何处理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;脚本运行失败或错误请在 &lt;a href=&#34;https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC93YXJwLnNoL2lzc3Vlcw&#34;&gt;GitHub issues&lt;/a&gt; 页面进行留言，提供虚拟化平台、系统版本、内核版本以及从脚本运行到末尾的详细日志等信息，以便分析问题原因改进脚本。&lt;strong&gt;若未提供有用信息一律当做垃圾信息处理。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;重启、重装、重买是解决问题的三大法宝。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;最后&#34;&gt;最后&lt;/h2&gt;
+&lt;p&gt;这个脚本从方案设计到代码编写全部都是由博主个人原创，且花费了大量时间和精力打磨而成，最初只是自己使用，觉得达到了近乎完美的状态也就开源分享了出来。如果觉得这个脚本对你有帮助，可以去 &lt;a href=&#34;https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC93YXJwLnNo&#34;&gt;WARP 脚本的 Github 项目页面&lt;/a&gt;点下 Star 点亮小星星支持一下，也欢迎小伙伴们分享出去让更多的人看到、使用并受益。&lt;/p&gt;
+">Cloudflare WARP 一键配置脚本 使用教程</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/da-jian-ji-yu-telegraph-de-wu-xian-chu-cun-tu-chuang/"" data-c="
+          &lt;p&gt;Telegraph是即时聊天软件Telegram的开发商推出的一个内容发布网站，它允许用户匿名发布文章,所以基于telegraph我们搭建一个无限储存空间的图床。&lt;br&gt;
+github项目地址:https://github.com/cloudflytc/tgpic&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;下载程序压缩包&lt;br&gt;
+下载地址:&lt;a href=&#34;https://github.com/cloudflytc/tgpic/archive/refs/heads/master.zip&#34;&gt;点击下载&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;上传压缩包到PHP环境中解压，然后访问网站即可上传图片&lt;/li&gt;
+&lt;li&gt;上传图片成功后底部会出现三条图片直链,国内用户建议选择第一条，是经过wp代理加速的，第二条是telegraph官方链接，国内无法访问&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Demo:&lt;a href=&#34;https://im.432100.xyz/&#34;&gt;点击进入图床&lt;/a&gt;&lt;br&gt;
+测试图片:&lt;img src=&#34;https://i1.wp.com/telegra.ph/file/66f334bb88e16aba5f8ce.jpg&#34; alt=&#34;测试图片(2.5Mb)&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+">搭建基于telegraph的无限储存图床</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/x-uizhi-chi-duo-xie-yi-duo-yong-hu-de-xray-mian-ban-v2-ui-quan-mian-ting-zhi-geng-xin-hou-xu-zhu-jian-yong-x-ui-mian-ban-qu-dai-v2-ui-mian-ban/"" data-c="
+          &lt;p&gt;1、VPS 一台重置好主流的操作系统 （CentOS 7+、Ubuntu 16+、Debian 8+），作者使用：&lt;a href=&#34;https://www.v2rayssr.com/bwg.html&#34;&gt;搬瓦工 VPS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2、域名一个，做好相关的解析，若是需要套用 CDN，请托管域名到 cloudflare ，&lt;a href=&#34;https://www.v2rayssr.com/yumingreg.html&#34;&gt;不会请点击&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装-x-ui-面板&#34;&gt;安装 X-ui 面板&lt;/h2&gt;
+&lt;h3 id=&#34;申请-ssl-证书&#34;&gt;申请 SSL 证书&lt;/h3&gt;
+&lt;p&gt;下面环境的安装方式，大家根据自己的系统选择命令安装就好了。&lt;/p&gt;
+&lt;h4 id=&#34;更新及安装组件&#34;&gt;更新及安装组件&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;apt update -y          # Debian/Ubuntu 命令apt install -y curl    #Debian/Ubuntu 命令apt install -y socat    #Debian/Ubuntu 命令
+yum update -y          #CentOS 命令yum install -y curl    #CentOS 命令yum install -y socat    #CentOS 命令
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;安装-acme-脚本&#34;&gt;安装 Acme 脚本&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;curl https://get.acme.sh | sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;80-端口空闲的证书申请方式&#34;&gt;80 端口空闲的证书申请方式&lt;/h4&gt;
+&lt;p&gt;自行更换代码中的域名、邮箱为你解析的域名及邮箱&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~/.acme.sh/acme.sh --register-account -m xxxx@xxxx.com~/.acme.sh/acme.sh  --issue -d mydomain.com   --standalone
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;安装证书到指定文件夹&#34;&gt;安装证书到指定文件夹&lt;/h4&gt;
+&lt;p&gt;自行更换代码中的域名为你解析的域名&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~/.acme.sh/acme.sh --installcert -d mydomain.com --key-file /root/private.key --fullchain-file /root/cert.crt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;安装-升级-x-ui-面板&#34;&gt;安装 &amp;amp; 升级 X-ui 面板&lt;/h3&gt;
+&lt;h4 id=&#34;安装及升级的一键代码&#34;&gt;安装及升级的一键代码&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;节点配置及功能讲解&#34;&gt;节点配置及功能讲解&lt;/h4&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://www.v2rayssr.com/wp-content/uploads/2021/07/2.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;节点配置及龙能方面，请看 &lt;a href=&#34;https://www.v2rayssr.com/go?url=https://youtu.be/6ztPETEiY8M&#34;&gt;视频教程&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;v2-ui-x-ui数据迁移&#34;&gt;V2-ui - X-ui数据迁移&lt;/h4&gt;
+&lt;p&gt;安装完 X-ui 以后，输入以下代码，即可完成用户数据的迁移（不包含管理员账号及密码，仅针对已部署的节点部分）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;x-ui v2-ui
+&lt;/code&gt;&lt;/pre&gt;
+">X-ui，支持多协议多用户的 Xray 面板！V2-ui全面停止更新，后续逐渐用 X-ui 面板取代 V2-ui 面板！</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/docker-yi-jian-bu-shu-bo-ke/"" data-c="
+          &lt;h2 id=&#34;项目介绍&#34;&gt;项目介绍&lt;/h2&gt;
+&lt;p&gt;Docker是一种非常轻量的虚拟化技术（相比于VM这种虚拟化技术），同时它还有部署简单，不易对电脑环境造成污染的特点。而docker-compose则是对容器进行管理的工具，适合多容器同时使用或容器部署命令复杂时使用。&lt;/p&gt;
+&lt;p&gt;下面我会分享如何在x86_64或arm64平台（包括但不限于CentOS7、Ubuntu20.04、Rasbianarm64）上利用docker-compose命令构建属于自己的博客（wordpress或者typecho二选一，个人推荐wordpress）&lt;/p&gt;
+&lt;h3 id=&#34;1环境&#34;&gt;1.环境&lt;/h3&gt;
+&lt;h4 id=&#34;11-环境检查&#34;&gt;1.1 环境检查&lt;/h4&gt;
+&lt;p&gt;这一步骤主要是对服务器上docker-compose和git的检查，你可以使用下面命令查询服务器是否安装docker-compose和git&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker-compose -v
+git --version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://www.laning.cc/wp-content/uploads/2021/12/%E6%8D%95%E8%8E%B72.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://www.laning.cc/wp-content/uploads/2021/12/%E6%8D%95%E8%8E%B73.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;如果看到类似下面的输出，则证明服务器已经安装docker-compose和git（可能版本不太一样，但不必焦虑，请直接跳转到第2步）&lt;/p&gt;
+&lt;h4 id=&#34;12-环境安装&#34;&gt;1.2 环境安装&lt;/h4&gt;
+&lt;p&gt;如果没有看到版本信息，则服务器没有安装docker-compose，你需要用下面的命令安装此工具：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CentOS：sudo yum install docker-compose &amp;amp;&amp;amp; sudo yum install git
+Ubuntu：sudo apt install docker-compose &amp;amp;&amp;amp; sudo apt install git
+Rasbianarm64：sudo apt install docker-compose &amp;amp;&amp;amp; sudo apt install git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;13-添加docker开机自启动&#34;&gt;1.3 添加docker开机自启动&lt;/h4&gt;
+&lt;p&gt;这一步骤主要是将docker添加到开机自启动中，命令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl enable docker
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;2部署博客&#34;&gt;2.部署博客&lt;/h3&gt;
+&lt;h4 id=&#34;21-wordpress-部署&#34;&gt;2.1 wordpress 部署&lt;/h4&gt;
+&lt;h4 id=&#34;211-拉取文件并启动容器&#34;&gt;2.1.1 拉取文件并启动容器&lt;/h4&gt;
+&lt;p&gt;利用git从github拉取wordpress 的docker-compose.yml文件，命令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/laningya/docker_wordpress.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启动容器，命令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd docker-wordpress &amp;amp;&amp;amp; sudo docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;212-访问博客&#34;&gt;2.1.2 访问博客&lt;/h4&gt;
+&lt;p&gt;使用服务器IP访问博客地址&lt;/p&gt;
+&lt;p&gt;例：内网IP：http://192.168.x.x&lt;/p&gt;
+&lt;p&gt;如果是购买的阿里云、腾讯云等云服务器请先备案并在安全组中开放80端口&lt;/p&gt;
+&lt;h4 id=&#34;213-配置wordpress&#34;&gt;2.1.3 配置wordpress&lt;/h4&gt;
+&lt;p&gt;语言选择：简体中文 点击继续&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://www.laning.ltd/wp-content/uploads/2021/12/%E6%8D%95%E8%8E%B71.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;补充说明：&lt;/p&gt;
+&lt;p&gt;请按照自己的个人信息自行填写&lt;/p&gt;
+&lt;p&gt;搜索引擎可见性可选可不选&lt;/p&gt;
+&lt;h4 id=&#34;214-补充&#34;&gt;2.1.4 补充&lt;/h4&gt;
+&lt;p&gt;默认博客地址是 http://服务器IP&lt;/p&gt;
+&lt;p&gt;默认博客后台地址是 http://服务器IP/admin&lt;/p&gt;
+&lt;p&gt;关于wordpress的美化请自行百度&lt;/p&gt;
+&lt;h4 id=&#34;22-typecho-部署&#34;&gt;2.2 typecho 部署&lt;/h4&gt;
+&lt;h4 id=&#34;221-拉取文件并启动容器&#34;&gt;2.2.1 拉取文件并启动容器&lt;/h4&gt;
+&lt;p&gt;利用git从github拉取typecho的docker-compose.yml文件，命令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/laningya/docker_typecho.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启动容器，命令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd docker-typecho &amp;amp;&amp;amp; sudo docker-compose up -d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;222-访问博客&#34;&gt;2.2.2 访问博客&lt;/h4&gt;
+&lt;p&gt;使用服务器IP访问博客地址&lt;/p&gt;
+&lt;p&gt;例：内网IP：http://192.168.x.x&lt;/p&gt;
+&lt;p&gt;如果是购买的阿里云、腾讯云等云服务器请先备案并在安全组中开放80端口&lt;/p&gt;
+&lt;h4 id=&#34;223-配置typecho&#34;&gt;2.2.3 配置typecho&lt;/h4&gt;
+&lt;p&gt;点击我准备好了开始下一步&lt;/p&gt;
+&lt;p&gt;接下来按如下图配置&lt;/p&gt;
+&lt;p&gt;补充说明：&lt;/p&gt;
+&lt;p&gt;数据库配置请严格按照上面格式&lt;/p&gt;
+&lt;p&gt;管理员账号中请填写自己的IP地址或自己的域名&lt;/p&gt;
+&lt;p&gt;用户名 密码 邮箱部分请自己填写&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://www.laning.ltd/wp-content/uploads/2021/12/%E6%8D%95%E8%8E%B7.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h4 id=&#34;224-补充&#34;&gt;2.2.4 补充&lt;/h4&gt;
+&lt;p&gt;默认博客地址是 http://服务器IP&lt;/p&gt;
+&lt;p&gt;默认博客后台地址是 http://服务器IP/admin&lt;/p&gt;
+">Docker一键部署博客</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/about/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;欢迎来到我的小站呀，很高兴遇见你！🤝&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;关于本站&#34;&gt;🏠 关于本站&lt;/h2&gt;
+&lt;h2 id=&#34;博主是谁&#34;&gt;👨‍💻 博主是谁&lt;/h2&gt;
+&lt;h2 id=&#34;兴趣爱好&#34;&gt;⛹ 兴趣爱好&lt;/h2&gt;
+&lt;h2 id=&#34;联系我呀&#34;&gt;📬 联系我呀&lt;/h2&gt;
+">关于</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/hello-gridea/"" data-c="
+          &lt;p&gt;👏  欢迎使用 &lt;strong&gt;Gridea&lt;/strong&gt; ！&lt;br&gt;
+✍️  &lt;strong&gt;Gridea&lt;/strong&gt; 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/getgridea/gridea&#34;&gt;Github&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://gridea.dev/&#34;&gt;Gridea 主页&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://fehey.com/&#34;&gt;示例网站&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特性&#34;&gt;特性👇&lt;/h2&gt;
+&lt;p&gt;📝  你可以使用最酷的 &lt;strong&gt;Markdown&lt;/strong&gt; 语法，进行快速创作&lt;/p&gt;
+&lt;p&gt;🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片&lt;/p&gt;
+&lt;p&gt;🏷️  你可以对文章进行标签分组&lt;/p&gt;
+&lt;p&gt;📋  你可以自定义菜单，甚至可以创建外部链接菜单&lt;/p&gt;
+&lt;p&gt;💻  你可以在 &lt;strong&gt;Windows&lt;/strong&gt;，&lt;strong&gt;MacOS&lt;/strong&gt; 或 &lt;strong&gt;Linux&lt;/strong&gt; 设备上使用此客户端&lt;/p&gt;
+&lt;p&gt;🌎  你可以使用 &lt;strong&gt;𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌&lt;/strong&gt; 或 &lt;strong&gt;Coding Pages&lt;/strong&gt; 向世界展示，未来将支持更多平台&lt;/p&gt;
+&lt;p&gt;💬  你可以进行简单的配置，接入 &lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt; 或 &lt;a href=&#34;https://github.com/SukkaW/DisqusJS&#34;&gt;DisqusJS&lt;/a&gt; 评论系统&lt;/p&gt;
+&lt;p&gt;🇬🇧  你可以使用&lt;strong&gt;中文简体&lt;/strong&gt;或&lt;strong&gt;英语&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力&lt;/p&gt;
+&lt;p&gt;🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步&lt;/p&gt;
+&lt;p&gt;🌱 当然 &lt;strong&gt;Gridea&lt;/strong&gt; 还很年轻，有很多不足，但请相信，它会不停向前 🏃&lt;/p&gt;
+&lt;p&gt;未来，它一定会成为你离不开的伙伴&lt;/p&gt;
+&lt;p&gt;尽情发挥你的才华吧！&lt;/p&gt;
+&lt;p&gt;😘 Enjoy~&lt;/p&gt;
+">Hello Gridea</a>
+      </div>
+      
+    </div>
+    <div class="page">
+      <div id="page_ul"></div>
+    </div>
+  </div>
+</div>
+<script>
+  !function () {
+    let searchMask = document.querySelector('#search_mask');
+    let result = document.querySelector('#result');
+    let items = document.querySelectorAll('.item');
+    let searchBox = document.querySelector('#search');
+    let statCount = document.querySelector('#stat_count');
+    let statTimes = document.querySelector('#stat_times');
+    let pageUl = document.querySelector('#page_ul');
+    let close = document.querySelector('#close');
+    
+    close.addEventListener('click', function() {
+      searchMask.style = 'display: none;'
+    })
+
+    let finds = [];
+    let contents = [];
+    let pageSize = 10;
+    items.forEach(item => {
+      let a = item.querySelector('a');
+      contents.push({
+        title: a.innerText,
+        details: a.dataset.c,
+        link: a.href
+      })
+      item.remove();
+    })
+
+    function insertStr(soure, start, count) {
+      let newStr = soure.substr(start, count);
+      return soure.slice(0, start) + '<em>' + newStr + '</em>' + soure.slice(start + count);
+    }
+
+    pageUl.addEventListener('click', function(event) {
+      let target = event.target;
+      if (target.__proto__ === HTMLSpanElement.prototype) {
+        appendResults(parseInt(target.dataset.i));
+      }
+    })
+
+    function appendResults(index) {
+      let htmlResult = '';
+      let start = index || 0;
+      let end = Math.min(start + pageSize, finds.length);
+      for (let i = start; i < end; i++) {
+        const current = finds[i];
+        let html = current.title;
+        let sum = 0;
+        let positions = current.positions;
+        positions.forEach(position => {
+          html = insertStr(html, position.start + sum, position.count);
+          sum += 9;
+        })
+        htmlResult += `<div class="item"><a class="result-title" href="${current.link}">${html}</a></div>`;
+      }
+      result.innerHTML = htmlResult;
+      pageUl.innerHTML = '';
+      let count = finds.length / pageSize;
+      let lis = '';
+      if (start !== 0) {
+        lis += `<span class="fa fa-angle-left" data-i='${start - 1}'></span>`;
+      }
+      for (let i = 0; i < count; i++) {
+        lis += `<span class='${i === start?'current':''}' data-i='${i}'>${i+1}</span>`;     
+      }
+      if (start+1 < count) {
+        lis += `<span class="fa fa-angle-right" data-i='${start+1}'></span>`;  
+      }
+      pageUl.innerHTML = lis;
+    }
+
+    function search(delay) {
+      let timer = null
+      return function () {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          let start = Date.now();
+          let segments = searchBox.value.split(' ').filter(c => c != '');
+          if (segments.length <= 0) {
+            return;
+          }
+          finds = [];
+          let htmlResult = '';
+          contents.forEach(content => {
+            let title = content.title;
+            let positions = [];
+            let find = false;
+            segments.forEach((segment) => {
+              if (content.title.includes(segment)) {
+                find = true;
+                positions.push({
+                  start: content.title.indexOf(segment),
+                  count: segment.length
+                })
+              } else if (content.details.includes(segment)) {
+                find = true;
+              }
+            });
+            if (find) {
+              finds.push({
+                title: content.title,
+                link: content.link,
+                positions
+              });
+            }
+          })
+          appendResults(0);
+          statCount.textContent = finds.length;
+          statTimes.textContent = Date.now() - start;
+        }, delay)
+      }
+    }
+    searchBox.addEventListener('input', search(200));
+  }()
+</script>
 
 <input hidden id="copy" />
 <script>
