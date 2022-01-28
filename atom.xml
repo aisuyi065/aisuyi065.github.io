@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.52naiba.cn</id>
-    <title>Gridea</title>
-    <updated>2022-01-26T15:35:05.854Z</updated>
+    <title>52naiba</title>
+    <updated>2022-01-28T12:01:22.447Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.52naiba.cn"/>
     <link rel="self" href="https://blog.52naiba.cn/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>搜集各种教程源码插件备用</subtitle>
     <logo>https://blog.52naiba.cn/images/avatar.png</logo>
     <icon>https://blog.52naiba.cn/favicon.ico</icon>
-    <rights>All rights reserved 2022, Gridea</rights>
+    <rights>All rights reserved 2022, 52naiba</rights>
     <entry>
         <title type="html"><![CDATA[netflix-proxy DNS解锁Netflix项目]]></title>
         <id>https://blog.52naiba.cn/netflix-proxy-dns-jie-suo-netflix-xiang-mu/</id>
