@@ -9,7 +9,7 @@
 <meta name="description" content="搜集各种教程源码插件备用">
 <meta name="theme-color" content="#000">
 <title>openwrt编译教程及踩坑记录（持续更新） | 52naiba</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1643371703603">
+<link rel="shortcut icon" href="/favicon.ico?v=1643432267602">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -205,7 +205,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">22</span>
+        <span class="site-item-stat-count">23</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -1194,6 +1194,115 @@ make -j$(nproc) ||  make -j1 V=s
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/shi-yong-gost-da-jian-yi-ge-jian-dan-de-duan-kou-zhuan-fa-linuxandwindows/"" data-c="
+          &lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Gost&lt;/strong&gt;是一个功能多样且实用的安全隧道工具，使用的是&lt;strong&gt;go&lt;/strong&gt;语言编写&lt;br&gt;
+**GitHub项目：**https://github.com/ginuerzh/gost&lt;br&gt;
+**Gost文档：**https://docs.ginuerzh.xyz/gost&lt;br&gt;
+**Gost搭建Socks5：**https://sunpma.com/862.html&lt;/p&gt;
+&lt;h2 id=&#34;特性&#34;&gt;特性&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;多端口监听&lt;/li&gt;
+&lt;li&gt;可设置转发代理，支持多级转发(代理链)&lt;/li&gt;
+&lt;li&gt;支持标准HTTP/HTTPS/HTTP2/SOCKS4(A)/SOCKS5代理协议&lt;/li&gt;
+&lt;li&gt;Web代理支持探测防御&lt;/li&gt;
+&lt;li&gt;支持多种隧道类型&lt;/li&gt;
+&lt;li&gt;SOCKS5代理支持TLS协商加密&lt;/li&gt;
+&lt;li&gt;Tunnel UDP over TCP&lt;/li&gt;
+&lt;li&gt;TCP/UDP透明代理&lt;/li&gt;
+&lt;li&gt;本地/远程TCP/UDP端口转发&lt;/li&gt;
+&lt;li&gt;支持Shadowsocks(TCP/UDP)协议&lt;/li&gt;
+&lt;li&gt;支持SNI代理&lt;/li&gt;
+&lt;li&gt;权限控制&lt;/li&gt;
+&lt;li&gt;负载均衡&lt;/li&gt;
+&lt;li&gt;路由控制&lt;/li&gt;
+&lt;li&gt;DNS解析和代理&lt;/li&gt;
+&lt;li&gt;TUN/TAP设备&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;linux安装&#34;&gt;Linux安装&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;X64
+wget &amp;quot;https://github.com/ginuerzh/gost/releases/download/v2.8.1/gost_2.8.1_linux_amd64.tar.gz&amp;quot;
+
+tar -zxvf gost_2.8.1_linux_amd64.tar.gz
+
+mv gost_2.8.1_linux_amd64/gost /usr/bin/gost
+
+chmod +x /usr/bin/gost
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;ARM&lt;/code&gt;（比如甲骨文&lt;code&gt;ARM&lt;/code&gt;机型）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget &amp;quot;https://github.com/ginuerzh/gost/releases/download/v2.8.1/gost_2.8.1_linux_arm.tar.gz&amp;quot;
+
+tar -zxvf gost_2.8.1_linux_arm.tar.gz
+
+mv gost_2.8.1_linux_arm/gost /usr/bin/gost
+
+chmod +x /usr/bin/gost
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;TCP 转发&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gost -L=tcp://:本地使用端口/远程服务IP:远程服务端口
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;UDP 转发&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gost -L=udp://:本地使用端口/远程服务IP:远程服务端口
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;全协议转发（TCP+UDP）&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gost -L=:本地使用端口/远程服务IP:远程服务端口
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;小飞机转发&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gost -L=:本地使用端口 -F=ss://加密方式:密码@远程服务IP:远程服务端口?nodelay=true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;示例：使用A服务器的&lt;code&gt;8888&lt;/code&gt;端口转发IP为&lt;code&gt;114.114.114.114&lt;/code&gt;的B服务器的&lt;code&gt;9999&lt;/code&gt;端口（TCP+UDP）&lt;br&gt;
+&lt;code&gt;gost -L=:8888/114.114.114.114:9999&lt;/code&gt;&lt;br&gt;
+创建命令后我们就可以连接到A服务器的&lt;code&gt;8888&lt;/code&gt;端口，从而使用B服务器的&lt;code&gt;9999&lt;/code&gt;端口；&lt;br&gt;
+如果服务器使用了宝塔面板需要在面板安全设置中放行对应的端口；&lt;/p&gt;
+&lt;p&gt;如果测试后没有问题，就可以使用&lt;code&gt;nohup&lt;/code&gt;命令将转发设置挂载到后台持续运行；&lt;br&gt;
+&lt;code&gt;nohup&lt;/code&gt;命令重启后会失效，开机后再次挂载即可重新使用；&lt;br&gt;
+&lt;strong&gt;挂载后台&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nohup gost -L=:本地使用端口/远程服务IP:远程服务端口 &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;关闭挂载&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kill -9 $(ps aux | grep &amp;quot;gost&amp;quot; | sed &#39;/grep/d&#39; | awk &#39;{print $2}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;windows安装&#34;&gt;Windows安装&lt;/h2&gt;
+&lt;p&gt;首先下载需要的&lt;code&gt;Windows&lt;/code&gt;版本程序：https://github.com/ginuerzh/gost/releases&lt;br&gt;
+压缩包解压后将得到的&lt;code&gt;exe&lt;/code&gt;后缀文件移动到&lt;code&gt;C&lt;/code&gt;盘根目录下&lt;br&gt;
+然后打开系统&lt;code&gt;CMD(命令提示符)&lt;/code&gt;输入以下命令开始运行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 切换到C盘根目录
+cd /
+
+# 开始转发
+gost-windows-amd64.exe -L=tcp://:本地使用端口/远程服务IP:远程服务端口
+
+# 其中gost-windows-amd64.exe为移动到C盘根目录下的程序名称，如有不同自行修改；
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;iptables-一键脚本&#34;&gt;iptables 一键脚本&lt;/h2&gt;
+&lt;p&gt;如果不想使用GOST，也可以选择使用iptables来转发，这里推荐一个233大佬的端口转发一键脚本；&lt;br&gt;
+&lt;strong&gt;安装&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget -N --no-check-certificate https://raw.githubusercontent.com/sunpma/doubi/master/iptables-pf.sh &amp;amp;&amp;amp; chmod +x iptables-pf.sh &amp;amp;&amp;amp; bash iptables-pf.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;管理&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;./iptables-pf.sh
+ iptables 端口转发一键管理脚本 [v1.1.1]
+  
+ 0. 升级脚本
+————————————
+ 1. 安装 iptables
+ 2. 清空 iptables 端口转发
+————————————
+ 3. 查看 iptables 端口转发
+ 4. 添加 iptables 端口转发
+ 5. 删除 iptables 端口转发
+————————————
+注意：初次使用前请请务必执行 1. 安装 iptables(不仅仅是安装)
+
+ 请输入数字 [0-5]:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;添加转发时依次输入落地端IP、落地端口、本地端口、本地内网IP、转发类型；&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;注意：填写本机IP时是填写本地内网IP地址，而非外网IP地址，查看本地内网IP地址可以使用&lt;code&gt;ifconfig&lt;/code&gt;命令；&lt;/strong&gt;&lt;br&gt;
+&lt;a href=&#34;https://sunpma.com/usr/uploads/2020/10/3120166323.png&#34;&gt;&lt;img src=&#34;https://sunpma.com/usr/uploads/2020/10/3120166323.png&#34; alt=&#34;img&#34; loading=&#34;lazy&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+">使用GOST搭建一个简单的端口转发（Linux&Windows）</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://blog.52naiba.cn/netflix-proxy-dns-jie-suo-netflix-xiang-mu/"" data-c="
