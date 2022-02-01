@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.52naiba.cn</id>
     <title>52naiba</title>
-    <updated>2022-01-29T04:57:52.009Z</updated>
+    <updated>2022-02-01T07:04:02.033Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.52naiba.cn"/>
     <link rel="self" href="https://blog.52naiba.cn/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://blog.52naiba.cn/images/avatar.png</logo>
     <icon>https://blog.52naiba.cn/favicon.ico</icon>
     <rights>All rights reserved 2022, 52naiba</rights>
+    <entry>
+        <title type="html"><![CDATA[Docker搭建自己的服务器监控— ServerStatus]]></title>
+        <id>https://blog.52naiba.cn/docker-da-jian-zi-ji-de-fu-wu-qi-jian-kong-serverstatus/</id>
+        <link href="https://blog.52naiba.cn/docker-da-jian-zi-ji-de-fu-wu-qi-jian-kong-serverstatus/">
+        </link>
+        <updated>2022-02-01T06:58:18.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[使用GOST搭建一个简单的端口转发（Linux&Windows）]]></title>
         <id>https://blog.52naiba.cn/shi-yong-gost-da-jian-yi-ge-jian-dan-de-duan-kou-zhuan-fa-linuxandwindows/</id>
@@ -72,12 +79,5 @@
         <link href="https://blog.52naiba.cn/docker-an-zhuang-v2ray-linux-ke-hu-duan-dai-web-kong-zhi-duan/">
         </link>
         <updated>2022-01-09T11:33:25.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[[完全开源] 可在WebUI查看进度的一键DD脚本*]]></title>
-        <id>https://blog.52naiba.cn/wan-quan-kai-yuan-ke-zai-webui-cha-kan-jin-du-de-yi-jian-dd-jiao-ben/</id>
-        <link href="https://blog.52naiba.cn/wan-quan-kai-yuan-ke-zai-webui-cha-kan-jin-du-de-yi-jian-dd-jiao-ben/">
-        </link>
-        <updated>2022-01-06T03:53:00.000Z</updated>
     </entry>
 </feed>
