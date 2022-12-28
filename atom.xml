@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://aisuyi065.github.io</id>
+    <title>52naiba</title>
+    <updated>2022-12-28T12:59:11.065Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://aisuyi065.github.io"/>
+    <link rel="self" href="https://aisuyi065.github.io/atom.xml"/>
+    <subtitle>搜集各种教程源码插件备用</subtitle>
+    <logo>https://aisuyi065.github.io/images/avatar.png</logo>
+    <icon>https://aisuyi065.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, 52naiba</rights>
+    <entry>
+        <title type="html"><![CDATA[发现了一个不错的 24 小时 Linux 直播工具（带 web 界面）发现了一个不错的 24 小时 Linux 直播工具（带 web 界面）]]></title>
+        <id>https://aisuyi065.github.io/fa-xian-liao-yi-ge-bu-cuo-de-24-xiao-shi-linux-zhi-bo-gong-ju-dai-web-jie-mian-fa-xian-liao-yi-ge-bu-cuo-de-24-xiao-shi-linux-zhi-bo-gong-ju-dai-web-jie-mian/</id>
+        <link href="https://aisuyi065.github.io/fa-xian-liao-yi-ge-bu-cuo-de-24-xiao-shi-linux-zhi-bo-gong-ju-dai-web-jie-mian-fa-xian-liao-yi-ge-bu-cuo-de-24-xiao-shi-linux-zhi-bo-gong-ju-dai-web-jie-mian/">
+        </link>
+        <updated>2022-12-28T12:58:29.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Docker搭建自己的服务器监控— ServerStatus]]></title>
+        <id>https://aisuyi065.github.io/docker-da-jian-zi-ji-de-fu-wu-qi-jian-kong-serverstatus/</id>
+        <link href="https://aisuyi065.github.io/docker-da-jian-zi-ji-de-fu-wu-qi-jian-kong-serverstatus/">
+        </link>
+        <updated>2022-02-01T06:58:18.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用GOST搭建一个简单的端口转发（Linux&Windows）]]></title>
+        <id>https://aisuyi065.github.io/shi-yong-gost-da-jian-yi-ge-jian-dan-de-duan-kou-zhuan-fa-linuxandwindows/</id>
+        <link href="https://aisuyi065.github.io/shi-yong-gost-da-jian-yi-ge-jian-dan-de-duan-kou-zhuan-fa-linuxandwindows/">
+        </link>
+        <updated>2022-01-29T04:57:27.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[netflix-proxy DNS解锁Netflix项目]]></title>
+        <id>https://aisuyi065.github.io/netflix-proxy-dns-jie-suo-netflix-xiang-mu/</id>
+        <link href="https://aisuyi065.github.io/netflix-proxy-dns-jie-suo-netflix-xiang-mu/">
+        </link>
+        <updated>2022-01-26T15:34:39.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[go端口转发带web]]></title>
+        <id>https://aisuyi065.github.io/go-duan-kou-zhuan-fa-dai-web/</id>
+        <link href="https://aisuyi065.github.io/go-duan-kou-zhuan-fa-dai-web/">
+        </link>
+        <updated>2022-01-26T02:59:16.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[纯ipv6添加DNS访问IPV4]]></title>
+        <id>https://aisuyi065.github.io/chun-ipv6-tian-jia-dns-fang-wen-ipv4/</id>
+        <link href="https://aisuyi065.github.io/chun-ipv6-tian-jia-dns-fang-wen-ipv4/">
+        </link>
+        <updated>2022-01-18T16:12:50.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[安卓手机用qemu运行openwrt【转恩山】]]></title>
+        <id>https://aisuyi065.github.io/an-zhuo-shou-ji-yong-qemu-yun-xing-openwrtzhuan-en-shan/</id>
+        <link href="https://aisuyi065.github.io/an-zhuo-shou-ji-yong-qemu-yun-xing-openwrtzhuan-en-shan/">
+        </link>
+        <updated>2022-01-18T11:42:45.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Acme.sh 域名证书一键申请脚本]]></title>
+        <id>https://aisuyi065.github.io/acmesh-yu-ming-zheng-shu-yi-jian-shen-qing-jiao-ben/</id>
+        <link href="https://aisuyi065.github.io/acmesh-yu-ming-zheng-shu-yi-jian-shen-qing-jiao-ben/">
+        </link>
+        <updated>2022-01-18T06:35:36.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[LibreSpeed 魔改 Docker 版 ]]></title>
+        <id>https://aisuyi065.github.io/librespeed-mo-gai-docker-ban/</id>
+        <link href="https://aisuyi065.github.io/librespeed-mo-gai-docker-ban/">
+        </link>
+        <updated>2022-01-10T11:51:05.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Docker安装MyNodeQuery探针]]></title>
+        <id>https://aisuyi065.github.io/docker-an-zhuang-mynodequery-tan-zhen/</id>
+        <link href="https://aisuyi065.github.io/docker-an-zhuang-mynodequery-tan-zhen/">
+        </link>
+        <updated>2022-01-10T11:49:24.000Z</updated>
+    </entry>
+</feed>
